@@ -1,96 +1,59 @@
-﻿using STRINGS;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using TUNING;
 using UnityEngine;
 
-namespace MoreCuisineVariety
+namespace DupesCuisine.Foods
 {
     public class Food_SpicedOmelette : IEntityConfig
     {
         public const string Id = "SpicedOmelette";
-        public static string Name = UI.FormatAsLink("Spiced Omelette", Id.ToUpper());
-        public static string Description = $"A fluffy dish made from beaten {UI.FormatAsLink("Eggs", "RAWEGG")} and served with generous pinch of {UI.FormatAsLink("Pincha Peppernut", "SPICENUT")}. Has a deep spiced flavour that sticks to the mouth.";
-        public static string RecipeDescription = $"Bake a {UI.FormatAsLink("Spiced Omelette", Food_SpicedOmelette.Id)}";
         public static ComplexRecipe Recipe;
 
-        public string[] GetDlcIds() =>
-            DlcManager.AVAILABLE_ALL_VERSIONS;
-
-
-        public static GameObject CreateFabricationVisualizer(GameObject result)
-        {
-            KBatchedAnimController component = result.GetComponent<KBatchedAnimController>();
-            GameObject gameObject = new GameObject();
-            gameObject.name = result.name + "Visualizer";
-            gameObject.SetActive(false);
-            gameObject.transform.SetLocalPosition(Vector3.zero);
-            KBatchedAnimController kbatchedAnimController = gameObject.AddComponent<KBatchedAnimController>();
-            kbatchedAnimController.AnimFiles = component.AnimFiles;
-            kbatchedAnimController.initialAnim = "fabricating";
-            kbatchedAnimController.isMovable = true;
-            KBatchedAnimTracker kbatchedAnimTracker = gameObject.AddComponent<KBatchedAnimTracker>();
-            kbatchedAnimTracker.symbol = new HashedString("meter_ration");
-            kbatchedAnimTracker.offset = Vector3.zero;
-            UnityEngine.Object.DontDestroyOnLoad(gameObject);
-            return gameObject;
-        }
+        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
 
         public GameObject CreatePrefab()
         {
+            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_SpicedOmelette.Id, "", 2800000f, 3, 255.15f, 277.15f, 2400f, true);
 
-            var looseEntity = EntityTemplates.CreateLooseEntity(
-                id: Id,
-                name: Name,
-                desc: Description,
-                mass: 1f,
-                unitMass: false,
-                anim: Assets.GetAnim("food_spiced_omelette_kanim"),
-                initialAnim: "object",
-                sceneLayer: Grid.SceneLayer.Front,
-                collisionShape: EntityTemplates.CollisionShape.RECTANGLE,
-                width: 0.8f,
-                height: 0.4f,
-                isPickupable: true);
+            foodInfo.AddEffects(new List<string>
+            {
+                "WarmTouchFood"
+            },
+            DlcManager.AVAILABLE_ALL_VERSIONS);
 
-            var foodInfo = new EdiblesManager.FoodInfo(
-                id: Id,
-                dlcId: "",
-                caloriesPerUnit: 3200000f,
-                quality: TUNING.FOOD.FOOD_QUALITY_GREAT,
-                preserveTemperatue: 255.15f,
-                rotTemperature: 277.15f,
-                spoilTime: 2400f,
-                can_rot: true);
+            GameObject food = EntityTemplates.ExtendEntityToFood(
+                EntityTemplates.CreateLooseEntity(
+                    Food_SpicedOmelette.Id,
+                    STRINGS.FOOD.SPICEDOMELETTE.NAME,
+                    STRINGS.FOOD.SPICEDOMELETTE.DESC, 1f, false, Assets.GetAnim(("food_spiced_omelette_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
+                    foodInfo);
 
-            var foodEntity = EntityTemplates.ExtendEntityToFood(
-                template: looseEntity,
-                foodInfo: foodInfo);
-
-            /*
-             Calculation -
-             Standard Omelette = 2800 Kcal
-             Pincha Peppernut = 400 Kcal
-             -----------------------------> 3200 Kcal
-            */
-
-            //===> SPICED OMELETTE RECIPE <=============================================================================================================================================
-            ComplexRecipe.RecipeElement[] elementArray31 = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement("RawEgg", 1f), new ComplexRecipe.RecipeElement(SpiceNutConfig.ID, 1f) };
-            ComplexRecipe.RecipeElement[] elementArray32 = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement("SpicedOmelette".ToTag(), 1f, ComplexRecipe.RecipeElement.TemperatureOperation.Heated, false) };
-            ComplexRecipe SpicedOmeletteRecipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID("CookingStation", elementArray31, elementArray32), elementArray31, elementArray32);
-            SpicedOmeletteRecipe.time = TUNING.FOOD.RECIPES.STANDARD_COOK_TIME;
-            SpicedOmeletteRecipe.description = Food_SpicedOmelette.RecipeDescription;
-            SpicedOmeletteRecipe.nameDisplay = ComplexRecipe.RecipeNameDisplay.Result;
-            List<Tag> list16 = new List<Tag>();
-            list16.Add("CookingStation");
-            SpicedOmeletteRecipe.fabricators = list16;
-            SpicedOmeletteRecipe.sortOrder = 25;
-            Food_SpicedOmelette.Recipe = SpicedOmeletteRecipe;
-
-            return foodEntity;
+            ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[2]
+            {
+                new ComplexRecipe.RecipeElement("RawEgg", 1f),
+                new ComplexRecipe.RecipeElement(SpiceNutConfig.ID, 1f)
+            };
+            ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
+            {
+                new ComplexRecipe.RecipeElement(Id, 1f, (ComplexRecipe.RecipeElement.TemperatureOperation) 1, false)
+            };
+            Food_SpicedOmelette.Recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(CookingStationConfig.ID, recipeElementArray1, recipeElementArray2), recipeElementArray1, recipeElementArray2)
+            {
+                time = FOOD.RECIPES.STANDARD_COOK_TIME,
+                description = STRINGS.FOOD.SPICEDOMELETTE.RECIPEDESC,
+                nameDisplay = (ComplexRecipe.RecipeNameDisplay)1,
+                fabricators = new List<Tag>() { CookingStationConfig.ID },
+                sortOrder = 25
+            };
+            return food;
         }
 
-        public void OnPrefabInit(GameObject inst) { }
+        public void OnPrefabInit(GameObject inst)
+        {
+        }
 
-        public void OnSpawn(GameObject inst) { }
-
+        public void OnSpawn(GameObject inst)
+        {
+        }
     }
 }

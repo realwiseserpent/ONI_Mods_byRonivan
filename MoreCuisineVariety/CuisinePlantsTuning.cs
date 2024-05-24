@@ -3,66 +3,83 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 
-namespace MoreCuisineVariety
+namespace DupesCuisine
 {
     public class CuisinePlantsTuning
     {
         public static bool DebugMode = false;
         public static string[] SupportedVersions = DlcManager.AVAILABLE_ALL_VERSIONS;
-        public static CropsTuning OakTreeTuning;
-        public static CropsTuning CreamcapTuning;
-        public static CropsTuning SunnyWheatTuning;
 
-        static CuisinePlantsTuning()
+        public static CropsTuning OakTreeTuning = new CropsTuning
         {
-            CropsTuning tuning = new CropsTuning {
-                density = new MinMax(0.08f, 0.14f)
-            };
-            HashSet<Temperature.Range> set1 = new HashSet<Temperature.Range>();
-            set1.Add(Temperature.Range.Mild);
-            set1.Add(Temperature.Range.Room);
-            set1.Add(Temperature.Range.HumanWarm);
-            set1.Add(Temperature.Range.HumanHot);
-            set1.Add(Temperature.Range.Hot);
-            tuning.biomeTemperatures = set1;
-            HashSet<string> set2 = new HashSet<string>();
-            set2.Add(BIOMES_STRINGS.FOREST);
-            tuning.biomes = set2;
-            tuning.spawnLocation = Mob.Location.Floor;
-            OakTreeTuning = tuning;
-            tuning = new CropsTuning {
-                density = new MinMax(0.08f, 0.14f)
-            };
-            HashSet<Temperature.Range> set3 = new HashSet<Temperature.Range>();
-            set3.Add(Temperature.Range.Mild);
-            set3.Add(Temperature.Range.Room);
-            set3.Add(Temperature.Range.HumanWarm);
-            set3.Add(Temperature.Range.HumanHot);
-            set3.Add(Temperature.Range.Hot);
-            tuning.biomeTemperatures = set3;
-            HashSet<string> set4 = new HashSet<string>();
-            set4.Add(BIOMES_STRINGS.MARSH);
-            set4.Add(BIOMES_STRINGS.SWAMP);
-            tuning.biomes = set4;
-            tuning.spawnLocation = Mob.Location.Floor;
-            CreamcapTuning = tuning;
-            tuning = new CropsTuning {
-                density = new MinMax(0.08f, 0.14f)
-            };
-            HashSet<Temperature.Range> set5 = new HashSet<Temperature.Range>();
-            set5.Add(Temperature.Range.Mild);
-            set5.Add(Temperature.Range.Room);
-            set5.Add(Temperature.Range.HumanWarm);
-            set5.Add(Temperature.Range.HumanHot);
-            set5.Add(Temperature.Range.Hot);
-            tuning.biomeTemperatures = set5;
-            HashSet<string> set6 = new HashSet<string>();
-            set6.Add(BIOMES_STRINGS.JUNGLE);
-            set6.Add(BIOMES_STRINGS.WASTELAND);
-            tuning.biomes = set6;
-            tuning.spawnLocation = Mob.Location.Floor;
-            SunnyWheatTuning = tuning;
-        }
+            density = new MinMax(0.1f, 0.2f),
+            biomeTemperatures = new HashSet<Temperature.Range>()
+                {
+                    Temperature.Range.Mild,
+                    Temperature.Range.Room,
+                    Temperature.Range.HumanWarm,
+                    Temperature.Range.HumanHot,
+                    Temperature.Range.Hot
+                },
+            biomes = new HashSet<string>()
+                {
+                    BIOMES_STRINGS.FOREST,
+                    BAATOR_BIOME_STRINGS.MINAUROS,
+                    BAATOR_BIOME_STRINGS.SHADOWFEL,
+                    EARTH_BIOME_STRINGS.ASTHENOSPHERE,
+                    EARTH_BIOME_STRINGS.SURFACE,
+                    EMPTY_WORLDS_BIOME_STRINGS.CUSTOMFOREST,
+                },
+            spawnLocation = Mob.Location.Floor
+        };
+
+        public static CropsTuning CreamcapTuning = new CropsTuning
+        {
+            density = new MinMax(0.15f, 0.3f),
+            biomeTemperatures = new HashSet<Temperature.Range>()
+                {
+                    Temperature.Range.Cool,
+                    Temperature.Range.Mild,
+                    Temperature.Range.Room,
+                    Temperature.Range.HumanWarm,
+                    Temperature.Range.HumanHot,
+                    Temperature.Range.Hot
+                },
+            biomes = new HashSet<string>()
+                {
+                    BIOMES_STRINGS.MARSH,
+                    BIOMES_STRINGS.SWAMP,
+                    BAATOR_BIOME_STRINGS.AVERNUS,
+                    BAATOR_BIOME_STRINGS.SHADOWFEL,
+                    EARTH_BIOME_STRINGS.ASTHENOSPHERE,
+                    EARTH_BIOME_STRINGS.SURFACE,
+                },
+            spawnLocation = Mob.Location.Floor
+        };
+
+        public static CropsTuning SunnyWheatTuning = new CropsTuning
+        {
+            density = new MinMax(0.25f, 0.3f),
+            biomeTemperatures = new HashSet<Temperature.Range>()
+                {
+                    Temperature.Range.Mild,
+                    Temperature.Range.Room,
+                    Temperature.Range.HumanWarm,
+                    Temperature.Range.HumanHot,
+                    Temperature.Range.Hot
+                },
+            biomes = new HashSet<string>()
+                {
+                    BIOMES_STRINGS.JUNGLE,
+                    BIOMES_STRINGS.WASTELAND,
+                    BAATOR_BIOME_STRINGS.NESSUS,
+                    BAATOR_BIOME_STRINGS.DIS,
+                    "Desert", //SEDIMENTARY desert + TestDesert from RollerSnake
+                    EARTH_BIOME_STRINGS.ASTHENOSPHERE,
+                    EARTH_BIOME_STRINGS.SURFACE,
+                },
+            spawnLocation = Mob.Location.Floor
+        };
 
         public class BIOMES_STRINGS
         {
@@ -88,6 +105,38 @@ namespace MoreCuisineVariety
             public static string SWAMP = (PREFIX + "Swamp");
             public static string WASTELAND = (PREFIX + "Wasteland");
         }
+        public class EARTH_BIOME_STRINGS //Earth mod
+        {
+            public static string PREFIX = @"biomes/Earth/";
+            public static string
+                ASTHENOSPHERE = PREFIX + "Asthenosphere",
+                CORE = PREFIX + "Core",
+                MANTLE = PREFIX + "Mantle",
+                MANTLE2 = PREFIX + "Mantle2",
+                OCEAN = PREFIX + "Ocean",
+                SKY = PREFIX + "Sky",
+                SURFACE = PREFIX + "Surface";
+        }
+        public class BAATOR_BIOME_STRINGS //Baator mod
+        {
+            public static string PREFIX = @"biomes/";
+            public static string
+                SURFACECRAGS = PREFIX + "Baator_SurfaceCrags",
+                SHADOWFEL = PREFIX + "Baator_Shadowfel",
+                AVERNUS = PREFIX + "Baator_Avernus",
+                DIS = PREFIX + "Baator_Dis",
+                MINAUROS = PREFIX + "Baator_Minauros",
+                PHLEGETHOS = PREFIX + "Baator_Phlegethos",
+                STYGIA = PREFIX + "Baator_Stygia",
+                MALBOLGE = PREFIX + "Baator_Malbolge",
+                MALADOMINI = PREFIX + "Baator_Maladomini",
+                CANIA = PREFIX + "Baator_Cania",
+                NESSUS = PREFIX + "Baator_Nessus";
+        }
+        public class EMPTY_WORLDS_BIOME_STRINGS //EmptyWorlds mod
+        {
+            public static string CUSTOMFOREST = "CustomForest";
+        }
 
         [StructLayout(LayoutKind.Sequential)]
         public struct CropsTuning
@@ -97,9 +146,46 @@ namespace MoreCuisineVariety
             public ISet<string> biomes;
             public ISet<string> biomesExcluded;
             public Mob.Location spawnLocation;
-            public bool ValidBiome(SubWorld subworld, string biome) => 
-                ((this.biomeTemperatures.Contains(subworld.temperatureRange) && ((this.biomesExcluded == null) || !this.biomesExcluded.Any<string>(b => biome.Contains(b)))) && this.biomes.Any<string>(b => biome.Contains(b)));
+            // Check that the subworld temperature and current biome are appropriate for the plant
+            public bool ValidBiome(SubWorld subworld, string biome)
+            {
+                return biomeTemperatures.Contains(subworld.temperatureRange) && (biomesExcluded == null || !biomesExcluded.Any(b => biome.Contains(b))) && biomes.Any(b => biome.Contains(b));
+            }
         }
+
+        public struct SeedTuning
+        {
+            public MinMax density;
+            public ISet<string> biomes;
+            public ISet<string> biomesExcluded;
+
+            // Check that the subworld temperature and current biome are appropriate for the plant
+            public bool ValidBiome(string biome)
+            {
+                return (biomesExcluded == null || !biomesExcluded.Any(b => biome.Contains(b))) && biomes.Any(b => biome.Contains(b));
+            }
+        }
+        public static SeedTuning OakTreeSeedTuning = new SeedTuning
+        {
+            density = new MinMax(0.005f, 0.01f),
+            biomes = OakTreeTuning.biomes,
+            biomesExcluded = new HashSet<string>() { EARTH_BIOME_STRINGS.ASTHENOSPHERE, },
+        };
+        public static SeedTuning CreamcapSeedTuning = new SeedTuning
+        {
+            density = new MinMax(0.03f, 0.04f),
+            biomes = new HashSet<string>(CreamcapTuning.biomes) { },
+            biomesExcluded = new HashSet<string>() {     
+                EARTH_BIOME_STRINGS.ASTHENOSPHERE,
+                EARTH_BIOME_STRINGS.MANTLE2
+            },
+        };
+        public static SeedTuning SunnyWheatSeedTuning = new SeedTuning
+        {
+            density = new MinMax(0.005f, 0.01f),
+            biomes = SunnyWheatTuning.biomes,
+            biomesExcluded = new HashSet<string>() { EARTH_BIOME_STRINGS.SURFACE, },
+        };
     }
 }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using STRINGS;
 using UnityEngine;
 
-namespace MoreCuisineVariety
+namespace DupesCuisine.Buildings
 {
     public class ManualJuicerStation : ComplexFabricator, IGameObjectEffectDescriptor
     {

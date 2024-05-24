@@ -1,100 +1,70 @@
-﻿using STRINGS;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using TUNING;
 using UnityEngine;
 
-namespace MoreCuisineVariety
+namespace DupesCuisine.Foods
 {
     public class Food_Nutpie : IEntityConfig
     {
         public const string Id = "Nutpie";
-        public static string Name = UI.FormatAsLink("Grubner Nusstorte", Id.ToUpper());
-        public static string Description = $"A gourmet pie with a nut filling of caramelised {UI.FormatAsLink("Roast Grubfruit Nuts", "WORMBASICFOOD")}, {UI.FormatAsLink("Sleet Wheat Grain", "COLDWHEATSEED")} and {UI.FormatAsLink("Eggs", "RAWEGG")} dough, and {UI.FormatAsLink("Sucrose", "SUCROSE")}. The buttery crust remains fresh for a long time.";
-        public static string RecipeDescription = $"Bake a {UI.FormatAsLink("Grubner Nusstorte", Food_Nutpie.Id)}";
-
         public static ComplexRecipe Recipe;
 
-        public string[] GetDlcIds() =>
-            DlcManager.AVAILABLE_EXPANSION1_ONLY;
-
-
-        public static GameObject CreateFabricationVisualizer(GameObject result)
-        {
-            KBatchedAnimController component = result.GetComponent<KBatchedAnimController>();
-            GameObject gameObject = new GameObject();
-            gameObject.name = result.name + "Visualizer";
-            gameObject.SetActive(false);
-            gameObject.transform.SetLocalPosition(Vector3.zero);
-            KBatchedAnimController kbatchedAnimController = gameObject.AddComponent<KBatchedAnimController>();
-            kbatchedAnimController.AnimFiles = component.AnimFiles;
-            kbatchedAnimController.initialAnim = "fabricating";
-            kbatchedAnimController.isMovable = true;
-            KBatchedAnimTracker kbatchedAnimTracker = gameObject.AddComponent<KBatchedAnimTracker>();
-            kbatchedAnimTracker.symbol = new HashedString("meter_ration");
-            kbatchedAnimTracker.offset = Vector3.zero;
-            UnityEngine.Object.DontDestroyOnLoad(gameObject);
-            return gameObject;
-        }
+        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
 
         public GameObject CreatePrefab()
         {
+            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_Nutpie.Id, "", 6000000f, 5, 255.15f, 277.15f, 4800f, true);
+            foodInfo.AddEffects(new List<string>
+            {
+                Effects.SugarRushId
+            },
+            DlcManager.AVAILABLE_ALL_VERSIONS);
 
-            var looseEntity = EntityTemplates.CreateLooseEntity(
-                id: Id,
-                name: Name,
-                desc: Description,
-                mass: 1f,
-                unitMass: false,
-                anim: Assets.GetAnim("food_nutpie_kanim"),
-                initialAnim: "object",
-                sceneLayer: Grid.SceneLayer.Front,
-                collisionShape: EntityTemplates.CollisionShape.RECTANGLE,
-                width: 0.8f,
-                height: 0.4f,
-                isPickupable: true);
+            GameObject food = EntityTemplates.ExtendEntityToFood(
+                EntityTemplates.CreateLooseEntity(
+                    Food_Nutpie.Id,
+                    STRINGS.FOOD.NUTPIE.NAME,
+                    STRINGS.FOOD.NUTPIE.DESC, 1f, false, Assets.GetAnim(("food_nutpie_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
+                foodInfo);
 
-            var foodInfo = new EdiblesManager.FoodInfo(
-                id: Id,
-                dlcId: "EXPANSION1_ID",
-                caloriesPerUnit: 6000000f,
-                quality: TUNING.FOOD.FOOD_QUALITY_MORE_WONDERFUL,
-                preserveTemperatue: 255.15f,
-                rotTemperature: 277.15f,
-                spoilTime: 6000f,
-                can_rot: true);
-
-            var foodEntity = EntityTemplates.ExtendEntityToFood(
-                template: looseEntity,
-                foodInfo: foodInfo);
-
-            /*
-             Calculation -
-             Spindly Grubfruit 3x= 3200 Kcal
-             Sleet Wheat Grain = 250 Kcal/unit 4x = 1000 Kcal
-             Raw Egg = 800 Kcal
-             Sucrose = 12 = 300 Kcal
-             Cooking Process = 700 Kcal
-             -----------------------------> 6000 Kcal
-            */
-
-            //===> GRUBNER NUSSTORTE RECIPE <=============================================================================================================================================
-            ComplexRecipe.RecipeElement[] elementArray43 = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement("WormBasicFood", 3f), new ComplexRecipe.RecipeElement("ColdWheatSeed", 4f), new ComplexRecipe.RecipeElement("RawEgg", 1f), new ComplexRecipe.RecipeElement(SimHashes.Sucrose.CreateTag(), 12f) };
-            ComplexRecipe.RecipeElement[] elementArray44 = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement("Nutpie".ToTag(), 1f, ComplexRecipe.RecipeElement.TemperatureOperation.Heated, false) };
-            ComplexRecipe NutpieRecipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID("GourmetCookingStation", elementArray43, elementArray44), elementArray43, elementArray44);
-            NutpieRecipe.time = TUNING.FOOD.RECIPES.STANDARD_COOK_TIME;
-            NutpieRecipe.description = Food_Nutpie.RecipeDescription;
-            NutpieRecipe.nameDisplay = ComplexRecipe.RecipeNameDisplay.Result;
-            List<Tag> list22 = new List<Tag>();
-            list22.Add("GourmetCookingStation");
-            NutpieRecipe.fabricators = list22;
-            NutpieRecipe.sortOrder = 31;
-            Food_Nutpie.Recipe = NutpieRecipe;
-
-            return foodEntity;
+            ComplexRecipe.RecipeElement[] recipeElementArray1;
+            if (DlcManager.IsContentSubscribed(DlcManager.EXPANSION1_ID))
+                recipeElementArray1 = new ComplexRecipe.RecipeElement[4]
+                {
+                    new ComplexRecipe.RecipeElement("WormBasicFood", 2f),
+                    new ComplexRecipe.RecipeElement("ColdWheatSeed", 2f),
+                    new ComplexRecipe.RecipeElement("RawEgg", 1f),
+                    new ComplexRecipe.RecipeElement(SimHashes.Sucrose.CreateTag(), 12f)
+                };
+            else
+                recipeElementArray1 = new ComplexRecipe.RecipeElement[4]
+                {
+                    new ComplexRecipe.RecipeElement(GrilledPrickleFruitConfig.ID, 6/5f),
+                    new ComplexRecipe.RecipeElement("ColdWheatSeed", 2f),
+                    new ComplexRecipe.RecipeElement("RawEgg", 1f),
+                    new ComplexRecipe.RecipeElement(SimHashes.Sucrose.CreateTag(), 12f)
+                };
+            ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
+            {
+                new ComplexRecipe.RecipeElement(Id, 1f, (ComplexRecipe.RecipeElement.TemperatureOperation) 1, false)
+            };
+            Food_Nutpie.Recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(GourmetCookingStationConfig.ID, recipeElementArray1, recipeElementArray2), recipeElementArray1, recipeElementArray2)
+            {
+                time = FOOD.RECIPES.STANDARD_COOK_TIME,
+                description = STRINGS.FOOD.NUTPIE.RECIPEDESC,
+                nameDisplay = (ComplexRecipe.RecipeNameDisplay)1,
+                fabricators = new List<Tag>() { GourmetCookingStationConfig.ID },
+                sortOrder = 31
+            };
+            return food;
         }
 
-        public void OnPrefabInit(GameObject inst) { }
+        public void OnPrefabInit(GameObject inst)
+        {
+        }
 
-        public void OnSpawn(GameObject inst) { }
-
+        public void OnSpawn(GameObject inst)
+        {
+        }
     }
 }

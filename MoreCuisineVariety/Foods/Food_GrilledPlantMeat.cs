@@ -1,96 +1,59 @@
-﻿using STRINGS;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using TUNING;
 using UnityEngine;
 
-namespace MoreCuisineVariety
+namespace DupesCuisine.Foods
 {
     public class Food_GrilledPlantMeat : IEntityConfig
     {
         public const string Id = "GrilledPlantMeat";
-        public static string Name = UI.FormatAsLink("Grilled Plant Meat", Id.ToUpper());
-        public static string Description = $"A delightful grilled {UI.FormatAsLink("Plant Meat", "PLANTMEAT")}. It don't taste like meat, nor it taste like plant, but it really does taste good.";
-        public static string RecipeDescription = $"Bake a {UI.FormatAsLink("Grilled Plant Meat", Food_GrilledPlantMeat.Id)}";
-
         public static ComplexRecipe Recipe;
 
-        public string[] GetDlcIds() =>
-            DlcManager.AVAILABLE_EXPANSION1_ONLY;
-
-        public static GameObject CreateFabricationVisualizer(GameObject result)
-        {
-            KBatchedAnimController component = result.GetComponent<KBatchedAnimController>();
-            GameObject gameObject = new GameObject();
-            gameObject.name = result.name + "Visualizer";
-            gameObject.SetActive(false);
-            gameObject.transform.SetLocalPosition(Vector3.zero);
-            KBatchedAnimController kbatchedAnimController = gameObject.AddComponent<KBatchedAnimController>();
-            kbatchedAnimController.AnimFiles = component.AnimFiles;
-            kbatchedAnimController.initialAnim = "fabricating";
-            kbatchedAnimController.isMovable = true;
-            KBatchedAnimTracker kbatchedAnimTracker = gameObject.AddComponent<KBatchedAnimTracker>();
-            kbatchedAnimTracker.symbol = new HashedString("meter_ration");
-            kbatchedAnimTracker.offset = Vector3.zero;
-            UnityEngine.Object.DontDestroyOnLoad(gameObject);
-            return gameObject;
-        }
+        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
 
         public GameObject CreatePrefab()
         {
+            GameObject food = EntityTemplates.ExtendEntityToFood(
+                EntityTemplates.CreateLooseEntity(
+                    Food_GrilledPlantMeat.Id,
+                    STRINGS.FOOD.GRILLEDPLANTMEAT.NAME,
+                    STRINGS.FOOD.GRILLEDPLANTMEAT.DESC, 1f, false, Assets.GetAnim(("food_grilled_plantmeat_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true, 0, (SimHashes)976099455, null),
+                new EdiblesManager.FoodInfo(Food_GrilledPlantMeat.Id, "", 1600000f, 2, 255.15f, 277.15f, 2400f, true));
 
-            var looseEntity = EntityTemplates.CreateLooseEntity(
-                id: Id,
-                name: Name,
-                desc: Description,
-                mass: 1f,
-                unitMass: false,
-                anim: Assets.GetAnim("food_grilled_plantmeat_kanim"),
-                initialAnim: "object",
-                sceneLayer: Grid.SceneLayer.Front,
-                collisionShape: EntityTemplates.CollisionShape.RECTANGLE,
-                width: 0.8f,
-                height: 0.4f,
-                isPickupable: true);
+            ComplexRecipe.RecipeElement[] recipeElementArray1;
+            if (DlcManager.IsContentSubscribed(DlcManager.EXPANSION1_ID))
+                recipeElementArray1 = new ComplexRecipe.RecipeElement[1]
+                {
+                    new ComplexRecipe.RecipeElement("PlantMeat", 1f)
+                };
+            else
+                recipeElementArray1 = new ComplexRecipe.RecipeElement[]
+                {
+                    new ComplexRecipe.RecipeElement("BasicPlantFood", 8/3f),
+                    new ComplexRecipe.RecipeElement(SpiceNutConfig.ID, 1f),
+                };
 
-            var foodInfo = new EdiblesManager.FoodInfo(
-                id: Id,
-                dlcId: "EXPANSION1_ID",
-                caloriesPerUnit: 2400000f,
-                quality: TUNING.FOOD.FOOD_QUALITY_GREAT,
-                preserveTemperatue: 255.15f,
-                rotTemperature: 277.15f,
-                spoilTime: 2400f,
-                can_rot: true);
-
-            var foodEntity = EntityTemplates.ExtendEntityToFood(
-                template: looseEntity,
-                foodInfo: foodInfo);
-
-            /*
-             Calculation -
-             Plant Meat = 1200 Kcal
-             Cooking Process = 1200 Kcal
-             -----------------------------> 2400 Kcal
-            */
-
-            ////===> BAKED MUCKROOT RECIPE <=============================================================================================================================================
-            ComplexRecipe.RecipeElement[] elementArray35 = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement("PlantMeat", 1f) };
-            ComplexRecipe.RecipeElement[] elementArray36 = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement("GrilledPlantMeat".ToTag(), 1f, ComplexRecipe.RecipeElement.TemperatureOperation.Heated, false) };
-            ComplexRecipe GrilledPlantMeatRecipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID("CookingStation", elementArray35, elementArray36), elementArray35, elementArray36);
-            GrilledPlantMeatRecipe.time = TUNING.FOOD.RECIPES.STANDARD_COOK_TIME;
-            GrilledPlantMeatRecipe.description = Food_GrilledPlantMeat.RecipeDescription;
-            GrilledPlantMeatRecipe.nameDisplay = ComplexRecipe.RecipeNameDisplay.Result;
-            List<Tag> list18 = new List<Tag>();
-            list18.Add("CookingStation");
-            GrilledPlantMeatRecipe.fabricators = list18;
-            GrilledPlantMeatRecipe.sortOrder = 27;
-            Food_GrilledPlantMeat.Recipe = GrilledPlantMeatRecipe;
-
-            return foodEntity;
+            ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
+            {
+                new ComplexRecipe.RecipeElement(Id, 1f, (ComplexRecipe.RecipeElement.TemperatureOperation) 1, false)
+            };
+            Food_GrilledPlantMeat.Recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(CookingStationConfig.ID, recipeElementArray1, recipeElementArray2), recipeElementArray1, recipeElementArray2)
+            {
+                time = FOOD.RECIPES.STANDARD_COOK_TIME,
+                description = STRINGS.FOOD.GRILLEDPLANTMEAT.RECIPEDESC,
+                nameDisplay = (ComplexRecipe.RecipeNameDisplay)1,
+                fabricators = new List<Tag>() { CookingStationConfig.ID },
+                sortOrder = 27
+            };
+            return food;
         }
 
-        public void OnPrefabInit(GameObject inst) { }
+        public void OnPrefabInit(GameObject inst)
+        {
+        }
 
-        public void OnSpawn(GameObject inst) { }
-
+        public void OnSpawn(GameObject inst)
+        {
+        }
     }
 }

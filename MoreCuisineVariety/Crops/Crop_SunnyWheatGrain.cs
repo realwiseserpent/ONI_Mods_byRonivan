@@ -1,27 +1,31 @@
-﻿using STRINGS;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace MoreCuisineVariety
+namespace DupesCuisine.Crops
 {
-    public class Crop_SunnyWheatGrain : IEntityConfig
+    public class Crop_SunnyWheatGrain //: IEntityConfig
     {
         public const string Id = "SunnyWheat_Grain";
-        public static string Name = UI.FormatAsLink("Sunny Wheat Grain", "SunnyWheat_Grain".ToUpper());
-        public static string Description = ("The edible grain of a " + UI.FormatAsLink("Sunny Wheat", "SunnyWheat") + ". This edible grain leaves a warm taste on the tongue.");
+        public const float CaloriesPerUnit = 0.0f;
+        public const int FoodQuality = -1;
+        public const float PreserveTemperature = 283.15f;
+        public const float RotTemperature = 308.15f;
+        public const float SpoilTime = 9600f;
+        public static EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Id, "", CaloriesPerUnit, FoodQuality, PreserveTemperature, RotTemperature, SpoilTime, true);
 
-        public GameObject CreatePrefab() => 
-            EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("SunnyWheat_Grain", Name, Description, 1f, false, Assets.GetAnim("edible_sunnygrain_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true, 0, SimHashes.Creature, null), new EdiblesManager.FoodInfo("SunnyWheat_Grain", "", 0f, -1, 255.15f, 277.15f, 2400f, true));
+        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
 
-        public string[] GetDlcIds() => 
-            DlcManager.AVAILABLE_ALL_VERSIONS;
+        //public GameObject CreatePrefab()
+        //{
+        //    return EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity(Crop_SunnyWheatGrain.Id, Crop_SunnyWheatGrain.Name, Crop_SunnyWheatGrain.Description, 1f, false, Assets.GetAnim(("crop_sunnygrain_kanim")), "object", (Grid.SceneLayer)26, 1, 0.8f, 0.4f, true, 0, (SimHashes)976099455, null), 
+        //        new EdiblesManager.FoodInfo(Crop_SunnyWheatGrain.Id, "", 0.0f, -1, 255.15f, 277.15f, 3000f, true));
+        //}
 
-        public void OnPrefabInit(GameObject inst)
-        {
-        }
+        //public void OnPrefabInit(GameObject inst)
+        //{
+        //}
 
-        public void OnSpawn(GameObject inst)
-        {
-        }
+        //public void OnSpawn(GameObject inst)
+        //{
+        //}
     }
 }
-

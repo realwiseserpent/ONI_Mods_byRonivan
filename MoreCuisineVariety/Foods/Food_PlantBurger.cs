@@ -1,98 +1,64 @@
-﻿using STRINGS;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using TUNING;
 using UnityEngine;
 
-namespace MoreCuisineVariety
+namespace DupesCuisine.Foods
 {
     public class Food_PlantBurger : IEntityConfig
     {
         public const string Id = "PlantBurger";
-        public static string Name = UI.FormatAsLink("Plant Burger", Id.ToUpper());
-        public static string Description = $"Tasty {UI.FormatAsLink("Grilled Plant Meat", Food_GrilledPlantMeat.Id)} and {UI.FormatAsLink("Lettuce", "LETTUCE")} pressed together inside a split {UI.FormatAsLink("Mealbrot", Food_MealBread.Id)}. Can cause shivers and shakes after consumption.";
-        public static string RecipeDescription = $"Bake a {UI.FormatAsLink("Plant Burger", Food_PlantBurger.Id)}";
-
         public static ComplexRecipe Recipe;
 
-        public string[] GetDlcIds() =>
-        DlcManager.AVAILABLE_EXPANSION1_ONLY;
-
-
-        public static GameObject CreateFabricationVisualizer(GameObject result)
-        {
-            KBatchedAnimController component = result.GetComponent<KBatchedAnimController>();
-            GameObject gameObject = new GameObject();
-            gameObject.name = result.name + "Visualizer";
-            gameObject.SetActive(false);
-            gameObject.transform.SetLocalPosition(Vector3.zero);
-            KBatchedAnimController kbatchedAnimController = gameObject.AddComponent<KBatchedAnimController>();
-            kbatchedAnimController.AnimFiles = component.AnimFiles;
-            kbatchedAnimController.initialAnim = "fabricating";
-            kbatchedAnimController.isMovable = true;
-            KBatchedAnimTracker kbatchedAnimTracker = gameObject.AddComponent<KBatchedAnimTracker>();
-            kbatchedAnimTracker.symbol = new HashedString("meter_ration");
-            kbatchedAnimTracker.offset = Vector3.zero;
-            UnityEngine.Object.DontDestroyOnLoad(gameObject);
-            return gameObject;
-        }
+        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
 
         public GameObject CreatePrefab()
         {
+            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_PlantBurger.Id, "", 6000000f, 6, 255.15f, 277.15f, 2400f, true);
 
-            var looseEntity = EntityTemplates.CreateLooseEntity(
-                id: Id,
-                name: Name,
-                desc: Description,
-                mass: 1f,
-                unitMass: false,
-                anim: Assets.GetAnim("food_plantburger_kanim"),
-                initialAnim: "object",
-                sceneLayer: Grid.SceneLayer.Front,
-                collisionShape: EntityTemplates.CollisionShape.RECTANGLE,
-                width: 0.8f,
-                height: 0.4f,
-                isPickupable: true);
+            foodInfo.AddEffects(new List<string>
+            {
+                "GoodEats"
+            }, DlcManager.AVAILABLE_ALL_VERSIONS);
 
-            var foodInfo = new EdiblesManager.FoodInfo(
-                id: Id,
-                dlcId: "EXPANSION1_ID",
-                caloriesPerUnit: 6000000f,
-                quality: TUNING.FOOD.FOOD_QUALITY_MORE_WONDERFUL,
-                preserveTemperatue: 255.15f,
-                rotTemperature: 277.15f,
-                spoilTime: 2400f,
-                can_rot: true);
+            foodInfo.AddEffects(new List<string>
+            {
+                "SeafoodRadiationResistance"
+            }, DlcManager.AVAILABLE_EXPANSION1_ONLY);
 
-            var foodEntity = EntityTemplates.ExtendEntityToFood(
-                template: looseEntity,
-                foodInfo: foodInfo);
-
-            /*
-             Calculation -
-             Grilled Plant Meat = 2400 Kcal
-             Mealbrot = 2800 Kcal
-             Lettuce = 400 Kcal
-             Cooking Process = 400 Kcal
-             -----------------------------> 6000 Kcal
-            */
-
-            //===> PLANT BURGER RECIPE <=============================================================================================================================================
-            ComplexRecipe.RecipeElement[] elementArray47 = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement("GrilledPlantMeat", 1f), new ComplexRecipe.RecipeElement("Lettuce", 1f), new ComplexRecipe.RecipeElement("MealBread", 1f) };
-            ComplexRecipe.RecipeElement[] elementArray48 = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement("PlantBurger".ToTag(), 1f, ComplexRecipe.RecipeElement.TemperatureOperation.Heated, false) };
-            ComplexRecipe PlantBurgerRecipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID("GourmetCookingStation", elementArray47, elementArray48), elementArray47, elementArray48);
-            PlantBurgerRecipe.time = TUNING.FOOD.RECIPES.STANDARD_COOK_TIME;
-            PlantBurgerRecipe.description = Food_PlantBurger.RecipeDescription;
-            PlantBurgerRecipe.nameDisplay = ComplexRecipe.RecipeNameDisplay.Result;
-            List<Tag> list24 = new List<Tag>();
-            list24.Add("GourmetCookingStation");
-            PlantBurgerRecipe.fabricators = list24;
-            PlantBurgerRecipe.sortOrder = 33;
-            Food_PlantBurger.Recipe = PlantBurgerRecipe;
-
-            return foodEntity;
+            GameObject food = EntityTemplates.ExtendEntityToFood(
+                EntityTemplates.CreateLooseEntity(
+                    Food_PlantBurger.Id,
+                    STRINGS.FOOD.PLANTBURGER.NAME,
+                    STRINGS.FOOD.PLANTBURGER.DESC, 1f, false, Assets.GetAnim(("food_plantburger_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
+                foodInfo);
+            
+            ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[]
+            {
+                new ComplexRecipe.RecipeElement(Food_MealBread.Id, 1f),
+                new ComplexRecipe.RecipeElement("Lettuce", 2f),
+                new ComplexRecipe.RecipeElement(Food_GrilledPlantMeat.Id, 1.5f),
+            };
+            ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
+            {
+                new ComplexRecipe.RecipeElement(Id, 1f, (ComplexRecipe.RecipeElement.TemperatureOperation) 1, false)
+            };
+            Food_PlantBurger.Recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(GourmetCookingStationConfig.ID, recipeElementArray1, recipeElementArray2), recipeElementArray1, recipeElementArray2)
+            {
+                time = FOOD.RECIPES.STANDARD_COOK_TIME,
+                description = STRINGS.FOOD.PLANTBURGER.RECIPEDESC,
+                nameDisplay = (ComplexRecipe.RecipeNameDisplay)1,
+                fabricators = new List<Tag>() { GourmetCookingStationConfig.ID },
+                sortOrder = 33
+            };
+            return food;
         }
 
-        public void OnPrefabInit(GameObject inst) { }
+        public void OnPrefabInit(GameObject inst)
+        {
+        }
 
-        public void OnSpawn(GameObject inst) { }
+        public void OnSpawn(GameObject inst)
+        {
+        }
     }
 }

@@ -1,62 +1,44 @@
-﻿using STRINGS;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using TUNING;
 using UnityEngine;
 
-namespace MoreCuisineVariety
+namespace DupesCuisine.Foods
 {
     public class Food_MeatWrap : IEntityConfig
     {
         public const string Id = "MeatWrap";
-        public static string Name = UI.FormatAsLink("Meat Wrap", "MeatWrap".ToUpper());
-        public static string Description;
-        public static string RecipeDescription;
         public static ComplexRecipe Recipe;
-
-        static Food_MeatWrap()
-        {
-            string[] textArray1 = new string[] { "A tasty snack made by wrapping grilled ", UI.FormatAsLink("Meat", "Meat"), " with ", UI.FormatAsLink("Warm Flat Bread", "FlatBread"), ". Each bite leaves a mild warm sensation in one's mouth, even when the snack itself is served cold." };
-            Description = string.Concat(textArray1);
-            RecipeDescription = "Bake a " + UI.FormatAsLink("Meat Wrap", "MeatWrap");
-        }
-
-        public static GameObject CreateFabricationVisualizer(GameObject result)
-        {
-            GameObject target = new GameObject {
-                name = result.name + "Visualizer"
-            };
-            target.SetActive(false);
-            target.transform.SetLocalPosition(Vector3.zero);
-            KBatchedAnimController controller2 = target.AddComponent<KBatchedAnimController>();
-            controller2.AnimFiles = result.GetComponent<KBatchedAnimController>().AnimFiles;
-            controller2.initialAnim = "fabricating";
-            controller2.isMovable = true;
-            KBatchedAnimTracker tracker = target.AddComponent<KBatchedAnimTracker>();
-            tracker.symbol = new HashedString("meter_ration");
-            tracker.offset = Vector3.zero;
-            UnityEngine.Object.DontDestroyOnLoad(target);
-            return target;
-        }
 
         public GameObject CreatePrefab()
         {
-            GameObject obj3 = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("MeatWrap", Name, Description, 1f, false, Assets.GetAnim("food_meat_wrap_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true, 0, SimHashes.Creature, null), new EdiblesManager.FoodInfo("MeatWrap", "", 2200000f, 2, 255.15f, 277.15f, 2400f, true));
-            ComplexRecipe.RecipeElement[] ingredients = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement("FlatBread", 1f), new ComplexRecipe.RecipeElement("Meat", 0.75f) };
-            ComplexRecipe.RecipeElement[] results = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement("MeatWrap", 1f) };
-            ComplexRecipe recipe1 = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID("CookingStation", ingredients, results), ingredients, results, 0);
-            recipe1.time = TUNING.FOOD.RECIPES.SMALL_COOK_TIME;
-            recipe1.description = RecipeDescription;
-            recipe1.nameDisplay = ComplexRecipe.RecipeNameDisplay.Result;
-            List<Tag> list1 = new List<Tag>();
-            list1.Add("CookingStation");
-            recipe1.fabricators = list1;
-            recipe1.sortOrder = 3;
-            recipe1.requiredTech = null;
-            Recipe = recipe1;
-            return obj3;
+            GameObject food = EntityTemplates.ExtendEntityToFood(
+                EntityTemplates.CreateLooseEntity(
+                    Food_MeatWrap.Id,
+                    STRINGS.FOOD.MEATWRAP.NAME,
+                    STRINGS.FOOD.MEATWRAP.DESC, 1f, false, Assets.GetAnim(("food_meat_wrap_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
+                new EdiblesManager.FoodInfo(Food_MeatWrap.Id, "", 3200000f, 3, 255.15f, 277.15f, 2400f, true));
+
+            ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[2]
+            {
+                new ComplexRecipe.RecipeElement(Food_FlatBread.Id, 1f),
+                new ComplexRecipe.RecipeElement(CookedMeatConfig.ID, 0.5f)
+            };
+            ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
+            {
+                new ComplexRecipe.RecipeElement(Food_MeatWrap.Id, 1f)
+            };
+            Food_MeatWrap.Recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(CookingStationConfig.ID, recipeElementArray1, recipeElementArray2), recipeElementArray1, recipeElementArray2, 0)
+            {
+                time = FOOD.RECIPES.SMALL_COOK_TIME,
+                description = STRINGS.FOOD.MEATWRAP.RECIPEDESC,
+                nameDisplay = (ComplexRecipe.RecipeNameDisplay)1,
+                fabricators = new List<Tag>() { CookingStationConfig.ID },
+                sortOrder = 3
+            };
+            return food;
         }
 
-        public string[] GetDlcIds() => 
-            DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
 
         public void OnPrefabInit(GameObject inst)
         {
@@ -67,4 +49,3 @@ namespace MoreCuisineVariety
         }
     }
 }
-

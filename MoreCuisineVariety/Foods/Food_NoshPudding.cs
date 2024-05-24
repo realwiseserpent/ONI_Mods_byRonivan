@@ -1,100 +1,60 @@
-﻿using STRINGS;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using TUNING;
 using UnityEngine;
 
-namespace MoreCuisineVariety
+namespace DupesCuisine.Foods
 {
     public class Food_NoshPudding : IEntityConfig
     {
         public const string Id = "NoshPudding";
-        public static string Name = UI.FormatAsLink("Nosh Custard Flan", Id.ToUpper());
-        public static string Description = $"A fancy sweet dessert made with {UI.FormatAsLink("Nosh Milk", Food_NoshMilkConfig.Id)}, {UI.FormatAsLink("Sleet Wheat Grain", "COLDWHEATSEED")}, whisked {UI.FormatAsLink("Eggs", "RAWEGG")} and quite a lot of {UI.FormatAsLink("Sucrose", "SUCROSE")}. Has a fine rimmed pastry that prevents it from breaking apart as one holds it (for a short time).";
-        public static string RecipeDescription = $"Bake a {UI.FormatAsLink("Nosh Custard Flan", Food_NoshPudding.Id)}";
-
         public static ComplexRecipe Recipe;
 
-        public string[] GetDlcIds() =>
-            DlcManager.AVAILABLE_EXPANSION1_ONLY;
-
-
-        public static GameObject CreateFabricationVisualizer(GameObject result)
-        {
-            KBatchedAnimController component = result.GetComponent<KBatchedAnimController>();
-            GameObject gameObject = new GameObject();
-            gameObject.name = result.name + "Visualizer";
-            gameObject.SetActive(false);
-            gameObject.transform.SetLocalPosition(Vector3.zero);
-            KBatchedAnimController kbatchedAnimController = gameObject.AddComponent<KBatchedAnimController>();
-            kbatchedAnimController.AnimFiles = component.AnimFiles;
-            kbatchedAnimController.initialAnim = "fabricating";
-            kbatchedAnimController.isMovable = true;
-            KBatchedAnimTracker kbatchedAnimTracker = gameObject.AddComponent<KBatchedAnimTracker>();
-            kbatchedAnimTracker.symbol = new HashedString("meter_ration");
-            kbatchedAnimTracker.offset = Vector3.zero;
-            UnityEngine.Object.DontDestroyOnLoad(gameObject);
-            return gameObject;
-        }
+        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
 
         public GameObject CreatePrefab()
         {
+            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_NoshPudding.Id, "", 6000000f, 6, 255.15f, 277.15f, 2400f, true);
+            foodInfo.AddEffects(new List<string>
+            {
+                "GoodEats",
+                Effects.SugarRushId
+            },
+            DlcManager.AVAILABLE_ALL_VERSIONS);
 
-            var looseEntity = EntityTemplates.CreateLooseEntity(
-                id: Id,
-                name: Name,
-                desc: Description,
-                mass: 1f,
-                unitMass: false,
-                anim: Assets.GetAnim("food_noshpudding_kanim"),
-                initialAnim: "object",
-                sceneLayer: Grid.SceneLayer.Front,
-                collisionShape: EntityTemplates.CollisionShape.RECTANGLE,
-                width: 0.8f,
-                height: 0.4f,
-                isPickupable: true);
-
-            var foodInfo = new EdiblesManager.FoodInfo(
-                id: Id,
-                dlcId: "EXPANSION1_ID",
-                caloriesPerUnit: 4000000f,
-                quality: TUNING.FOOD.FOOD_QUALITY_AMAZING,
-                preserveTemperatue: 255.15f,
-                rotTemperature: 277.15f,
-                spoilTime: 2400f,
-                can_rot: true);
-
-            var foodEntity = EntityTemplates.ExtendEntityToFood(
-                template: looseEntity,
-                foodInfo: foodInfo);
-
-            /*
-             Calculation -
-             Nosh Milk = 1200 Kcal
-             Sleet Wheat Grain = 250 Kcal/unit
-             Raw Egg = 1600 Kcal
-             Sucrose = 12 = 300 Kcal
-             Cooking Process = 600 Kcal
-             -----------------------------> 4000 Kcal
-            */
-
-            //===> MEAL BREAD RECIPE <=============================================================================================================================================
-            ComplexRecipe.RecipeElement[] elementArray41 = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement("NoshMilk", 1f), new ComplexRecipe.RecipeElement("ColdWheatSeed", 1f), new ComplexRecipe.RecipeElement("RawEgg", 2f), new ComplexRecipe.RecipeElement(SimHashes.Sucrose.CreateTag(), 12f) };
-            ComplexRecipe.RecipeElement[] elementArray42 = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement("NoshPudding".ToTag(), 1f, ComplexRecipe.RecipeElement.TemperatureOperation.Heated, false) };
-            ComplexRecipe NoshPuddingRecipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID("GourmetCookingStation", elementArray41, elementArray42), elementArray41, elementArray42);
-            NoshPuddingRecipe.time = TUNING.FOOD.RECIPES.STANDARD_COOK_TIME;
-            NoshPuddingRecipe.description = Food_NoshPudding.RecipeDescription;
-            NoshPuddingRecipe.nameDisplay = ComplexRecipe.RecipeNameDisplay.Result;
-            List<Tag> list21 = new List<Tag>();
-            list21.Add("GourmetCookingStation");
-            NoshPuddingRecipe.fabricators = list21;
-            NoshPuddingRecipe.sortOrder = 30;
-            Food_NoshPudding.Recipe = NoshPuddingRecipe;
-
-            return foodEntity;
+            GameObject food = EntityTemplates.ExtendEntityToFood(
+                EntityTemplates.CreateLooseEntity(
+                    Food_NoshPudding.Id,
+                    STRINGS.FOOD.NOSHPUDDING.NAME,
+                    STRINGS.FOOD.NOSHPUDDING.DESC, 1f, false, Assets.GetAnim(("food_noshpudding_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
+                foodInfo);
+            ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[4]
+            {
+                new ComplexRecipe.RecipeElement(Food_NoshMilkConfig.Id, 2f),
+                new ComplexRecipe.RecipeElement("ColdWheatSeed", 1f),
+                new ComplexRecipe.RecipeElement("RawEgg", 1.5f),
+                new ComplexRecipe.RecipeElement(SimHashes.Sucrose.CreateTag(), 12f)
+            };
+            ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
+            {
+                new ComplexRecipe.RecipeElement(Id, 1f, (ComplexRecipe.RecipeElement.TemperatureOperation) 1, false)
+            };
+            Food_NoshPudding.Recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(GourmetCookingStationConfig.ID, recipeElementArray1, recipeElementArray2), recipeElementArray1, recipeElementArray2)
+            {
+                time = FOOD.RECIPES.STANDARD_COOK_TIME,
+                description = STRINGS.FOOD.NOSHPUDDING.RECIPEDESC,
+                nameDisplay = (ComplexRecipe.RecipeNameDisplay)1,
+                fabricators = new List<Tag>() { GourmetCookingStationConfig.ID },
+                sortOrder = 30
+            };
+            return food;
         }
 
-        public void OnPrefabInit(GameObject inst) { }
+        public void OnPrefabInit(GameObject inst)
+        {
+        }
 
-        public void OnSpawn(GameObject inst) { }
-
+        public void OnSpawn(GameObject inst)
+        {
+        }
     }
 }

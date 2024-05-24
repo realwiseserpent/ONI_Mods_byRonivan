@@ -1,73 +1,95 @@
-﻿using HarmonyLib;
+﻿using Database;
+using HarmonyLib;
+using Mono.Cecil;
+using System.Collections.Generic;
+using System;
+using DupesCuisine.Foods;
+using UnityEngine;
 
-namespace MoreCuisineVariety
+namespace DupesCuisine.Patches
 {
-    public class MoreCuisineVariety_Patches_Food
+    public class DupesCuisine_Patches_Food
     {
         [HarmonyPatch(typeof(EntityConfigManager), "LoadGeneratedEntities")]
-        public class EntityConfigManager_LoadGeneratedEntities_Patch
+        public static class EntityConfigManager_LoadGeneratedEntities_Patch
         {
-            private static void Prefix()
+            public static void Prefix()
             {
-                //===> NOSH MILK <=================================================================================================================================
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_NoshMilkConfig.Id.ToUpperInvariant()}.NAME", Food_NoshMilkConfig.Name);
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_NoshMilkConfig.Id.ToUpperInvariant()}.DESC", Food_NoshMilkConfig.Description);
+                RegisterStrings.MakeFoodStrings(Food_BreadedPacu.Id, STRINGS.FOOD.BREADEDPACU.NAME, STRINGS.FOOD.BREADEDPACU.DESC, STRINGS.FOOD.BREADEDPACU.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_CookedMuckroot.Id, STRINGS.FOOD.COOKEDMUCKROOT.NAME, STRINGS.FOOD.COOKEDMUCKROOT.DESC, STRINGS.FOOD.COOKEDMUCKROOT.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_CookedShard.Id, STRINGS.FOOD.COOKEDSHARD.NAME, STRINGS.FOOD.COOKEDSHARD.DESC, STRINGS.FOOD.COOKEDSHARD.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_Cookie.Id, STRINGS.FOOD.COOKIE.NAME, STRINGS.FOOD.COOKIE.DESC, STRINGS.FOOD.COOKIE.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_DuskOmelette.Id, STRINGS.FOOD.DUSKOMELETTE.NAME, STRINGS.FOOD.DUSKOMELETTE.DESC, STRINGS.FOOD.DUSKOMELETTE.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_FishWrap.Id, STRINGS.FOOD.FISHWRAP.NAME, STRINGS.FOOD.FISHWRAP.DESC, STRINGS.FOOD.FISHWRAP.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_FlatBread.Id, STRINGS.FOOD.FLATBREAD.NAME, STRINGS.FOOD.FLATBREAD.DESC, STRINGS.FOOD.FLATBREAD.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_GrilledCreamtop.Id, STRINGS.FOOD.GRILLEDCREAMTOP.NAME, STRINGS.FOOD.GRILLEDCREAMTOP.DESC, STRINGS.FOOD.GRILLEDCREAMTOP.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_GrilledPlantMeat.Id, STRINGS.FOOD.GRILLEDPLANTMEAT.NAME, STRINGS.FOOD.GRILLEDPLANTMEAT.DESC, STRINGS.FOOD.GRILLEDPLANTMEAT.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_JellyDoughnut.Id, STRINGS.FOOD.JELLYDOUGHNUT.NAME, STRINGS.FOOD.JELLYDOUGHNUT.DESC, STRINGS.FOOD.JELLYDOUGHNUT.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_KakawaBar.Id, STRINGS.FOOD.KAKAWABAR.NAME, STRINGS.FOOD.KAKAWABAR.DESC, STRINGS.FOOD.KAKAWABAR.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_KakawaButter.Id, STRINGS.FOOD.KAKAWABUTTER.NAME, STRINGS.FOOD.KAKAWABUTTER.DESC, STRINGS.FOOD.KAKAWABUTTER.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_LiceWrap.Id, STRINGS.FOOD.LICEWRAP.NAME, STRINGS.FOOD.LICEWRAP.DESC, STRINGS.FOOD.LICEWRAP.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_MealBread.Id, STRINGS.FOOD.MEALBREAD.NAME, STRINGS.FOOD.MEALBREAD.DESC, STRINGS.FOOD.MEALBREAD.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_MealSlurryConfig.Id, STRINGS.FOOD.MEALSLURRY.NAME, STRINGS.FOOD.MEALSLURRY.DESC, STRINGS.FOOD.MEALSLURRY.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_MeatTaco.Id, STRINGS.FOOD.MEATTACO.NAME, STRINGS.FOOD.MEATTACO.DESC, STRINGS.FOOD.MEATTACO.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_MeatWrap.Id, STRINGS.FOOD.MEATWRAP.NAME, STRINGS.FOOD.MEATWRAP.DESC, STRINGS.FOOD.MEATWRAP.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_MilkBun.Id, STRINGS.FOOD.MILKBUN.NAME, STRINGS.FOOD.MILKBUN.DESC, STRINGS.FOOD.MILKBUN.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_MushroomStew.Id, STRINGS.FOOD.MUSHROOMSTEW.NAME, STRINGS.FOOD.MUSHROOMSTEW.DESC, STRINGS.FOOD.MUSHROOMSTEW.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_NoshMilkConfig.Id, STRINGS.FOOD.NOSHMILK.NAME, STRINGS.FOOD.NOSHMILK.DESC, STRINGS.FOOD.NOSHMILK.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_NoshPudding.Id, STRINGS.FOOD.NOSHPUDDING.NAME, STRINGS.FOOD.NOSHPUDDING.DESC, STRINGS.FOOD.NOSHPUDDING.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_Nutcake.Id, STRINGS.FOOD.NUTCAKE.NAME, STRINGS.FOOD.NUTCAKE.DESC, STRINGS.FOOD.NUTCAKE.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_Nutpie.Id, STRINGS.FOOD.NUTPIE.NAME, STRINGS.FOOD.NUTPIE.DESC, STRINGS.FOOD.NUTPIE.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_PlantBurger.Id, STRINGS.FOOD.PLANTBURGER.NAME, STRINGS.FOOD.PLANTBURGER.DESC, STRINGS.FOOD.PLANTBURGER.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_RoastedKakawa.Id, STRINGS.FOOD.ROASTEDKAKAWA.NAME, STRINGS.FOOD.ROASTEDKAKAWA.DESC, STRINGS.FOOD.ROASTEDKAKAWA.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_SaltedMeat.Id, STRINGS.FOOD.SALTEDMEAT.NAME, STRINGS.FOOD.SALTEDMEAT.DESC, STRINGS.FOOD.SALTEDMEAT.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_SeaTaco.Id, STRINGS.FOOD.SEATACO.NAME, STRINGS.FOOD.SEATACO.DESC, STRINGS.FOOD.SEATACO.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_SpicedOmelette.Id, STRINGS.FOOD.SPICEDOMELETTE.NAME, STRINGS.FOOD.SPICEDOMELETTE.DESC, STRINGS.FOOD.SPICEDOMELETTE.RECIPEDESC);
 
-                //===> MEAL SLURRY <===============================================================================================================================
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_MealSlurryConfig.Id.ToUpperInvariant()}.NAME", Food_MealSlurryConfig.Name);
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_MealSlurryConfig.Id.ToUpperInvariant()}.DESC", Food_MealSlurryConfig.Description);
+                RegisterStrings.MakeDublicantsModifiersStrings(Effects.ChocolateTasteId, STRINGS.EFFECTS.CHOCOLATETASTE.NAME, STRINGS.EFFECTS.CHOCOLATETASTE.TOOLTIP,
+                    STRINGS.EFFECTS.CHOCOLATETASTE.CAUSE, STRINGS.EFFECTS.CHOCOLATETASTE.DESCRIPTION);
+                RegisterStrings.MakeDublicantsModifiersStrings(Effects.SugarRushId, STRINGS.EFFECTS.SUGARRUSH.NAME, STRINGS.EFFECTS.SUGARRUSH.TOOLTIP,
+                    STRINGS.EFFECTS.SUGARRUSH.CAUSE, STRINGS.EFFECTS.SUGARRUSH.DESCRIPTION);
+            }
+        }
 
-                //===> BREADED PACU <==============================================================================================================================
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_BreadedPacu.Id.ToUpperInvariant()}.NAME", Food_BreadedPacu.Name);
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_BreadedPacu.Id.ToUpperInvariant()}.DESC", Food_BreadedPacu.Description);
+        [HarmonyPatch(typeof(Db))]
+        [HarmonyPatch("Initialize")]
+        public static class Db_Initialize_Patch
+        {
+            public static void Postfix()
+            {
+                Db.Get().effects.Add(Effects.ChocolateTasteEffect());
+                Db.Get().effects.Add(Effects.SugarRushEffect());
+            }
+        }
 
-                //===> COOKED MUCKROOT <===========================================================================================================================
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_CookedMuckroot.Id.ToUpperInvariant()}.NAME", Food_CookedMuckroot.Name);
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_CookedMuckroot.Id.ToUpperInvariant()}.DESC", Food_CookedMuckroot.Description);
+        [HarmonyPatch(typeof(EatXCaloriesFromY))]
+        [HarmonyPatch(MethodType.Constructor)]
+        [HarmonyPatch(new Type[] {
+            typeof(int),
+            typeof(List<string>)})]
+        public static class EatXCaloriesFromY_Constructor_Patch
+        {
+            public static void Prefix(ref List<string> fromFoodType)
+            {
+                fromFoodType.Add(Food_BreadedPacu.Id);
+                fromFoodType.Add(Food_FishWrap.Id);
+                fromFoodType.Add(Food_MeatTaco.Id);
+                fromFoodType.Add(Food_MeatWrap.Id);
+                fromFoodType.Add(Food_SaltedMeat.Id);
+                fromFoodType.Add(Food_SeaTaco.Id);
+            }
+        }
 
-                //===> COOKED CHARD <==============================================================================================================================
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_CookedShard.Id.ToUpperInvariant()}.NAME", Food_CookedShard.Name);
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_CookedShard.Id.ToUpperInvariant()}.DESC", Food_CookedShard.Description);
-
-                //===> GRILLED PLANT MEAT <========================================================================================================================
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_GrilledPlantMeat.Id.ToUpperInvariant()}.NAME", Food_GrilledPlantMeat.Name);
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_GrilledPlantMeat.Id.ToUpperInvariant()}.DESC", Food_GrilledPlantMeat.Description);
-
-                //===> MEALBROT <==================================================================================================================================
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_MealBread.Id.ToUpperInvariant()}.NAME", Food_MealBread.Name);
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_MealBread.Id.ToUpperInvariant()}.DESC", Food_MealBread.Description);
-
-                //===> MILK BUN <==================================================================================================================================
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_MilkBun.Id.ToUpperInvariant()}.NAME", Food_MilkBun.Name);
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_MilkBun.Id.ToUpperInvariant()}.DESC", Food_MilkBun.Description);
-
-                //===> NOSH PUDDING <==============================================================================================================================
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_NoshPudding.Id.ToUpperInvariant()}.NAME", Food_NoshPudding.Name);
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_NoshPudding.Id.ToUpperInvariant()}.DESC", Food_NoshPudding.Description);
-
-                //===> NUTPIE <====================================================================================================================================
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_Nutpie.Id.ToUpperInvariant()}.NAME", Food_Nutpie.Name);
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_Nutpie.Id.ToUpperInvariant()}.DESC", Food_Nutpie.Description);
-
-                //===> JELLY DOUGHNUT <============================================================================================================================
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_JellyDoughnut.Id.ToUpperInvariant()}.NAME", Food_JellyDoughnut.Name);
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_JellyDoughnut.Id.ToUpperInvariant()}.DESC", Food_JellyDoughnut.Description);
-
-                //===> PLANT BURGER <==============================================================================================================================
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_PlantBurger.Id.ToUpperInvariant()}.NAME", Food_PlantBurger.Name);
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_PlantBurger.Id.ToUpperInvariant()}.DESC", Food_PlantBurger.Description);
-
-                //===> SALT-CURED MEAT <===========================================================================================================================
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_SaltedMeat.Id.ToUpperInvariant()}.NAME", Food_SaltedMeat.Name);
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_SaltedMeat.Id.ToUpperInvariant()}.DESC", Food_SaltedMeat.Description);
-
-                //===> SPICED OMELETTE <===========================================================================================================================
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_SpicedOmelette.Id.ToUpperInvariant()}.NAME", Food_SpicedOmelette.Name);
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_SpicedOmelette.Id.ToUpperInvariant()}.DESC", Food_SpicedOmelette.Description);
-
-                //===> DUSK OMELETTE <=============================================================================================================================
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_DuskOmelette.Id.ToUpperInvariant()}.NAME", Food_DuskOmelette.Name);
-                Strings.Add($"STRINGS.ITEMS.FOOD.{Food_DuskOmelette.Id.ToUpperInvariant()}.DESC", Food_DuskOmelette.Description);
+        [HarmonyPatch(typeof(WormSuperFoodConfig), "CreatePrefab")]
+        public static class WormSuperFoodConfig_CreatePrefab_Patch
+        {
+            private static void Postfix(GameObject __result)
+            {
+                __result.AddOrGet<Edible>().FoodInfo.AddEffects(new List<string>
+                {
+                    Effects.SugarRushId
+                },
+                DlcManager.AVAILABLE_ALL_VERSIONS);
             }
         }
     }

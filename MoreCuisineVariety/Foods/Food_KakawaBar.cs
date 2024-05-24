@@ -1,57 +1,55 @@
-﻿using STRINGS;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TUNING;
 using UnityEngine;
 
-namespace MoreCuisineVariety
+namespace DupesCuisine.Foods
 {
     public class Food_KakawaBar : IEntityConfig
     {
         public const string Id = "KakawaBar";
-        public static string Name = UI.FormatAsLink("Kakawa Bar", "KakawaBar".ToUpper());
-        public static string Description = (UI.FormatAsLink("Roasted Kakawa", "Roasted_Kakawa") + " compressed to a dense, buttery mass. Further cooking remove most of Kakawa bitterness, rendering this bar incredible tasty.");
-        public static string RecipeDescription = ("Compress a " + UI.FormatAsLink("kakawa Bar", "KakawaBar"));
         public ComplexRecipe Recipe;
-
-        public static GameObject CreateFabricationVisualizer(GameObject result)
-        {
-            GameObject obj1 = new GameObject();
-            obj1.name = result.name + "Visualizer";
-            GameObject target = obj1;
-            target.SetActive(false);
-            target.transform.SetLocalPosition(Vector3.zero);
-            KBatchedAnimController controller = target.AddComponent<KBatchedAnimController>();
-            controller.AnimFiles = result.GetComponent<KBatchedAnimController>().AnimFiles;
-            controller.initialAnim = "fabricating";
-            controller.isMovable = true;
-            KBatchedAnimTracker tracker = target.AddComponent<KBatchedAnimTracker>();
-            tracker.symbol = new HashedString("meter_ration");
-            tracker.offset = Vector3.zero;
-            UnityEngine.Object.DontDestroyOnLoad(target);
-            return target;
-        }
 
         public GameObject CreatePrefab()
         {
-            GameObject obj3 = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("KakawaBar", Name, Description, 1f, false, Assets.GetAnim("food_kakawa_bar_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true, 0, SimHashes.Creature, null), new EdiblesManager.FoodInfo("KakawaBar", "", 2000000f, 2, 255.15f, 277.15f, 2400f, true));
-            ComplexRecipe.RecipeElement[] inputs = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement("Roasted_Kakawa", 3f), new ComplexRecipe.RecipeElement("KakawaButter", 1f) };
-            ComplexRecipe.RecipeElement[] outputs = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement("KakawaBar", 1f) };
-            string id = ComplexRecipeManager.MakeRecipeID("MicrobeMusher", inputs, outputs);
-            ComplexRecipe recipe1 = new ComplexRecipe(id, inputs, outputs, 0);
-            recipe1.time = FOOD.RECIPES.SMALL_COOK_TIME;
-            recipe1.description = RecipeDescription;
-            recipe1.nameDisplay = ComplexRecipe.RecipeNameDisplay.Result;
-            List<Tag> list1 = new List<Tag>();
-            list1.Add("MicrobeMusher");
-            recipe1.fabricators = list1;
-            recipe1.sortOrder = 3;
-            recipe1.requiredTech = null;
-            this.Recipe = recipe1;
-            return obj3;
+            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_KakawaBar.Id, "", 2400000f, 2, 255.15f, 277.15f, 4800f, true);
+
+            foodInfo.AddEffects(new List<string>
+            {
+                Effects.ChocolateTasteId
+            }, 
+            DlcManager.AVAILABLE_ALL_VERSIONS);
+
+            GameObject food = EntityTemplates.ExtendEntityToFood(
+                EntityTemplates.CreateLooseEntity(
+                    Food_KakawaBar.Id,
+                    STRINGS.FOOD.KAKAWABAR.NAME,
+                    STRINGS.FOOD.KAKAWABAR.DESC, 1f, false, Assets.GetAnim(("food_kakawa_bar_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
+                foodInfo);
+
+            ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[2]
+            {
+                new ComplexRecipe.RecipeElement(Food_RoastedKakawa.Id, 4f),
+                new ComplexRecipe.RecipeElement(Food_KakawaButter.Id, 1f)
+            };
+            ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
+            {
+                new ComplexRecipe.RecipeElement(Food_KakawaBar.Id, 1f)
+            };
+            this.Recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(MicrobeMusherConfig.ID, recipeElementArray1, recipeElementArray2), recipeElementArray1, recipeElementArray2, 0)
+            {
+                time = FOOD.RECIPES.STANDARD_COOK_TIME,
+                description = STRINGS.FOOD.KAKAWABAR.RECIPEDESC,
+                nameDisplay = (ComplexRecipe.RecipeNameDisplay)1,
+                fabricators = new List<Tag>() { MicrobeMusherConfig.ID },
+                sortOrder = 3
+            };
+
+            ComplexRecipeManager.Get().GetRecipe(this.Recipe.id).FabricationVisualizer = MushBarConfig.CreateFabricationVisualizer(food);
+
+            return food;
         }
 
-        public string[] GetDlcIds() => 
-            DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
 
         public void OnPrefabInit(GameObject inst)
         {
@@ -62,4 +60,3 @@ namespace MoreCuisineVariety
         }
     }
 }
-

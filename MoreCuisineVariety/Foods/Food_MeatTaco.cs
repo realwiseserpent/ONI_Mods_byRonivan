@@ -1,62 +1,51 @@
-﻿using STRINGS;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using TUNING;
 using UnityEngine;
 
-namespace MoreCuisineVariety
+namespace DupesCuisine.Foods
 {
     public class Food_MeatTaco : IEntityConfig
     {
         public const string Id = "MeatTaco";
-        public static string Name = UI.FormatAsLink("Meat Taco", "MeatTaco".ToUpper());
-        public static string Description;
-        public static string RecipeDescription;
         public static ComplexRecipe Recipe;
-
-        static Food_MeatTaco()
-        {
-            string[] textArray1 = new string[] { "A filling meal made with slowly baked ", UI.FormatAsLink("Meat", "Meat"), " with ", UI.FormatAsLink("Omellete", "CookedEgg"), ", all served within a ", UI.FormatAsLink("Warm Flat Bread", "FlatBread"), ". It promptly leaves a warm sensation while it goes inside, as well when it leaves." };
-            Description = string.Concat(textArray1);
-            RecipeDescription = "Bake a " + UI.FormatAsLink("Meat Taco", "MeatTaco");
-        }
-
-        public static GameObject CreateFabricationVisualizer(GameObject result)
-        {
-            GameObject target = new GameObject {
-                name = result.name + "Visualizer"
-            };
-            target.SetActive(false);
-            target.transform.SetLocalPosition(Vector3.zero);
-            KBatchedAnimController controller2 = target.AddComponent<KBatchedAnimController>();
-            controller2.AnimFiles = result.GetComponent<KBatchedAnimController>().AnimFiles;
-            controller2.initialAnim = "fabricating";
-            controller2.isMovable = true;
-            KBatchedAnimTracker tracker = target.AddComponent<KBatchedAnimTracker>();
-            tracker.symbol = new HashedString("meter_ration");
-            tracker.offset = Vector3.zero;
-            UnityEngine.Object.DontDestroyOnLoad(target);
-            return target;
-        }
 
         public GameObject CreatePrefab()
         {
-            GameObject obj3 = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("MeatTaco", Name, Description, 1f, false, Assets.GetAnim("food_meat_taco_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true, 0, SimHashes.Creature, null), new EdiblesManager.FoodInfo("MeatTaco", "", 6000000f, 6, 255.15f, 277.15f, 2400f, true));
-            ComplexRecipe.RecipeElement[] ingredients = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement("FlatBread", 1f), new ComplexRecipe.RecipeElement("CookedMeat", 0.5f), new ComplexRecipe.RecipeElement("CookedEgg", 1f) };
-            ComplexRecipe.RecipeElement[] results = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement("MeatTaco", 1f) };
-            ComplexRecipe recipe1 = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID("GourmetCookingStation", ingredients, results), ingredients, results, 0);
-            recipe1.time = TUNING.FOOD.RECIPES.SMALL_COOK_TIME;
-            recipe1.description = RecipeDescription;
-            recipe1.nameDisplay = ComplexRecipe.RecipeNameDisplay.Result;
-            List<Tag> list1 = new List<Tag>();
-            list1.Add("GourmetCookingStation");
-            recipe1.fabricators = list1;
-            recipe1.sortOrder = 3;
-            recipe1.requiredTech = null;
-            Recipe = recipe1;
-            return obj3;
+            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_MeatTaco.Id, "", 6000000f, 6, 255.15f, 277.15f, 2400f, true);
+            foodInfo.AddEffects(new List<string>
+            {
+                "GoodEats"
+            }, 
+            DlcManager.AVAILABLE_ALL_VERSIONS);
+
+            GameObject food = EntityTemplates.ExtendEntityToFood(
+                EntityTemplates.CreateLooseEntity(
+                    Food_MeatTaco.Id,
+                    STRINGS.FOOD.MEATTACO.NAME,
+                    STRINGS.FOOD.MEATTACO.DESC, 1f, false, Assets.GetAnim(("food_meat_taco_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
+                foodInfo);
+            ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[3]
+            {
+                new ComplexRecipe.RecipeElement(Food_FlatBread.Id, 1f),
+                new ComplexRecipe.RecipeElement("CookedMeat", 0.5f),
+                new ComplexRecipe.RecipeElement("CookedEgg", 1f)
+            };
+            ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
+            {
+                new ComplexRecipe.RecipeElement(Food_MeatTaco.Id, 1f)
+            };
+            Food_MeatTaco.Recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(GourmetCookingStationConfig.ID, recipeElementArray1, recipeElementArray2), recipeElementArray1, recipeElementArray2, 0)
+            {
+                time = FOOD.RECIPES.SMALL_COOK_TIME,
+                description = STRINGS.FOOD.MEATTACO.RECIPEDESC,
+                nameDisplay = (ComplexRecipe.RecipeNameDisplay)1,
+                fabricators = new List<Tag>() { GourmetCookingStationConfig.ID },
+                sortOrder = 3
+            };
+            return food;
         }
 
-        public string[] GetDlcIds() => 
-            DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
 
         public void OnPrefabInit(GameObject inst)
         {
@@ -67,4 +56,3 @@ namespace MoreCuisineVariety
         }
     }
 }
-

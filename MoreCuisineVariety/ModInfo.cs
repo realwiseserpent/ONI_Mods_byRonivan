@@ -1,8 +1,11 @@
 ﻿using HarmonyLib;
 using KMod;
 using System.Collections.Generic;
+using DupesCuisine.Plants;
+using DupesCuisine.Patches;
+using DupesCuisine.Crops;
 
-namespace MoreCuisineVariety
+namespace DupesCuisine
 {
     class ModInfo : KMod.UserMod2
     {
@@ -12,18 +15,28 @@ namespace MoreCuisineVariety
         {
             base.OnLoad(harmony);
 
-            Dictionary<string, CuisinePlantsTuning.CropsTuning> dictionary1 = new Dictionary<string, CuisinePlantsTuning.CropsTuning>();
-            dictionary1.Add("KakawaTree", CuisinePlantsTuning.OakTreeTuning);
-            dictionary1.Add("Creamcap", CuisinePlantsTuning.CreamcapTuning);
-            dictionary1.Add("SunnyWheat", CuisinePlantsTuning.SunnyWheatTuning);
-            MoreCuisineVariety_Patches_Plants.CropsDictionary = dictionary1;
-
-            Manager.Dialog(title: "Warning!", text: $"{this.mod.title}:\n This mod will be removed from Steam soon. Please visit mod page on Steam Workshop for more info.");
-
             Namespace = GetType().Namespace;
             Debug.Log($"{Namespace}: Loaded from: {this.mod.ContentPath}");
             Debug.Log($"{Namespace}: DLL version: {GetType().Assembly.GetName().Version} " +
                         $"supporting game build {this.mod.packagedModInfo.minimumSupportedBuild} ({this.mod.packagedModInfo.supportedContent})");
+
+            //PUtil.InitLibrary();
+            //new POptions().RegisterOptions(this, typeof(Settings));
+            //Settings.PLib_Initalize();
+
+            DupesCuisine_Patches_Plants.CropsDictionary = new Dictionary<string, CuisinePlantsTuning.CropsTuning>
+            {
+                { Plant_KakawaTreeConfig.Id, CuisinePlantsTuning.OakTreeTuning },
+                { Plant_CreamcapMushroomConfig.Id, CuisinePlantsTuning.CreamcapTuning },
+                { Plant_SunnyWheatConfig.Id, CuisinePlantsTuning.SunnyWheatTuning }
+            };
+
+            DupesCuisine_Patches_Plants.SeedDictionary = new Dictionary<string, CuisinePlantsTuning.SeedTuning>()
+                {
+                    { Crop_KakawaAcorn.Id, CuisinePlantsTuning.OakTreeSeedTuning },
+                    { Plant_CreamcapMushroomConfig.SeedId, CuisinePlantsTuning.CreamcapSeedTuning },
+                    { Crop_SunnyWheatGrain.Id, CuisinePlantsTuning.SunnyWheatSeedTuning },
+                };
         }
     }
 }

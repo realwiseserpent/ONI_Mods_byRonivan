@@ -1,57 +1,57 @@
-﻿using STRINGS;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using TUNING;
+using DupesCuisine.Buildings;
 
-namespace MoreCuisineVariety
+namespace DupesCuisine.Foods
 {
     public class Food_NoshMilkConfig : IEntityConfig
     {
         public const string Id = "NoshMilk";
-        public static string Name = UI.FormatAsLink("Nosh Milk", Id.ToUpper());
-        public static string Description = $"A plant-based drink produced by soaking and pressing of {UI.FormatAsLink("Nosh Bean", "BEAN")}.";
-
         public static ComplexRecipe recipe;
 
-        public string[] GetDlcIds() =>
-            DlcManager.AVAILABLE_ALL_VERSIONS;
-
+        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
 
         public GameObject CreatePrefab()
         {
+            ConfigureRecipes();
 
-            var looseEntity = EntityTemplates.CreateLooseEntity(
-                id: Id,
-                name: Name,
-                desc: Description,
-                mass: 1f,
-                unitMass: false,
-                anim: Assets.GetAnim("nosh_milk_kanim"),
-                initialAnim: "object",
-                sceneLayer: Grid.SceneLayer.Front,
-                collisionShape: EntityTemplates.CollisionShape.RECTANGLE,
-                width: 0.8f,
-                height: 0.4f,
-                isPickupable: true);
-
-            var foodInfo = new EdiblesManager.FoodInfo(
-                id: Id,
-                dlcId: "",
-                caloriesPerUnit: 0f,
-                quality: -1,
-                preserveTemperatue: 255.15f,
-                rotTemperature: 277.15f,
-                spoilTime: 2400f,
-                can_rot: true);
-
-            var foodEntity = EntityTemplates.ExtendEntityToFood(
-                template: looseEntity,
-                foodInfo: foodInfo);
-
-            return foodEntity;
+            return EntityTemplates.ExtendEntityToFood(
+                EntityTemplates.CreateLooseEntity(
+                    Food_NoshMilkConfig.Id,
+                    STRINGS.FOOD.NOSHMILK.NAME,
+                    STRINGS.FOOD.NOSHMILK.DESC, 1f, true, Assets.GetAnim(("nosh_milk_kanim")), "object", (Grid.SceneLayer)26, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true),
+                new EdiblesManager.FoodInfo(Food_NoshMilkConfig.Id, "", 0.0f, 0, 255.15f, 277.15f, 4800f, true));
         }
 
-        public void OnPrefabInit(GameObject inst) { }
+        public void OnPrefabInit(GameObject inst)
+        {
+        }
 
-        public void OnSpawn(GameObject inst) { }
+        public void OnSpawn(GameObject inst)
+        {
+        }
 
+        private void ConfigureRecipes()
+        {
+            ComplexRecipe.RecipeElement[] ingredients = new ComplexRecipe.RecipeElement[]
+            {
+                new ComplexRecipe.RecipeElement("BeanPlantSeed", 7f),
+                new ComplexRecipe.RecipeElement(SimHashes.Water.CreateTag(), 12f),
+            };
+            ComplexRecipe.RecipeElement[] results = new ComplexRecipe.RecipeElement[]
+            {
+                new ComplexRecipe.RecipeElement(Food_NoshMilkConfig.Id, 6f, 0, false),
+            };
+
+            recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(ManualJuicerConfig.ID, ingredients, results), ingredients, results, 0)
+            {
+                time = FOOD.RECIPES.SMALL_COOK_TIME,
+                description = STRINGS.FOOD.NOSHMILK.RECIPEDESC,
+                nameDisplay = ComplexRecipe.RecipeNameDisplay.Result,
+                fabricators = new List<Tag>{ ManualJuicerConfig.ID },
+                sortOrder = 1
+            };
+        }
     }
 }

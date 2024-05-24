@@ -1,97 +1,51 @@
-﻿using STRINGS;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using TUNING;
 using UnityEngine;
 
-namespace MoreCuisineVariety
+namespace DupesCuisine.Foods
 {
     public class Food_SaltedMeat : IEntityConfig
     {
         public const string Id = "SaltedMeat";
-        public static string Name = UI.FormatAsLink("Salt-cured Meat", Id.ToUpper());
-        public static string Description = $"A shunk of {UI.FormatAsLink("Meat", "MEAT")} dried with a lot of {UI.FormatAsLink("Salt", "SALT")}. The large amount of salt present in this meat made it completely resistant to microorganisms that would spoil it under normal conditions.";
-        public static string RecipeDescription = $"Bake a {UI.FormatAsLink("Salt-cured Meat", Food_SaltedMeat.Id)}";
-
         public static ComplexRecipe Recipe;
 
-        public string[] GetDlcIds() =>
-            DlcManager.AVAILABLE_ALL_VERSIONS;
-
-
-        public static GameObject CreateFabricationVisualizer(GameObject result)
-        {
-            KBatchedAnimController component = result.GetComponent<KBatchedAnimController>();
-            GameObject gameObject = new GameObject();
-            gameObject.name = result.name + "Visualizer";
-            gameObject.SetActive(false);
-            gameObject.transform.SetLocalPosition(Vector3.zero);
-            KBatchedAnimController kbatchedAnimController = gameObject.AddComponent<KBatchedAnimController>();
-            kbatchedAnimController.AnimFiles = component.AnimFiles;
-            kbatchedAnimController.initialAnim = "fabricating";
-            kbatchedAnimController.isMovable = true;
-            KBatchedAnimTracker kbatchedAnimTracker = gameObject.AddComponent<KBatchedAnimTracker>();
-            kbatchedAnimTracker.symbol = new HashedString("meter_ration");
-            kbatchedAnimTracker.offset = Vector3.zero;
-            UnityEngine.Object.DontDestroyOnLoad(gameObject);
-            return gameObject;
-        }
+        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
 
         public GameObject CreatePrefab()
         {
+            GameObject food = EntityTemplates.ExtendEntityToFood(
+                EntityTemplates.CreateLooseEntity(
+                    Food_SaltedMeat.Id,
+                    STRINGS.FOOD.SALTEDMEAT.NAME,
+                    STRINGS.FOOD.SALTEDMEAT.DESC, 1f, false, Assets.GetAnim(("food_saltedmeat_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
+                new EdiblesManager.FoodInfo(Food_SaltedMeat.Id, "", 2000000f, 1, 275.15f, 303.15f, 9600f, true));
 
-            var looseEntity = EntityTemplates.CreateLooseEntity(
-                id: Id,
-                name: Name,
-                desc: Description,
-                mass: 1f,
-                unitMass: false,
-                anim: Assets.GetAnim("food_saltedmeat_kanim"),
-                initialAnim: "object",
-                sceneLayer: Grid.SceneLayer.Front,
-                collisionShape: EntityTemplates.CollisionShape.RECTANGLE,
-                width: 0.8f,
-                height: 0.4f,
-                isPickupable: true);
-
-            var foodInfo = new EdiblesManager.FoodInfo(
-                id: Id,
-                dlcId: "",
-                caloriesPerUnit: 1400000f,
-                quality: TUNING.FOOD.FOOD_QUALITY_MEDIOCRE,
-                preserveTemperatue: 267.15f,
-                rotTemperature: 315.15f,
-                spoilTime: 12800f,
-                can_rot: true);
-
-            var foodEntity = EntityTemplates.ExtendEntityToFood(
-                template: looseEntity,
-                foodInfo: foodInfo);
-
-            /*
-             Calculation -
-             Meat 1/2 = 800 Kcal
-             Cooking Process = 600 Kcal
-             -----------------------------> 1400 Kcal
-            */
-
-            //===> SALT-CURED MEAL RECIPE <=============================================================================================================================================
-            ComplexRecipe.RecipeElement[] elementArray33 = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement("Meat", 0.5f), new ComplexRecipe.RecipeElement(SimHashes.Salt.CreateTag(), 10f) };
-            ComplexRecipe.RecipeElement[] elementArray34 = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement("SaltedMeat".ToTag(), 1f, ComplexRecipe.RecipeElement.TemperatureOperation.Heated, false) };
-            ComplexRecipe SaltedMeatRecipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID("CookingStation", elementArray33, elementArray34), elementArray33, elementArray34);
-            SaltedMeatRecipe.time = TUNING.FOOD.RECIPES.STANDARD_COOK_TIME;
-            SaltedMeatRecipe.description = Food_SaltedMeat.RecipeDescription;
-            SaltedMeatRecipe.nameDisplay = ComplexRecipe.RecipeNameDisplay.Result;
-            List<Tag> list17 = new List<Tag>();
-            list17.Add("CookingStation");
-            SaltedMeatRecipe.fabricators = list17;
-            SaltedMeatRecipe.sortOrder = 26;
-            Food_SaltedMeat.Recipe = SaltedMeatRecipe;
-
-            return foodEntity;
+            ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[2]
+            {
+                new ComplexRecipe.RecipeElement("Meat", 1f),
+                new ComplexRecipe.RecipeElement(SimHashes.Salt.CreateTag(), 10f)
+            };
+            ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
+            {
+                new ComplexRecipe.RecipeElement(Id, 1f, (ComplexRecipe.RecipeElement.TemperatureOperation) 1, false)
+            };
+            Food_SaltedMeat.Recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(CookingStationConfig.ID, recipeElementArray1, recipeElementArray2), recipeElementArray1, recipeElementArray2)
+            {
+                time = FOOD.RECIPES.STANDARD_COOK_TIME,
+                description = STRINGS.FOOD.SALTEDMEAT.RECIPEDESC,
+                nameDisplay = (ComplexRecipe.RecipeNameDisplay)1,
+                fabricators = new List<Tag>() { CookingStationConfig.ID },
+                sortOrder = 26
+            };
+            return food;
         }
 
-        public void OnPrefabInit(GameObject inst) { }
+        public void OnPrefabInit(GameObject inst)
+        {
+        }
 
-        public void OnSpawn(GameObject inst) { }
-
+        public void OnSpawn(GameObject inst)
+        {
+        }
     }
 }
