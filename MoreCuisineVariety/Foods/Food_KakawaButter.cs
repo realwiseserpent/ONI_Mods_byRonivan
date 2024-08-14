@@ -1,39 +1,44 @@
 ﻿using STRINGS;
 using System.Collections.Generic;
-using TUNING;
 using UnityEngine;
+using Dupes_Cuisine.Crops;
 
-namespace MoreCuisineVariety
+namespace Dupes_Cuisine.Food
 {
     public class Food_KakawaButter : IEntityConfig
     {
         public const string Id = "KakawaButter";
         public static string Name = UI.FormatAsLink("Kakawa Butter", "KakawaButter".ToUpper());
-        public static string Description = ("An oily butter extracted from " + Crop_KakawaAcorn.Name + ". This butter has a tasty aroma, although one must like bitterness to actually eat it in this form.");
-        public static string RecipeDescription = ("Extract oil from " + Crop_KakawaAcorn.Name + ".");
+        public static string Description = "An oily butter extracted from " + Crop_KakawaAcorn.Name + ". This butter has a tasty aroma, although one must like bitterness to actually eat it in this form.";
+        public static string RecipeDescription = "Extract oil from " + Crop_KakawaAcorn.Name + ".";
         public ComplexRecipe Recipe;
 
         public GameObject CreatePrefab()
         {
-            GameObject obj3 = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("KakawaButter", Name, Description, 1f, false, Assets.GetAnim("food_kakawa_butter_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true, 0, SimHashes.Creature, null), new EdiblesManager.FoodInfo("KakawaButter", "", 0f, -1, 255.15f, 277.15f, 2400f, true));
-            ComplexRecipe.RecipeElement[] inputs = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement("Kakawa_Acorn", 4f) };
-            ComplexRecipe.RecipeElement[] outputs = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement("KakawaButter", 1f) };
-            string id = ComplexRecipeManager.MakeRecipeID("CookingStation", inputs, outputs);
-            ComplexRecipe recipe1 = new ComplexRecipe(id, inputs, outputs, 0);
-            recipe1.time = FOOD.RECIPES.SMALL_COOK_TIME;
-            recipe1.description = RecipeDescription;
-            recipe1.nameDisplay = ComplexRecipe.RecipeNameDisplay.Result;
-            List<Tag> list1 = new List<Tag>();
-            list1.Add("CookingStation");
-            recipe1.fabricators = list1;
-            recipe1.sortOrder = 3;
-            recipe1.requiredTech = null;
-            this.Recipe = recipe1;
-            return obj3;
+            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("KakawaButter", Food_KakawaButter.Name, Food_KakawaButter.Description, 1f, false, Assets.GetAnim((HashedString)"food_kakawa_butter_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("KakawaButter", "", 0.0f, -1, 255.15f, 277.15f, 2400f, true));
+            ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[1]
+            {
+                new ComplexRecipe.RecipeElement((Tag) "Kakawa_Acorn", 4f)
+            };
+            ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
+            {
+                new ComplexRecipe.RecipeElement((Tag) "KakawaButter", 1f)
+            };
+            this.Recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID("CookingStation", (IList<ComplexRecipe.RecipeElement>)recipeElementArray1, (IList<ComplexRecipe.RecipeElement>)recipeElementArray2), recipeElementArray1, recipeElementArray2, 0)
+            {
+                time = TUNING.FOOD.RECIPES.SMALL_COOK_TIME,
+                description = Food_KakawaButter.RecipeDescription,
+                nameDisplay = ComplexRecipe.RecipeNameDisplay.Result,
+                fabricators = new List<Tag>()
+                {
+                    (Tag) "CookingStation"
+                },
+                sortOrder = 3,
+            };
+            return food;
         }
 
-        public string[] GetDlcIds() => 
-            DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
 
         public void OnPrefabInit(GameObject inst)
         {
@@ -44,4 +49,3 @@ namespace MoreCuisineVariety
         }
     }
 }
-

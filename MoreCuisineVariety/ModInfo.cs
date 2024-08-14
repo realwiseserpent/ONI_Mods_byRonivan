@@ -2,7 +2,7 @@
 using KMod;
 using System.Collections.Generic;
 
-namespace MoreCuisineVariety
+namespace Dupes_Cuisine
 {
     class ModInfo : KMod.UserMod2
     {
@@ -16,9 +16,9 @@ namespace MoreCuisineVariety
             dictionary1.Add("KakawaTree", CuisinePlantsTuning.OakTreeTuning);
             dictionary1.Add("Creamcap", CuisinePlantsTuning.CreamcapTuning);
             dictionary1.Add("SunnyWheat", CuisinePlantsTuning.SunnyWheatTuning);
-            MoreCuisineVariety_Patches_Plants.CropsDictionary = dictionary1;
+            Dupes_Cuisine_Patches.CropsDictionary = dictionary1;
 
-            Manager.Dialog(title: "Warning!", text: $"{this.mod.title}:\n This mod will be removed from Steam soon. Please visit mod page on Steam Workshop for more info.");
+            //Manager.Dialog(title: "Warning!", text: $"{this.mod.title}:\n This mod will be removed from Steam soon. Please visit mod page on Steam Workshop for more info.");
 
             Namespace = GetType().Namespace;
             Debug.Log($"{Namespace}: Loaded from: {this.mod.ContentPath}");
