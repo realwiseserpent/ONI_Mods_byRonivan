@@ -111,16 +111,16 @@ namespace Dupes_Cuisine
             public static void Postfix(ref Immigration __instance)
             {
                 Traverse traverse = Traverse.Create((object)__instance).Field("carePackages");
-                List<CarePackageInfo> list = ((IEnumerable<CarePackageInfo>)traverse.GetValue<CarePackageInfo[]>()).ToList<CarePackageInfo>();
+                List<CarePackageInfo> list = traverse.GetValue<List<CarePackageInfo>>();
                 list.Add(new CarePackageInfo("KakawaTreeSeed", 3f, (Func<bool>)null));
                 list.Add(new CarePackageInfo("CreamcapSeed", 3f, (Func<bool>)null));
                 list.Add(new CarePackageInfo("SunnyWheatSeed", 3f, (Func<bool>)null));
-                traverse.SetValue((object)list.ToArray());
                 list.Add(new CarePackageInfo("KakawaBar", 5f, (Func<bool>)null));
                 list.Add(new CarePackageInfo("FishWrap", 8f, (Func<bool>)null));
                 list.Add(new CarePackageInfo("MeatWrap", 8f, (Func<bool>)null));
                 list.Add(new CarePackageInfo("KakawaCookie", 8f, (Func<bool>)null));
                 list.Add(new CarePackageInfo("Nut_cake", 6f, (Func<bool>)null));
+                traverse.SetValue(list);
             }
         }
 
