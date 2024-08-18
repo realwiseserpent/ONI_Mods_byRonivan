@@ -1,9 +1,30 @@
-﻿using HarmonyLib;
+﻿using Database;
+using Dupes_Cuisine.Food;
+using HarmonyLib;
+using System.Collections.Generic;
+using System;
 
 namespace MoreCuisineVariety
 {
     public class MoreCuisineVariety_Patches_Food
     {
+        [HarmonyPatch(typeof(EatXCaloriesFromY))]
+        [HarmonyPatch(MethodType.Constructor)]
+        [HarmonyPatch(new Type[] {
+            typeof(int),
+            typeof(List<string>)})]
+        public static class EatXCaloriesFromY_Constructor_Patch
+        {
+            public static void Prefix(ref List<string> fromFoodType)
+            {
+                fromFoodType.Add(Food_BreadedPacu.Id);
+                fromFoodType.Add(Food_FishWrap.Id);
+                fromFoodType.Add(Food_MeatTaco.Id);
+                fromFoodType.Add(Food_MeatWrap.Id);
+                fromFoodType.Add(Food_SaltedMeat.Id);
+                fromFoodType.Add(Food_SeaTaco.Id);
+            }
+        }
         ////[HarmonyPatch(typeof(EntityConfigManager), "LoadGeneratedEntities")]
         //public class EntityConfigManager_LoadGeneratedEntities_Patch
         //{
