@@ -32,7 +32,7 @@ namespace Dupes_Cuisine.Plants
                 SimHashes.Oxygen,
                 SimHashes.CarbonDioxide
             };
-            EntityTemplates.ExtendEntityToBasicPlant(placedEntity, 277.15f, temperature_warning_high: 309.15f, temperature_lethal_high: 313.15f, safe_elements: safe_elements, crop_id: "Creamtop_Cap", max_radiation: 220f, baseTraitId: "CreamcapOriginal", baseTraitName: "Creamcap Mushroom");
+            EntityTemplates.ExtendEntityToBasicPlant(placedEntity, 277.15f, temperature_warning_high: 309.15f, temperature_lethal_high: 313.15f, safe_elements: safe_elements, crop_id: "Creamtop_Cap", baseTraitId: "CreamcapOriginal", baseTraitName: "Creamcap Mushroom");
             PlantElementAbsorber.ConsumeInfo info = new PlantElementAbsorber.ConsumeInfo()
             {
                 tag = SimHashes.DirtyWater.CreateTag(),

@@ -33,7 +33,7 @@ namespace Dupes_Cuisine.Plants
                 SimHashes.CarbonDioxide,
                 SimHashes.ContaminatedOxygen
             };
-            EntityTemplates.ExtendEntityToBasicPlant(placedEntity, 273.15f, temperature_warning_high: 313.15f, temperature_lethal_high: 321.15f, safe_elements: safe_elements, crop_id: "Kakawa_Acorn", max_radiation: 220f, baseTraitId: "KakawaTreeOriginal", baseTraitName: "Kakawa Tree");
+            EntityTemplates.ExtendEntityToBasicPlant(placedEntity, 273.15f, temperature_warning_high: 313.15f, temperature_lethal_high: 321.15f, safe_elements: safe_elements, crop_id: "Kakawa_Acorn", baseTraitId: "KakawaTreeOriginal", baseTraitName: "Kakawa Tree");
             PlantElementAbsorber.ConsumeInfo info = new PlantElementAbsorber.ConsumeInfo()
             {
                 tag = GameTags.Water,
