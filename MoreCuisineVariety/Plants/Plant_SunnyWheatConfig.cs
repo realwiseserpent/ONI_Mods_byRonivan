@@ -34,7 +34,7 @@ namespace Dupes_Cuisine.Plants
                 SimHashes.ContaminatedOxygen,
                 SimHashes.ChlorineGas
             };
-            EntityTemplates.ExtendEntityToBasicPlant(placedEntity, 273.15f, 313.15f, 343.15f, 348.15f, safe_elements, crop_id: "SunnyWheat_Grain", max_radiation: 220f, baseTraitId: "SunnyWheatOriginal", baseTraitName: "Sunny Wheat");
+            EntityTemplates.ExtendEntityToBasicPlant(placedEntity, 273.15f, 313.15f, 343.15f, 348.15f, safe_elements, crop_id: "SunnyWheat_Grain", baseTraitId: "SunnyWheatOriginal", baseTraitName: "Sunny Wheat");
             PlantElementAbsorber.ConsumeInfo info = new PlantElementAbsorber.ConsumeInfo()
             {
                 tag = GameTags.Water,
