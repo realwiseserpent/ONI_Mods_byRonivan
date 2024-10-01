@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System;
 using DupesCuisine.Foods;
 using UnityEngine;
+using static EdiblesManager;
+using System.Linq;
 
 namespace DupesCuisine.Patches
 {
@@ -44,6 +46,10 @@ namespace DupesCuisine.Patches
                 RegisterStrings.MakeFoodStrings(Food_SeaTaco.Id, STRINGS.FOOD.SEATACO.NAME, STRINGS.FOOD.SEATACO.DESC, STRINGS.FOOD.SEATACO.RECIPEDESC);
                 RegisterStrings.MakeFoodStrings(Food_SpicedOmelette.Id, STRINGS.FOOD.SPICEDOMELETTE.NAME, STRINGS.FOOD.SPICEDOMELETTE.DESC, STRINGS.FOOD.SPICEDOMELETTE.RECIPEDESC);
 
+                RegisterStrings.MakeFoodStrings(Food_CandyPikeapple.Id, STRINGS.FOOD.CANDYPIKEAPPLE.NAME, STRINGS.FOOD.CANDYPIKEAPPLE.DESC, STRINGS.FOOD.CANDYPIKEAPPLE.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_CookedHexalent.Id, STRINGS.FOOD.COOKEDHEXALENT.NAME, STRINGS.FOOD.COOKEDHEXALENT.DESC, STRINGS.FOOD.COOKEDHEXALENT.RECIPEDESC);
+                RegisterStrings.MakeFoodStrings(Food_CookedSherberry.Id, STRINGS.FOOD.COOKEDSHERBERRY.NAME, STRINGS.FOOD.COOKEDSHERBERRY.DESC, STRINGS.FOOD.COOKEDSHERBERRY.RECIPEDESC);
+
                 RegisterStrings.MakeDublicantsModifiersStrings(Effects.ChocolateTasteId, STRINGS.EFFECTS.CHOCOLATETASTE.NAME, STRINGS.EFFECTS.CHOCOLATETASTE.TOOLTIP,
                     STRINGS.EFFECTS.CHOCOLATETASTE.CAUSE, STRINGS.EFFECTS.CHOCOLATETASTE.DESCRIPTION);
                 RegisterStrings.MakeDublicantsModifiersStrings(Effects.SugarRushId, STRINGS.EFFECTS.SUGARRUSH.NAME, STRINGS.EFFECTS.SUGARRUSH.TOOLTIP,
@@ -80,17 +86,77 @@ namespace DupesCuisine.Patches
             }
         }
 
-        [HarmonyPatch(typeof(WormSuperFoodConfig), "CreatePrefab")]
-        public static class WormSuperFoodConfig_CreatePrefab_Patch
+        [HarmonyPatch(typeof(FoodInfo))]
+        [HarmonyPatch(MethodType.Constructor)]
+        [HarmonyPatch(new Type[] {
+            typeof(string),
+            typeof(string),
+            typeof(float),
+            typeof(int),
+            typeof(float),
+            typeof(float),
+            typeof(float),
+            typeof(bool),
+        })]
+        public static class FoodInfo_Constructor_Patch
         {
-            private static void Postfix(GameObject __result)
+            private static void Postfix(FoodInfo __instance)
             {
-                __result.AddOrGet<Edible>().FoodInfo.AddEffects(new List<string>
-                {
-                    Effects.SugarRushId
-                },
-                DlcManager.AVAILABLE_ALL_VERSIONS);
+                string[] sweets = new string[] { "WormSuperFood", "SpinosaCake", "SpinosaSyrup", "Duskbun", "Duskjam", "CandyPikeapple" };
+                if (sweets.Contains(__instance.Id))
+                    __instance.Effects.Add(Effects.SugarRushId);
+                //else if (__instance.Id == "Salsa" && !__instance.Effects.Contains("WarmTouchFood"))
+                //    __instance.Effects.Add("WarmTouchFood");
             }
         }
+
+        //[HarmonyPatch(typeof(ManualGeneratorConfig), "CreateBuildingDef")]
+        //public static class ManualGeneratorConfig_CreateBuildingDef
+        //{
+        //    private static void Postfix(BuildingDef __result)
+        //    {
+        //        __result.GeneratorWattageRating = 50000f;
+        //        __result.GeneratorBaseCapacity = 50000f;
+        //    }
+        //}
+
+        //[HarmonyPatch(typeof(MineralDeoxidizerConfig))]
+        //[HarmonyPatch("DoPostConfigureComplete")]
+        //public static class MineralDeoxidizerConfig_ConfigureBuildingTemplate_Patch
+        //{
+        //    public static void Postfix(GameObject go)
+        //    {
+        //        var elementConverter = go.GetComponent<ElementConverter>();
+        //        elementConverter.consumedElements = new ElementConverter.ConsumedElement[1]
+        //        {
+        //            new ElementConverter.ConsumedElement(SimHashes.Snow.CreateTag(), 0.001f)
+        //        };
+        //        elementConverter.outputElements = new ElementConverter.OutputElement[1]
+        //        {
+        //            new ElementConverter.OutputElement(2f, SimHashes.Oxygen, 293.15f)//, outputElementOffsetx: (float) cellOffset.x, outputElementOffsety: (float) cellOffset.y)
+        //        };
+
+        //        ManualDeliveryKG manualDeliveryKg = go.GetComponent<ManualDeliveryKG>();
+        //        manualDeliveryKg.RequestedItemTag = SimHashes.Snow.CreateTag();
+
+
+        //        ComplexRecipe.RecipeElement[] recipeElement1 = new ComplexRecipe.RecipeElement[]
+        //        {
+        //            new ComplexRecipe.RecipeElement(SimHashes.Snow.CreateTag(), 0.001f),
+        //        };
+        //        ComplexRecipe.RecipeElement[] recipeElement2 = new ComplexRecipe.RecipeElement[1]
+        //        {
+        //            new ComplexRecipe.RecipeElement(CookedMeatConfig.ID, 20f)
+        //        };
+        //        var ecipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(CookingStationConfig.ID, recipeElement1, recipeElement2), recipeElement1, recipeElement2, 0)
+        //        {
+        //            time = 1f,
+        //            description = STRINGS.FOOD.MEATTACO.RECIPEDESC,
+        //            nameDisplay = (ComplexRecipe.RecipeNameDisplay)1,
+        //            fabricators = new List<Tag>() { CookingStationConfig.ID },
+        //            sortOrder = 3
+        //        };
+        //    }
+        //}
     }
 }

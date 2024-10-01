@@ -188,6 +188,25 @@ namespace DupesCuisine
                 public static LocString DESC = "A fluffy dish made from beaten " + UI.FormatAsLink("Eggs", "RAWEGG") + " and served with generous pinch of " + UI.FormatAsLink("Pincha Peppernut", "SPICENUT") + ". Has a deep spiced flavour that sticks to the mouth.";
                 public static LocString RECIPEDESC = DESC; //"Bake a " + UI.FormatAsLink("Spiced Omelette", Food_SpicedOmelette.Id);
             }
+            //---------------------------------
+            public class CANDYPIKEAPPLE
+            {
+                public static LocString NAME = UI.FormatAsLink("Candy Pikeapple", Food_CandyPikeapple.Id.ToUpper());
+                public static LocString DESC = $"{UI.FormatAsLink("Pikeapple Skewer", "COOKEDPIKEAPPLE")} in sugar.";
+                public static LocString RECIPEDESC = DESC;
+            }
+            public class COOKEDHEXALENT
+            {
+                public static LocString NAME = UI.FormatAsLink("Baked Hexalent Fruit", Food_CookedHexalent.Id.ToUpper());
+                public static LocString DESC = "A baked " + UI.FormatAsLink("Hexalent Fruit", "FORESTFORAGEPLANT") + ".";
+                public static LocString RECIPEDESC = DESC;
+            }
+            public class COOKEDSHERBERRY
+            {
+                public static LocString NAME = UI.FormatAsLink("Baked Sherberry", Food_CookedSherberry.Id.ToUpper());
+                public static LocString DESC = "A baked " + UI.FormatAsLink("Sherberry", "ICECAVESFORAGEPLANT") + ".";
+                public static LocString RECIPEDESC = DESC;
+            }
         }
         public class SEEDS
         {

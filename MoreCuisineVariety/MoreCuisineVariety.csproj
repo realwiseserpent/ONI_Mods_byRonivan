@@ -67,6 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Foods\Effects.cs" />
+    <Compile Include="Foods\TestFood\Food_CandyPikeapple.cs" />
+    <Compile Include="Foods\TestFood\Food_CookedHexalent.cs" />
+    <Compile Include="Foods\TestFood\Food_CookedSherberry.cs" />
     <Compile Include="Misc\RegisterStrings.cs" />
     <Compile Include="ModInfo.cs" />
     <Compile Include="Patches\MoreCuisineVariety_Patches_Buildings.cs" />
@@ -117,6 +120,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>IF exist "C:\Users\Admin\Documents\Klei\OxygenNotIncluded\mods\1Dev\$(TargetName)" ( echo Mod Dir exists ) ELSE  ( mkdir "C:\Users\Admin\Documents\Klei\OxygenNotIncluded\mods\1Dev\$(TargetName)" &amp;&amp; echo Mod Dir created)
