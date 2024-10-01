@@ -16,7 +16,7 @@ namespace DupesCuisine.Plants
         public const float TemperatureLethalHigh = 348.15f;
         public const float GROW_TIME = 10800f;
         public const byte CROP_NUM = 18;
-        public const float Irrigation = 12 / 600f;             //   Irrigation Needed
+        public const float Irrigation = 10 / 600f;             //   Irrigation Needed
         public const float Fertilization = 15 / 600f;         //   Fertilization Needed
         public static CuisinePlantsTuning.CropsTuning tuning = CuisinePlantsTuning.SunnyWheatTuning;
 
@@ -83,7 +83,7 @@ namespace DupesCuisine.Plants
                 new ComplexRecipe.RecipeElement("ColdWheatSeed", 1f),
                 new ComplexRecipe.RecipeElement(SimHashes.Carbon.CreateTag(), 25f)
             };
-            ComplexRecipe.RecipeElement[] outputs = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement(Crop_SunnyWheatGrain.Id, 1f) };
+            ComplexRecipe.RecipeElement[] outputs = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement(SeedId, 1f) };
             string id = ComplexRecipeManager.MakeRecipeID(KilnConfig.ID, inputs, outputs);
             ComplexRecipe recipe1 = new ComplexRecipe(id, inputs, outputs, 0)
             {

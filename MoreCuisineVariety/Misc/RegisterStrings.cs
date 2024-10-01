@@ -10,13 +10,6 @@ namespace DupesCuisine
             Strings.Add($"STRINGS.CREATURES.SPECIES.{id.ToUpperInvariant()}.DESC", desc);
         }
 
-        public static void MakePlantCodexStrings(string plantId, string name, string subtitle, string body)
-        {
-            Strings.Add($"STRINGS.CODEX.{plantId.ToUpperInvariant()}.TITLE", name);
-            Strings.Add($"STRINGS.CODEX.{plantId.ToUpperInvariant()}.SUBTITLE", subtitle);
-            Strings.Add($"STRINGS.CODEX.{plantId.ToUpperInvariant()}.BODY.CONTAINER1", body);
-        }
-
         public static void MakePlantProductStrings(string id, string name, string desc)
         {
             Strings.Add($"STRINGS.ITEMS.INDUSTRIAL_PRODUCTS.{id.ToUpperInvariant()}.NAME", name);
@@ -79,5 +72,12 @@ namespace DupesCuisine
             Strings.Add($"STRINGS.DUPLICANTS.MODIFIERS.{id.ToUpperInvariant()}.CAUSE", sause);
             Strings.Add($"STRINGS.DUPLICANTS.MODIFIERS.{id.ToUpperInvariant()}.DESCRIPTION", desc);
         }
+
+        //public static void MakePlantCodexStrings(string plantId, string name, string subtitle, string body)
+        //{
+        //    Strings.Add($"STRINGS.CODEX.{plantId.ToUpperInvariant()}.TITLE", name);
+        //    Strings.Add($"STRINGS.CODEX.{plantId.ToUpperInvariant()}.SUBTITLE", subtitle);
+        //    Strings.Add($"STRINGS.CODEX.{plantId.ToUpperInvariant()}.BODY.CONTAINER1", body);
+        //}
     }
 }

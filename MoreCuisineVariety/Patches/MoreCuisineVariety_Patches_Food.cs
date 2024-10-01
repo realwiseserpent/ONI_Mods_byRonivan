@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System;
 using DupesCuisine.Foods;
 using UnityEngine;
+using static EdiblesManager;
+using System.Linq;
 
 namespace DupesCuisine.Patches
 {
@@ -80,16 +82,25 @@ namespace DupesCuisine.Patches
             }
         }
 
-        [HarmonyPatch(typeof(WormSuperFoodConfig), "CreatePrefab")]
-        public static class WormSuperFoodConfig_CreatePrefab_Patch
+        [HarmonyPatch(typeof(FoodInfo))]
+        [HarmonyPatch(MethodType.Constructor)]
+        [HarmonyPatch(new Type[] {
+            typeof(string),
+            typeof(string),
+            typeof(float),
+            typeof(int),
+            typeof(float),
+            typeof(float),
+            typeof(float),
+            typeof(bool),
+        })]
+        public static class FoodInfo_Constructor_Patch
         {
-            private static void Postfix(GameObject __result)
+            private static void Postfix(FoodInfo __instance)
             {
-                __result.AddOrGet<Edible>().FoodInfo.AddEffects(new List<string>
-                {
-                    Effects.SugarRushId
-                },
-                DlcManager.AVAILABLE_ALL_VERSIONS);
+                string[] sweets = new string[] { "WormSuperFood", "SpinosaCake", "SpinosaSyrup", "Duskbun", "Duskjam", "CandyPikeapple" };
+                if (sweets.Contains(__instance.Id))
+                    __instance.Effects.Add(Effects.SugarRushId);
             }
         }
     }

@@ -12,24 +12,23 @@ namespace DupesCuisine.Buildings
 
         public override void ConfigureBuildingTemplate(GameObject go, Tag prefab_tag)
         {
-            EntityTemplateExtensions.AddOrGet<BuildingComplete>(go).isManuallyOperated = true;
-            MicrobeMusher microbeMusher = EntityTemplateExtensions.AddOrGet<MicrobeMusher>(go);
-            ((ComplexFabricator)microbeMusher).heatedTemperature = 300.15f;
-            EntityTemplateExtensions.AddOrGet<FabricatorIngredientStatusManager>(go);
-            EntityTemplateExtensions.AddOrGet<CopyBuildingSettings>(go);
-            ((Workable)EntityTemplateExtensions.AddOrGet<ComplexFabricatorWorkable>(go)).overrideAnims = new KAnimFile[1]
+            go.AddOrGet<BuildingComplete>().isManuallyOperated = true;
+            MicrobeMusher fabricator = go.AddOrGet<MicrobeMusher>();
+            fabricator.heatedTemperature = 300.15f;
+            go.AddOrGet<FabricatorIngredientStatusManager>();
+            go.AddOrGet<CopyBuildingSettings>();
+            go.AddOrGet<ComplexFabricatorWorkable>().overrideAnims = new KAnimFile[1]
             {
-                Assets.GetAnim(("anim_interacts_musher_kanim"))
+                Assets.GetAnim((HashedString) "anim_interacts_musher_kanim")
             };
-            ((ComplexFabricator)microbeMusher).sideScreenStyle = (ComplexFabricatorSideScreen.StyleSetting)7;
+            fabricator.sideScreenStyle = ComplexFabricatorSideScreen.StyleSetting.ListQueueHybrid;
             Prioritizable.AddRef(go);
-            EntityTemplateExtensions.AddOrGet<DropAllWorkable>(go);
-
+            go.AddOrGet<DropAllWorkable>();
             ConfigureRecipes();
 
-            EntityTemplateExtensions.AddOrGetDef<PoweredController.Def>(go);
-            BuildingTemplates.CreateComplexFabricatorStorage(go, (ComplexFabricator)microbeMusher);
-            go.GetComponent<KPrefabID>().AddTag(RoomConstraints.ConstraintTags.CookTop, false);
+            go.AddOrGetDef<PoweredController.Def>();
+            BuildingTemplates.CreateComplexFabricatorStorage(go, fabricator);
+            go.GetComponent<KPrefabID>().AddTag(RoomConstraints.ConstraintTags.CookTop);
         }
 
         public override BuildingDef CreateBuildingDef()
@@ -74,28 +73,6 @@ namespace DupesCuisine.Buildings
                     fabricators = new List<Tag> { ManualJuicerConfig.ID },
                     sortOrder = 6
                 };
-
-
-                //ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[2]
-                //{
-                //    new ComplexRecipe.RecipeElement(PrickleFruitConfig.ID, 2f),
-                //    new ComplexRecipe.RecipeElement(SimHashes.Water.CreateTag(), 18f)
-                //};
-                //ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
-                //{
-                //    new ComplexRecipe.RecipeElement(SimHashes.SugarWater.CreateTag(), 20f)
-                //};
-                //ComplexRecipe complexRecipe1 = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID("MilkPress", (IList<ComplexRecipe.RecipeElement>)recipeElementArray1, (IList<ComplexRecipe.RecipeElement>)recipeElementArray2), recipeElementArray1, recipeElementArray2, 0, 0)
-                //{
-                //    time = 40f,
-                //    description = string.Format((string)BUILDINGS.PREFABS.MILKPRESS.WHEAT_MILK_RECIPE_DESCRIPTION, (object)ITEMS.FOOD.PRICKLEFRUIT.NAME, (object)SimHashes.SugarWater.CreateTag().ProperName()),
-                //    nameDisplay = ComplexRecipe.RecipeNameDisplay.IngredientToResult,
-                //    fabricators = new List<Tag>()
-                //    {
-                //        TagManager.Create("MilkPress")
-                //    },
-                //    sortOrder = 6
-                //};
             }
         }
     }

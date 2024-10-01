@@ -16,8 +16,8 @@ namespace DupesCuisine.Plants
         public const float TemperatureLethalHigh = 321.15f;
         public const float GROW_TIME = 14400f;
         public const byte CROP_NUM = 24;
-        public const float Irrigation = 12 / 600f;             //   Irrigation Needed
-        public const float Fertilization = 18 / 600f;         //   Fertilization Needed
+        public const float Irrigation = 14 / 600f;             //   Irrigation Needed
+        public const float Fertilization = 10 / 600f;         //   Fertilization Needed
         public static CuisinePlantsTuning.CropsTuning tuning = CuisinePlantsTuning.OakTreeTuning;
 
         public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
@@ -28,7 +28,7 @@ namespace DupesCuisine.Plants
             GameObject gameObject = EntityTemplates.CreatePlacedEntity(
                 Plant_KakawaTreeConfig.Id,
                 STRINGS.PLANTS.KAKAWATREE.NAME,
-                STRINGS.PLANTS.KAKAWATREE.DESC, 1f, Assets.GetAnim("plant_kakawatree_kanim"), "idle_empty", Grid.SceneLayer.BuildingFront, 3, 3, TUNING.DECOR.BONUS.TIER1, noise, SimHashes.Creature, null, 305.15f);
+                STRINGS.PLANTS.KAKAWATREE.DESC, 1f, Assets.GetAnim("plant_kakawatree_kanim"), "idle_empty", Grid.SceneLayer.BuildingFront, 1, 3, TUNING.DECOR.BONUS.TIER1, noise, SimHashes.Creature, null, 305.15f);
             SimHashes[] hashesArray1 = new SimHashes[]
             {
                 SimHashes.Oxygen,
@@ -99,7 +99,7 @@ namespace DupesCuisine.Plants
                 new ComplexRecipe.RecipeElement("ForestTreeSeed", 1f),
                 new ComplexRecipe.RecipeElement(SimHashes.Carbon.CreateTag(), 25f)
             };
-            ComplexRecipe.RecipeElement[] outputs = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement(Crop_KakawaAcorn.Id, 1f) };
+            ComplexRecipe.RecipeElement[] outputs = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement(SeedId, 1f) };
             string id = ComplexRecipeManager.MakeRecipeID(KilnConfig.ID, inputs, outputs);
             ComplexRecipe recipe1 = new ComplexRecipe(id, inputs, outputs, 0)
             {

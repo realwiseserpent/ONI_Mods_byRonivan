@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using DupesCuisine.Plants;
+using UnityEngine;
 
 namespace DupesCuisine.Crops
 {
     public class Crop_KakawaAcorn //: IEntityConfig
     {
-        public const string Id = "Kakawa_Acorn";
+        public const string Id = Plant_KakawaTreeConfig.SeedId; //"Kakawa_Acorn";
         public const float CaloriesPerUnit = 0.0f;
         public const int FoodQuality = -1;
         public const float PreserveTemperature = 283.15f;

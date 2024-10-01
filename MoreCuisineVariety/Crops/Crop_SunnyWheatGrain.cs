@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using DupesCuisine.Plants;
+using UnityEngine;
 
 namespace DupesCuisine.Crops
 {
     public class Crop_SunnyWheatGrain //: IEntityConfig
     {
-        public const string Id = "SunnyWheat_Grain";
+        public const string Id = Plant_SunnyWheatConfig.SeedId;//"SunnyWheat_Grain";
         public const float CaloriesPerUnit = 0.0f;
         public const int FoodQuality = -1;
         public const float PreserveTemperature = 283.15f;

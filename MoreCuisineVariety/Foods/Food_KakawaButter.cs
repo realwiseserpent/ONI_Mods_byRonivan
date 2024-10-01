@@ -30,7 +30,7 @@ namespace DupesCuisine.Foods
             };
             this.Recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(ManualJuicerConfig.ID, recipeElementArray1, recipeElementArray2), recipeElementArray1, recipeElementArray2, 0)
             {
-                time = FOOD.RECIPES.SMALL_COOK_TIME,
+                time = 50f,
                 description = STRINGS.FOOD.KAKAWABUTTER.RECIPEDESC,
                 nameDisplay = (ComplexRecipe.RecipeNameDisplay)1,
                 fabricators = new List<Tag>() { ManualJuicerConfig.ID },

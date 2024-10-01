@@ -46,7 +46,7 @@ namespace DupesCuisine.Foods
 
             recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(ManualJuicerConfig.ID, recipeElementArray3, recipeElementArray4), recipeElementArray3, recipeElementArray4, 0)
             {
-                time = FOOD.RECIPES.SMALL_COOK_TIME,
+                time = 100f,
                 description = STRINGS.FOOD.MEALSLURRY.RECIPEDESC,
                 nameDisplay = ComplexRecipe.RecipeNameDisplay.Result,
                 fabricators = new List<Tag> { ManualJuicerConfig.ID },

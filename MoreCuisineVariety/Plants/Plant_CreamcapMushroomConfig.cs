@@ -16,8 +16,8 @@ namespace DupesCuisine.Plants
         public const float TemperatureLethalHigh = 313.15f;
         public const float GROW_TIME = 3600f;
         public const byte CROP_NUM = 1;
-        public const float Irrigation = 20/600f;             //   Irrigation Needed
-        public const float Fertilization = 15 / 600f;         //   Fertilization Needed
+        public const float Irrigation = 20 / 600f;             //   Irrigation Needed
+        public const float Fertilization = 3 / 600f;         //   Fertilization Needed
         public static CuisinePlantsTuning.CropsTuning tuning = CuisinePlantsTuning.CreamcapTuning;
 
         public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
@@ -35,14 +35,14 @@ namespace DupesCuisine.Plants
                 SimHashes.CarbonDioxide
             };
             EntityTemplates.ExtendEntityToBasicPlant(placedEntity, 253.15f, 283.15f, 308.15f, 323.15f, simHashesArray, true, 0.0f, 0.15f, Crop_Creamcap.Id, true, true, true, true, 2400f, 0.0f, 4600f, "CreamcapOriginal", "Creamcap Mushroom");
-            //EntityTemplates.ExtendPlantToFertilizable(placedEntity, new PlantElementAbsorber.ConsumeInfo[]
-            //    {
-            //        new PlantElementAbsorber.ConsumeInfo()
-            //        {
-            //            tag = SimHashes.ToxicSand.CreateTag(),
-            //            massConsumptionRate = Fertilization
-            //        }
-            //    });
+            EntityTemplates.ExtendPlantToFertilizable(placedEntity, new PlantElementAbsorber.ConsumeInfo[]
+                {
+                    new PlantElementAbsorber.ConsumeInfo()
+                    {
+                        tag = SimHashes.ToxicSand.CreateTag(),
+                        massConsumptionRate = Fertilization
+                    }
+                });
 
             EntityTemplates.ExtendPlantToIrrigated(placedEntity, new PlantElementAbsorber.ConsumeInfo[]
                 {

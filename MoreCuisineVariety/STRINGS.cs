@@ -267,36 +267,30 @@ namespace DupesCuisine
             }
         }
 
-
-        public class CODEX
-        {
-            public static LocString SUBTITLE = "Edible Plant";
-            public class CREAMCAPMUSHROOM
-            {
-                //public static LocString TITLE = (LocString)"Balm Lily Flower";
-                //public static LocString SUBTITLE = (LocString)"Medicinal Herb";
-
-                public class BODY
-                {
-                    public static LocString CONTAINER1 = PLANTS.CREAMCAPMUSHROOM.DESC;
-                }
-            }
-            public class KAKAWATREE
-            {
-                public class BODY
-                {
-                    public static LocString CONTAINER1 = PLANTS.KAKAWATREE.DESC;
-                }
-            }
-            public class SUNNYWHEAT
-            {
-                public class BODY
-                {
-                    public static LocString CONTAINER1 = PLANTS.SUNNYWHEAT.DESC;
-                }
-            }
-        }
-
+        //public class CODEX
+        //{
+        //    public class CREAMCAPMUSHROOM
+        //    {
+        //        public class BODY
+        //        {
+        //            public static LocString CONTAINER1 = PLANTS.CREAMCAPMUSHROOM.DESC;
+        //        }
+        //    }
+        //    public class KAKAWATREE
+        //    {
+        //        public class BODY
+        //        {
+        //            public static LocString CONTAINER1 = PLANTS.KAKAWATREE.DESC;
+        //        }
+        //    }
+        //    public class SUNNYWHEAT
+        //    {
+        //        public class BODY
+        //        {
+        //            public static LocString CONTAINER1 = PLANTS.SUNNYWHEAT.DESC;
+        //        }
+        //    }
+        //}
 
         public class TRANSLATION
         {

@@ -1,6 +1,7 @@
-﻿using System;
+﻿using STRINGS;
+using System;
 using System.Collections.Generic;
-using STRINGS;
+using TUNING;
 using UnityEngine;
 
 namespace DupesCuisine.Buildings
@@ -10,7 +11,6 @@ namespace DupesCuisine.Buildings
         protected override void OnPrefabInit()
         {
             base.OnPrefabInit();
-            this.keepAdditionalTag = this.fuelTag;
             this.choreType = Db.Get().ChoreTypes.Cook;
             this.fetchChoreTypeIdHash = Db.Get().ChoreTypes.CookFetch.IdHash;
         }
@@ -18,80 +18,32 @@ namespace DupesCuisine.Buildings
         protected override void OnSpawn()
         {
             base.OnSpawn();
-            this.smi = new ManualJuicerStation.StatesInstance(this);
-            this.smi.StartSM();
+            GameScheduler.Instance.Schedule("WaterFetchingTutorial", 2f, (Action<object>)(obj => Tutorial.Instance.TutorialMessage(Tutorial.TutorialMessages.TM_FetchingWater)), (object)null, (SchedulerGroup)null);
+            this.workable.WorkerStatusItem = Db.Get().DuplicantStatusItems.Mushing;
+            this.workable.AttributeConverter = Db.Get().AttributeConverters.CookingSpeed;
+            this.workable.AttributeExperienceMultiplier = DUPLICANTSTATS.ATTRIBUTE_LEVELING.MOST_DAY_EXPERIENCE;
+            this.workable.SkillExperienceSkillGroup = Db.Get().SkillGroups.Cooking.Id;
+            this.workable.SkillExperienceMultiplier = SKILLS.MOST_DAY_EXPERIENCE;
+            this.GetComponent<ComplexFabricator>().workingStatusItem = Db.Get().BuildingStatusItems.ComplexFabricatorCooking;
         }
 
-        public float GetAvailableFuel()
-        {
-            return this.inStorage.GetAmountAvailable(this.fuelTag);
-        }
+        //protected override List<GameObject> SpawnOrderProduct(ComplexRecipe recipe)
+        //{
+        //    List<GameObject> gameObjectList = base.SpawnOrderProduct(recipe);
+        //    foreach (GameObject gameObject in gameObjectList)
+        //    {
+        //        PrimaryElement component = gameObject.GetComponent<PrimaryElement>();
+        //        component.ModifyDiseaseCount(-component.DiseaseCount, "CookingStation.CompleteOrder");
+        //    }
+        //    this.GetComponent<Operational>().SetActive(false);
+        //    return gameObjectList;
+        //}
 
-        protected override List<GameObject> SpawnOrderProduct(ComplexRecipe recipe)
-        {
-            List<GameObject> list = base.SpawnOrderProduct(recipe);
-            foreach (GameObject gameObject in list)
-            {
-                PrimaryElement component = gameObject.GetComponent<PrimaryElement>();
-                component.ModifyDiseaseCount(-component.DiseaseCount, "ManualJuicerStation.CompleteOrder");
-            }
-            base.GetComponent<Operational>().SetActive(false, false);
-            return list;
-        }
-
-        public override List<Descriptor> GetDescriptors(GameObject go)
-        {
-            List<Descriptor> descriptors = base.GetDescriptors(go);
-            descriptors.Add(new Descriptor(UI.BUILDINGEFFECTS.REMOVES_DISEASE, UI.BUILDINGEFFECTS.TOOLTIPS.REMOVES_DISEASE, Descriptor.DescriptorType.Effect, false));
-            return descriptors;
-        }
-
-        private static readonly Operational.Flag gourmetCookingStationFlag = new Operational.Flag("gourmet_cooking_station", Operational.Flag.Type.Requirement);
-        public float GAS_CONSUMPTION_RATE;
-        public float GAS_CONVERSION_RATIO = 0.1f;
-        public const float START_FUEL_MASS = 5f;
-        public Tag fuelTag;
-
-        [SerializeField]
-        private int diseaseCountKillRate = 150;
-        private ManualJuicerStation.StatesInstance smi;
-
-        public class StatesInstance : GameStateMachine<ManualJuicerStation.States, ManualJuicerStation.StatesInstance, ManualJuicerStation, object>.GameInstance
-        {
-            public StatesInstance(ManualJuicerStation smi) : base(smi)
-            {
-            }
-        }
-
-        public class States : GameStateMachine<ManualJuicerStation.States, ManualJuicerStation.StatesInstance, ManualJuicerStation>
-        {
-            public override void InitializeStates(out StateMachine.BaseState default_state)
-            {
-                bool flag = ManualJuicerStation.States.waitingForFuelStatus == null;
-                if (flag)
-                {
-                    ManualJuicerStation.States.waitingForFuelStatus = new StatusItem("waitingForFuelStatus", BUILDING.STATUSITEMS.ENOUGH_FUEL.NAME, BUILDING.STATUSITEMS.ENOUGH_FUEL.TOOLTIP, "status_item_no_gas_to_pump", StatusItem.IconType.Custom, NotificationType.BadMinor, false, OverlayModes.None.ID, 129022, true, null);
-                    ManualJuicerStation.States.waitingForFuelStatus.resolveStringCallback = delegate (string str, object obj)
-                    {
-                        ManualJuicerStation manualJuicerStation = (ManualJuicerStation)obj;
-                        return string.Format(str, manualJuicerStation.fuelTag.ProperName(), GameUtil.GetFormattedMass(5f, GameUtil.TimeSlice.None, GameUtil.MetricMassFormat.UseThreshold, true, "{0:0.#}"));
-                    };
-                }
-                default_state = this.waitingForFuel;
-                this.waitingForFuel.Enter(delegate (ManualJuicerStation.StatesInstance smi)
-                {
-                    smi.master.operational.SetFlag(ManualJuicerStation.gourmetCookingStationFlag, false);
-                }).ToggleStatusItem(ManualJuicerStation.States.waitingForFuelStatus, (ManualJuicerStation.StatesInstance smi) => smi.master).EventTransition(GameHashes.OnStorageChange, this.ready, (ManualJuicerStation.StatesInstance smi) => smi.master.GetAvailableFuel() >= 5f);
-                this.ready.Enter(delegate (ManualJuicerStation.StatesInstance smi)
-                {
-                    smi.master.SetQueueDirty();
-                    smi.master.operational.SetFlag(ManualJuicerStation.gourmetCookingStationFlag, true);
-                }).EventTransition(GameHashes.OnStorageChange, this.waitingForFuel, (ManualJuicerStation.StatesInstance smi) => smi.master.GetAvailableFuel() <= 0f);
-            }
-
-            public static StatusItem waitingForFuelStatus;
-            public GameStateMachine<ManualJuicerStation.States, ManualJuicerStation.StatesInstance, ManualJuicerStation, object>.State waitingForFuel;
-            public GameStateMachine<ManualJuicerStation.States, ManualJuicerStation.StatesInstance, ManualJuicerStation, object>.State ready;
-        }
+        //public override List<Descriptor> GetDescriptors(GameObject go)
+        //{
+        //    List<Descriptor> descriptors = base.GetDescriptors(go);
+        //    descriptors.Add(new Descriptor((string)UI.BUILDINGEFFECTS.REMOVES_DISEASE, (string)UI.BUILDINGEFFECTS.TOOLTIPS.REMOVES_DISEASE));
+        //    return descriptors;
+        //}
     }
 }

@@ -46,7 +46,7 @@ namespace DupesCuisine.Foods
 
             recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(ManualJuicerConfig.ID, ingredients, results), ingredients, results, 0)
             {
-                time = FOOD.RECIPES.SMALL_COOK_TIME,
+                time = 100f,
                 description = STRINGS.FOOD.NOSHMILK.RECIPEDESC,
                 nameDisplay = ComplexRecipe.RecipeNameDisplay.Result,
                 fabricators = new List<Tag>{ ManualJuicerConfig.ID },

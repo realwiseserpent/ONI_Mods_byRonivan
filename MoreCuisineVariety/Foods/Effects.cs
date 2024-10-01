@@ -15,7 +15,7 @@ namespace DupesCuisine.Foods
             Effect effect = new Effect(ChocolateTasteId, STRINGS.EFFECTS.CHOCOLATETASTE.NAME, STRINGS.EFFECTS.CHOCOLATETASTE.TOOLTIP, time, true, true, false);
             effect.SelfModifiers = new List<AttributeModifier>
             {
-                new AttributeModifier(Db.Get().Attributes.Learning.Id, 1, ChocolateTasteId),
+                new AttributeModifier(Db.Get().Attributes.Learning.Id, 2, ChocolateTasteId),
                 new AttributeModifier(Db.Get().Amounts.Stress.deltaAttribute.Id, -5 / time, ChocolateTasteId)
             };
             return effect;

@@ -11,7 +11,7 @@ namespace DupesCuisine.Foods
 
         public GameObject CreatePrefab()
         {
-            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_KakawaBar.Id, "", 2400000f, 2, 255.15f, 277.15f, 4800f, true);
+            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_KakawaBar.Id, "", 3000000f, 2, 275.15f, 298.15f, 4800f, true);
 
             foodInfo.AddEffects(new List<string>
             {
@@ -28,7 +28,7 @@ namespace DupesCuisine.Foods
 
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[2]
             {
-                new ComplexRecipe.RecipeElement(Food_RoastedKakawa.Id, 4f),
+                new ComplexRecipe.RecipeElement(Food_RoastedKakawa.Id, 6f),
                 new ComplexRecipe.RecipeElement(Food_KakawaButter.Id, 1f)
             };
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]

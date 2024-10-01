@@ -7,6 +7,8 @@ using DupesCuisine.Crops;
 using DupesCuisine.Foods;
 using DupesCuisine.Plants;
 using TUNING;
+using UnityEngine;
+using static ResearchTypes;
 
 namespace DupesCuisine.Patches
 {
@@ -23,19 +25,19 @@ namespace DupesCuisine.Patches
                 RegisterStrings.MakeFoodStrings(Crop_KakawaAcorn.Id, STRINGS.CROPS.KAKAWAACORN.NAME, STRINGS.CROPS.KAKAWAACORN.DESC, STRINGS.CROPS.RECIPEDESC);
                 RegisterStrings.MakeSeedStrings(Crop_KakawaAcorn.Id, STRINGS.SEEDS.KAKAWATREE.SEED_NAME, STRINGS.SEEDS.KAKAWATREE.SEED_DESC);
                 RegisterStrings.MakePlantSpeciesStrings(Plant_KakawaTreeConfig.Id, STRINGS.PLANTS.KAKAWATREE.NAME, STRINGS.PLANTS.KAKAWATREE.DESC);
-                RegisterStrings.MakePlantCodexStrings(Plant_KakawaTreeConfig.Id, STRINGS.PLANTS.KAKAWATREE.NAME, STRINGS.CODEX.SUBTITLE, STRINGS.CODEX.KAKAWATREE.BODY.CONTAINER1);
+                //RegisterStrings.MakePlantCodexStrings(Plant_KakawaTreeConfig.Id, STRINGS.PLANTS.KAKAWATREE.NAME, STRINGS.CODEX.SUBTITLE, STRINGS.CODEX.KAKAWATREE.BODY.CONTAINER1);
                 CROPS.CROP_TYPES.Add(new Crop.CropVal(Crop_KakawaAcorn.Id, Plant_KakawaTreeConfig.GROW_TIME, Plant_KakawaTreeConfig.CROP_NUM, true));
 
                 RegisterStrings.MakeFoodStrings(Crop_Creamcap.Id, STRINGS.CROPS.CREAMCAP.NAME, STRINGS.CROPS.CREAMCAP.DESC);
                 RegisterStrings.MakeSeedStrings(Plant_CreamcapMushroomConfig.SeedId, STRINGS.SEEDS.CREAMCAPMUSHROOM.SEED_NAME, STRINGS.SEEDS.CREAMCAPMUSHROOM.SEED_DESC);
                 RegisterStrings.MakePlantSpeciesStrings(Plant_CreamcapMushroomConfig.Id, STRINGS.PLANTS.CREAMCAPMUSHROOM.NAME, STRINGS.PLANTS.CREAMCAPMUSHROOM.DESC);
-                RegisterStrings.MakePlantCodexStrings(Plant_CreamcapMushroomConfig.Id, STRINGS.PLANTS.CREAMCAPMUSHROOM.NAME, STRINGS.CODEX.SUBTITLE, STRINGS.CODEX.CREAMCAPMUSHROOM.BODY.CONTAINER1);
+                //RegisterStrings.MakePlantCodexStrings(Plant_CreamcapMushroomConfig.Id, STRINGS.PLANTS.CREAMCAPMUSHROOM.NAME, STRINGS.CODEX.SUBTITLE, STRINGS.CODEX.CREAMCAPMUSHROOM.BODY.CONTAINER1);
                 CROPS.CROP_TYPES.Add(new Crop.CropVal(Crop_Creamcap.Id, Plant_CreamcapMushroomConfig.GROW_TIME, Plant_CreamcapMushroomConfig.CROP_NUM, true));
 
                 RegisterStrings.MakeFoodStrings(Crop_SunnyWheatGrain.Id, STRINGS.CROPS.SUNNYWHEATGRAIN.NAME, STRINGS.CROPS.SUNNYWHEATGRAIN.DESC, STRINGS.CROPS.RECIPEDESC);
                 RegisterStrings.MakeSeedStrings(Crop_SunnyWheatGrain.Id, STRINGS.SEEDS.SUNNYWHEAT.SEED_NAME, STRINGS.SEEDS.SUNNYWHEAT.SEED_DESC);
                 RegisterStrings.MakePlantSpeciesStrings(Plant_SunnyWheatConfig.Id, STRINGS.PLANTS.SUNNYWHEAT.NAME, STRINGS.PLANTS.SUNNYWHEAT.DESC);
-                RegisterStrings.MakePlantCodexStrings(Plant_SunnyWheatConfig.Id, STRINGS.PLANTS.SUNNYWHEAT.NAME, STRINGS.CODEX.SUBTITLE, STRINGS.CODEX.SUNNYWHEAT.BODY.CONTAINER1);
+                //RegisterStrings.MakePlantCodexStrings(Plant_SunnyWheatConfig.Id, STRINGS.PLANTS.SUNNYWHEAT.NAME, STRINGS.CODEX.SUBTITLE, STRINGS.CODEX.SUNNYWHEAT.BODY.CONTAINER1);
                 CROPS.CROP_TYPES.Add(new Crop.CropVal(Crop_SunnyWheatGrain.Id, Plant_SunnyWheatConfig.GROW_TIME, Plant_SunnyWheatConfig.CROP_NUM, true));
             }
         }
@@ -58,7 +60,6 @@ namespace DupesCuisine.Patches
                 list.Add(new CarePackageInfo(Food_Cookie.Id, 3f, null));
                 list.Add(new CarePackageInfo(Food_Nutcake.Id, 2f, null));
 
-                //if (!DlcManager.IsContentSubscribed(DlcManager.EXPANSION1_ID))
                 if (list.FindIndex(x => x.id.ToUpper() == sucrose.ToUpper()) == -1)
                     list.Add(new CarePackageInfo(sucrose, 200f, null)); // add sucrose
 
@@ -126,34 +127,63 @@ namespace DupesCuisine.Patches
             }
         }
 
-        [HarmonyPatch(typeof(CodexEntryGenerator), "GeneratePlantEntries")]
+        [HarmonyPatch(typeof(CodexEntry))]
+        [HarmonyPatch(MethodType.Constructor)]
+        [HarmonyPatch(new Type[] {
+            typeof(string),
+            typeof(List<ContentContainer>),
+            typeof(string)
+        })]
+        public static class CodexEntry_Constructor_Patch
+        {
+            private static void Postfix(CodexEntry __instance)
+            {
+                if (__instance.category != "PLANTS")
+                    return;
+
+                GameObject kakawa = Assets.GetPrefab(Plant_KakawaTreeConfig.Id);
+                GameObject mushroom = Assets.GetPrefab(Plant_CreamcapMushroomConfig.Id);
+                GameObject sunny = Assets.GetPrefab(Plant_SunnyWheatConfig.Id);
+
+                if (kakawa.GetProperName() == __instance.name)
+                    __instance.contentContainers.InsertRange(0, GetCodexContainers(Plant_KakawaTreeConfig.Id));
+                else if (mushroom.GetProperName() == __instance.name)
+                    __instance.contentContainers.InsertRange(0, GetCodexContainers(Plant_CreamcapMushroomConfig.Id));
+                else if (sunny.GetProperName() == __instance.name)
+                    __instance.contentContainers.InsertRange(0, GetCodexContainers(Plant_SunnyWheatConfig.Id));
+            }
+        }
+
+        //[HarmonyPatch(typeof(CodexEntryGenerator), "GeneratePlantEntries")]
         public class DupesCuisine_CodexEntryGenerator_GeneratePlantEntries_Patch
         {
             public static void Postfix(Dictionary<string, CodexEntry> __result)
             {
                 foreach (var key in CropsDictionary.Keys)
-                    UpdateCodex(key);
+                {
+                    CodexEntry entry = CodexCache.FindEntry(key.ToUpperInvariant());
+
+                    if (entry != null)
+                        entry.contentContainers.InsertRange(0, GetCodexContainers(key));
+                }
             }
         }
 
-        private static void UpdateCodex(string id)
+        private static List<ContentContainer> GetCodexContainers(string id)
         {
-            CodexEntry entry = CodexCache.FindEntry(id.ToUpperInvariant());
-
-            if (entry != null)
-            {
-                entry.contentContainers.InsertRange(0, new List<ContentContainer>()
+            return new List<ContentContainer>()
                 {
                     new ContentContainer()
                     {
                         contentLayout = ContentContainer.ContentLayout.Vertical,
                         content = new List<ICodexWidget>()
                         {
-                        new CodexText() {stringKey = $"STRINGS.CODEX.{id.ToUpperInvariant()}.TITLE",
+                        new CodexText() { stringKey = $"STRINGS.CREATURES.SPECIES.{id.ToUpperInvariant()}.NAME",
+                        //new CodexText() {stringKey = $"STRINGS.CODEX.{id.ToUpperInvariant()}.TITLE",
                             style = CodexTextStyle.Title },
-                        new CodexText() {stringKey = $"STRINGS.CODEX.MEALWOOD.SUBTITLE",
+                        new CodexText() { stringKey = $"STRINGS.CODEX.MEALWOOD.SUBTITLE",
                             style = CodexTextStyle.Subtitle },
-                        new CodexDividerLine() {preferredWidth = -1 }
+                        new CodexDividerLine() { preferredWidth = -1 }
                         }
                     },
                     new ContentContainer()
@@ -161,14 +191,13 @@ namespace DupesCuisine.Patches
                         contentLayout = ContentContainer.ContentLayout.Vertical,
                         content = new List<ICodexWidget>()
                         {
-                        new CodexText() {stringKey = $"STRINGS.CODEX.{id.ToUpperInvariant()}.BODY.CONTAINER1",
+                            new CodexText() { stringKey = $"STRINGS.CREATURES.SPECIES.{id.ToUpperInvariant()}.DESC",
+                            //new CodexText() {stringKey = $"STRINGS.CODEX.{id.ToUpperInvariant()}.BODY.CONTAINER1",
                             style = CodexTextStyle.Body }
                         }
                     }
-                });
-            }
+                };
         }
-
     }
 }
 
