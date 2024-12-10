@@ -14,7 +14,7 @@ namespace DupesCuisine
             {
                 public static LocString NAME = UI.FormatAsLink("Food Grinder", ManualJuicerConfig.ID);
                 public static LocString DESC = $"A cooking appliance used to grind down Food in to liquids.";
-                public static LocString EFFECT = "The grinder uses a mixture of " + UI.FormatAsLink("Water", "WATER") + " and other " + UI.FormatAsLink("Food","FOOD")+ " to make special ingredients used in culinary.\n\nDuplicants will not fabricate items unless recipes queued.";
+                public static LocString EFFECT = "The grinder uses a mixture of " + UI.FormatAsLink("Water", "WATER") + " and other " + UI.FormatAsLink("Food", "FOOD") + " to make special ingredients used in culinary.\n\nDuplicants will not fabricate items unless recipes queued.";
             }
         }
         public class FOOD
@@ -88,7 +88,7 @@ namespace DupesCuisine
             public class KAKAWABUTTER
             {
                 public static LocString NAME = UI.FormatAsLink("Kakawa Butter", Food_KakawaButter.Id.ToUpper());
-                public static LocString DESC = "An oily butter extracted from " + UI.FormatAsLink("Kakawa Acorn",Crop_KakawaAcorn.Id) + ". This butter has a tasty aroma, although one must like bitterness to actually eat it in this form.";
+                public static LocString DESC = "An oily butter extracted from " + UI.FormatAsLink("Kakawa Acorn", Crop_KakawaAcorn.Id) + ". This butter has a tasty aroma, although one must like bitterness to actually eat it in this form.";
                 public static LocString RECIPEDESC = DESC; //"Extract oil from " + UI.FormatAsLink("Kakawa Acorn",Crop_KakawaAcorn.Id) + ".";
             }
             public class LICEWRAP
@@ -148,8 +148,8 @@ namespace DupesCuisine
             public class NUTCAKE
             {
                 public static LocString NAME = UI.FormatAsLink("Nutcake", Food_Nutcake.Id.ToUpper());
-                public static LocString DESC = $"A saborous {UI.FormatAsLink("Nutcake", Food_Nutcake.Id)} baked from bitter { UI.FormatAsLink("Roasted Kakawa", Food_RoastedKakawa.Id.ToUpper())}"
-                    + $", {UI.FormatAsLink("Kakawa Butter", Food_KakawaButter.Id.ToUpper())} and { UI.FormatAsLink("Sunny Grains", Crop_SunnyWheatGrain.Id)}. Brings warmth to the heart (and stomach).";
+                public static LocString DESC = $"A saborous {UI.FormatAsLink("Nutcake", Food_Nutcake.Id)} baked from bitter {UI.FormatAsLink("Roasted Kakawa", Food_RoastedKakawa.Id.ToUpper())}"
+                    + $", {UI.FormatAsLink("Kakawa Butter", Food_KakawaButter.Id.ToUpper())} and {UI.FormatAsLink("Sunny Grains", Crop_SunnyWheatGrain.Id)}. Brings warmth to the heart (and stomach).";
                 public static LocString RECIPEDESC = DESC; //"Bake a " + UI.FormatAsLink("Nutcake", Food_Nutcake.Id) + " .";
             }
             public class NUTPIE
@@ -167,7 +167,7 @@ namespace DupesCuisine
             public class ROASTEDKAKAWA
             {
                 public static LocString NAME = UI.FormatAsLink("Roasted Kakawa", Food_RoastedKakawa.Id.ToUpper());
-                public static LocString DESC = "A fully roasted " + UI.FormatAsLink("Kakawa Acorn",Crop_KakawaAcorn.Id) + ". The roasting crack open its hard shell reaveling a edible nut, although the eating may be a bitter experience.";
+                public static LocString DESC = "A fully roasted " + UI.FormatAsLink("Kakawa Acorn", Crop_KakawaAcorn.Id) + ". The roasting crack open its hard shell reaveling a edible nut, although the eating may be a bitter experience.";
                 public static LocString RECIPEDESC = DESC; //"Roast a " + UI.FormatAsLink("Kakawa Acorn",Crop_KakawaAcorn.Id) + ".";
             }
             public class SALTEDMEAT
@@ -194,17 +194,17 @@ namespace DupesCuisine
             public class CREAMCAPMUSHROOM
             {
                 public static LocString SEED_NAME = UI.FormatAsLink("Creamcap Mushroom Spore", Plant_CreamcapMushroomConfig.Id);
-                public static LocString SEED_DESC = $"The small {UI.FormatAsLink("Spore", "PLANTS")} from a { UI.FormatAsLink("Creamcap Mushroom", Plant_CreamcapMushroomConfig.Id)}. Plant it in a dark place and its surely to flourish.";
+                public static LocString SEED_DESC = $"The small {UI.FormatAsLink("Spore", "PLANTS")} from a {UI.FormatAsLink("Creamcap Mushroom", Plant_CreamcapMushroomConfig.Id)}. Plant it in a dark place and its surely to flourish.";
             }
             public class KAKAWATREE
             {
                 public static LocString SEED_NAME = UI.FormatAsLink("Kakawa Acorn", Plant_KakawaTreeConfig.Id);//UI.FormatAsLink("Kakawa Tree Sprout", Plant_KakawaTreeConfig.Id);
-                public static LocString SEED_DESC = $"The {UI.FormatAsLink("Sprout", "PLANTS")} of a { UI.FormatAsLink("Kakawa Tree", Plant_KakawaTreeConfig.Id)}.";
+                public static LocString SEED_DESC = $"The {UI.FormatAsLink("Sprout", "PLANTS")} of a {UI.FormatAsLink("Kakawa Tree", Plant_KakawaTreeConfig.Id)}.";
             }
             public class SUNNYWHEAT
             {
                 public static LocString SEED_NAME = UI.FormatAsLink("Sunny Wheat Grain", Plant_SunnyWheatConfig.Id); //UI.FormatAsLink("Sunny Wheat Seed", Plant_SunnyWheatConfig.Id);
-                public static LocString SEED_DESC = $"The {UI.FormatAsLink("Seed", "PLANTS")} of a { UI.FormatAsLink("Sunny Wheat", Plant_SunnyWheatConfig.Id)} plant.";
+                public static LocString SEED_DESC = $"The {UI.FormatAsLink("Seed", "PLANTS")} of a {UI.FormatAsLink("Sunny Wheat", Plant_SunnyWheatConfig.Id)} plant.";
             }
         }
         public class PLANTS
@@ -265,32 +265,23 @@ namespace DupesCuisine
                 public static LocString CAUSE = (LocString)"Obtained by eating a sucrose meal";
                 public static LocString DESCRIPTION = (LocString)"Duplicants find this sucrose meal energizing";
             }
-        }
 
-        //public class CODEX
-        //{
-        //    public class CREAMCAPMUSHROOM
-        //    {
-        //        public class BODY
-        //        {
-        //            public static LocString CONTAINER1 = PLANTS.CREAMCAPMUSHROOM.DESC;
-        //        }
-        //    }
-        //    public class KAKAWATREE
-        //    {
-        //        public class BODY
-        //        {
-        //            public static LocString CONTAINER1 = PLANTS.KAKAWATREE.DESC;
-        //        }
-        //    }
-        //    public class SUNNYWHEAT
-        //    {
-        //        public class BODY
-        //        {
-        //            public static LocString CONTAINER1 = PLANTS.SUNNYWHEAT.DESC;
-        //        }
-        //    }
-        //}
+            public class DUPLICANTGOTETHANOL
+            {
+                public static LocString NAME = (LocString)"Extra Drunk";
+                public static LocString TOOLTIP = (LocString)("This Duplicant recently drank " + UI.PRE_KEYWORD + "Ethanol" + UI.PST_KEYWORD + ". It's helping them relax");
+                public static LocString PROVIDERS_NAME = NAME;
+                public static LocString PROVIDERS_TOOLTIP = TOOLTIP;
+            }
+
+            public class DUPLICANTGOTSUGARWATER
+            {
+                public static LocString NAME = (LocString)"Extra Sweetness";
+                public static LocString TOOLTIP = (LocString)("This Duplicant recently drank " + UI.PRE_KEYWORD + "Nectar" + UI.PST_KEYWORD + ". It's helping them relax");
+                public static LocString PROVIDERS_NAME = NAME;
+                public static LocString PROVIDERS_TOOLTIP = TOOLTIP;
+            }
+        }
 
         public class TRANSLATION
         {

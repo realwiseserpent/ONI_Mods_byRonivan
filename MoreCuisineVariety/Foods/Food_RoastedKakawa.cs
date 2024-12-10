@@ -21,15 +21,15 @@ namespace DupesCuisine.Foods
 
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[1]
             {
-                new ComplexRecipe.RecipeElement(Crop_KakawaAcorn.Id, 1f)
+                new ComplexRecipe.RecipeElement(Crop_KakawaAcorn.Id, 3f)
             };
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
             {
-                new ComplexRecipe.RecipeElement(Food_RoastedKakawa.Id, 1f)
+                new ComplexRecipe.RecipeElement(Food_RoastedKakawa.Id, 3f)
             };
             this.Recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(CookingStationConfig.ID, recipeElementArray1, recipeElementArray2), recipeElementArray1, recipeElementArray2, 0)
             {
-                time = 10f,
+                time = 30f,
                 description = STRINGS.FOOD.ROASTEDKAKAWA.RECIPEDESC,
                 nameDisplay = (ComplexRecipe.RecipeNameDisplay)1,
                 fabricators = new List<Tag>() { CookingStationConfig.ID },

@@ -65,12 +65,17 @@ namespace DupesCuisine
             Strings.Add($"STRINGS.BUILDINGS.STATUSITEMS.{id.ToUpperInvariant()}.TOOLTIP", tooltip);
         }
 
-        public static void MakeDublicantsModifiersStrings(string id, string name, string tooltip, string sause, string desc)
+        public static void MakeDublicantsModifiersStrings(string id, string name, string tooltip, string sause = null, string desc = null)
         {
             Strings.Add($"STRINGS.DUPLICANTS.MODIFIERS.{id.ToUpperInvariant()}.NAME", name);
             Strings.Add($"STRINGS.DUPLICANTS.MODIFIERS.{id.ToUpperInvariant()}.TOOLTIP", tooltip);
-            Strings.Add($"STRINGS.DUPLICANTS.MODIFIERS.{id.ToUpperInvariant()}.CAUSE", sause);
-            Strings.Add($"STRINGS.DUPLICANTS.MODIFIERS.{id.ToUpperInvariant()}.DESCRIPTION", desc);
+            if (sause != null)
+                Strings.Add($"STRINGS.DUPLICANTS.MODIFIERS.{id.ToUpperInvariant()}.CAUSE", sause);
+            if (desc != null)
+                Strings.Add($"STRINGS.DUPLICANTS.MODIFIERS.{id.ToUpperInvariant()}.DESCRIPTION", desc);
+
+            Strings.Add($"STRINGS.DUPLICANTS.MODIFIERS.{id.ToUpperInvariant()}.PROVIDERS_NAME", name);
+            Strings.Add($"STRINGS.DUPLICANTS.MODIFIERS.{id.ToUpperInvariant()}.PROVIDERS_TOOLTIP", tooltip);
         }
 
         //public static void MakePlantCodexStrings(string plantId, string name, string subtitle, string body)
@@ -79,5 +84,10 @@ namespace DupesCuisine
         //    Strings.Add($"STRINGS.CODEX.{plantId.ToUpperInvariant()}.SUBTITLE", subtitle);
         //    Strings.Add($"STRINGS.CODEX.{plantId.ToUpperInvariant()}.BODY.CONTAINER1", body);
         //}
+
+        public static void MakeWaterCoolerElemStrings(string name, string tooltip)
+        {
+            Strings.Add($"STRINGS.BUILDINGS.PREFABS.WATERCOOLER.OPTION_TOOLTIPS.{name.ToUpperInvariant()}", tooltip);
+        }
     }
 }

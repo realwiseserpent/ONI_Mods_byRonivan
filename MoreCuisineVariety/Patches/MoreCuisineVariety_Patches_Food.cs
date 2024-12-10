@@ -50,6 +50,11 @@ namespace DupesCuisine.Patches
                     STRINGS.EFFECTS.CHOCOLATETASTE.CAUSE, STRINGS.EFFECTS.CHOCOLATETASTE.DESCRIPTION);
                 RegisterStrings.MakeDublicantsModifiersStrings(Effects.SugarRushId, STRINGS.EFFECTS.SUGARRUSH.NAME, STRINGS.EFFECTS.SUGARRUSH.TOOLTIP,
                     STRINGS.EFFECTS.SUGARRUSH.CAUSE, STRINGS.EFFECTS.SUGARRUSH.DESCRIPTION);
+
+                RegisterStrings.MakeDublicantsModifiersStrings(MoreCuisineVariety_Patches_Buildings.EthanolEffectID, STRINGS.EFFECTS.DUPLICANTGOTETHANOL.NAME,
+                    STRINGS.EFFECTS.DUPLICANTGOTETHANOL.TOOLTIP);
+                RegisterStrings.MakeDublicantsModifiersStrings(MoreCuisineVariety_Patches_Buildings.SugarWaterEffectID, STRINGS.EFFECTS.DUPLICANTGOTSUGARWATER.NAME,
+                    STRINGS.EFFECTS.DUPLICANTGOTSUGARWATER.TOOLTIP);
             }
         }
 
