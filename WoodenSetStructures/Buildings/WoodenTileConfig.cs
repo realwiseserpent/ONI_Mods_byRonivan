@@ -17,7 +17,7 @@ namespace WoodenSetStructures
             SimCellOccupier local1 = go.AddOrGet<SimCellOccupier>();
             local1.doReplaceElement = true;
             local1.strengthMultiplier = 1.5f;
-            local1.movementSpeedMultiplier = DUPLICANTSTATS.MOVEMENT.BONUS_2;
+            local1.movementSpeedMultiplier = DUPLICANTSTATS.MOVEMENT_MODIFIERS.BONUS_2;
             local1.notifyOnMelt = true;
             go.AddOrGet<TileTemperature>();
             go.AddOrGet<KAnimGridTileVisualizer>().blockTileConnectorID = BlockTileConnectorID;
