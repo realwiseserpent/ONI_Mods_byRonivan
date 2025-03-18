@@ -11,13 +11,13 @@ namespace DupesCuisine.Foods
 
         public GameObject CreatePrefab()
         {
-            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_FishWrap.Id, "", 2800000f, 3, 255.15f, 277.15f, 2400f, true);
+            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_FishWrap.Id, 2800000f, 3, 255.15f, 277.15f, 2400f, true);
 
             foodInfo.AddEffects(new List<string>
             {
                 "SeafoodRadiationResistance"
             }, 
-            DlcManager.AVAILABLE_EXPANSION1_ONLY);
+            DlcManager.EXPANSION1);
 
             GameObject food = EntityTemplates.ExtendEntityToFood(
                 EntityTemplates.CreateLooseEntity(
@@ -45,7 +45,7 @@ namespace DupesCuisine.Foods
             return food;
         }
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public void OnPrefabInit(GameObject inst)
         {

@@ -20,7 +20,7 @@ namespace DupesCuisine.Plants
         public const float TemperatureWarningHigh = 313.15f;
         public const float TemperatureLethalHigh = 321.15f;
         public const int KAKAWA_AMOUT = 24;
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public GameObject CreatePrefab()
         {

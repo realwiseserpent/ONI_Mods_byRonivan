@@ -9,7 +9,7 @@ namespace DupesCuisine.Foods
         public const string Id = "CookedShard";
         public static ComplexRecipe Recipe;
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_EXPANSION1_ONLY;
+        public string[] GetDlcIds() => DlcManager.EXPANSION1;
 
         public GameObject CreatePrefab()
         {
@@ -18,7 +18,7 @@ namespace DupesCuisine.Foods
                     Food_CookedShard.Id, 
                     STRINGS.FOOD.COOKEDSHARD.NAME,
                     STRINGS.FOOD.COOKEDSHARD.DESC, 1f, false, Assets.GetAnim(("food_cooked_shard_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true), 
-                new EdiblesManager.FoodInfo(Food_CookedShard.Id, "EXPANSION1_ID", 1050000f, 0, 275.15f, 303.15f, 4800f, true));
+                new EdiblesManager.FoodInfo(Food_CookedShard.Id, 1050000f, 0, 275.15f, 303.15f, 4800f, true, DlcManager.EXPANSION1));
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[1]
             {
                 new ComplexRecipe.RecipeElement("SwampForagePlant", 1/3f)

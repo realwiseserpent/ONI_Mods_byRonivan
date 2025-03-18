@@ -20,7 +20,7 @@ namespace DupesCuisine.Plants
         public const float Fertilization = 10 / 600f;         //   Fertilization Needed
         public static CuisinePlantsTuning.CropsTuning tuning = CuisinePlantsTuning.OakTreeTuning;
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public GameObject CreatePrefab()
         {
@@ -84,7 +84,8 @@ namespace DupesCuisine.Plants
 
             gameObject.AddOrGet<BlightVulnerable>();
 
-            GameObject seed = EntityTemplates.CreateAndRegisterSeedForPlant(gameObject, SeedProducer.ProductionType.Crop,
+            GameObject seed = EntityTemplates.CreateAndRegisterSeedForPlant(gameObject, this as IHasDlcRestrictions, 
+                SeedProducer.ProductionType.Crop,
                 Crop_KakawaAcorn.Id,
                 STRINGS.SEEDS.KAKAWATREE.SEED_NAME,
                 STRINGS.SEEDS.KAKAWATREE.SEED_DESC, Assets.GetAnim("crop_kakawaacorn_kanim"), "object", 1, additionalTags, SingleEntityReceptacle.ReceptacleDirection.Top, replantGroundTag, 2,

@@ -2,7 +2,6 @@
 using TUNING;
 using UnityEngine;
 using DupesCuisine.Crops;
-using DupesCuisine.Crops;
 
 namespace DupesCuisine.Foods
 {
@@ -18,7 +17,7 @@ namespace DupesCuisine.Foods
                     Food_FlatBread.Id,
                     STRINGS.FOOD.FLATBREAD.NAME,
                     STRINGS.FOOD.FLATBREAD.DESC, 1f, false, Assets.GetAnim(("food_flat_bread_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
-                new EdiblesManager.FoodInfo(Id, "", 900000f, 0, 275.15f, 298.15f, 7200f, true));
+                new EdiblesManager.FoodInfo(Id, 900000f, 0, 275.15f, 298.15f, 7200f, true));
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[1]
             {
                 new ComplexRecipe.RecipeElement(Crop_SunnyWheatGrain.Id, 3f)
@@ -38,7 +37,7 @@ namespace DupesCuisine.Foods
             return food;
         }
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public void OnPrefabInit(GameObject inst)
         {

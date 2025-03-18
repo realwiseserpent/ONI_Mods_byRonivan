@@ -20,7 +20,7 @@ namespace DupesCuisine.Plants
         public const float Fertilization = 3 / 600f;         //   Fertilization Needed
         public static CuisinePlantsTuning.CropsTuning tuning = CuisinePlantsTuning.CreamcapTuning;
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public GameObject CreatePrefab()
         {
@@ -64,7 +64,8 @@ namespace DupesCuisine.Plants
             placedEntity.AddOrGet<BlightVulnerable>();
 
             EntityTemplates.CreateAndRegisterPreviewForPlant(
-                EntityTemplates.CreateAndRegisterSeedForPlant(placedEntity, SeedProducer.ProductionType.Harvest, Plant_CreamcapMushroomConfig.SeedId,
+                EntityTemplates.CreateAndRegisterSeedForPlant(placedEntity, this as IHasDlcRestrictions,
+                SeedProducer.ProductionType.Harvest, Plant_CreamcapMushroomConfig.SeedId,
                 STRINGS.SEEDS.CREAMCAPMUSHROOM.SEED_NAME,
                 STRINGS.SEEDS.CREAMCAPMUSHROOM.SEED_DESC, Assets.GetAnim(("seed_creamcap_kanim")), "object", 1, tagList, 0, tag, 2,
                 STRINGS.PLANTS.CREAMCAPMUSHROOM.DOMESTICATED_DESC, 0, 0.2f, 0.2f), "Creamcap_preview", Assets.GetAnim(("plant_creamcap_kanim")), "place", 1, 1);

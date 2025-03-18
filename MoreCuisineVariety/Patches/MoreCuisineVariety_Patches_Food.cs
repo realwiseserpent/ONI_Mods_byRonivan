@@ -86,13 +86,14 @@ namespace DupesCuisine.Patches
         [HarmonyPatch(MethodType.Constructor)]
         [HarmonyPatch(new Type[] {
             typeof(string),
-            typeof(string),
             typeof(float),
             typeof(int),
             typeof(float),
             typeof(float),
             typeof(float),
             typeof(bool),
+            typeof(string[]),
+            typeof(string[]),
         })]
         public static class FoodInfo_Constructor_Patch
         {

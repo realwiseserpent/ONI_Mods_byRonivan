@@ -9,17 +9,16 @@ namespace DupesCuisine.Foods
         public const string Id = "SpicedOmelette";
         public static ComplexRecipe Recipe;
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public GameObject CreatePrefab()
         {
-            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_SpicedOmelette.Id, "", 2800000f, 3, 255.15f, 277.15f, 2400f, true);
+            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_SpicedOmelette.Id, 2800000f, 3, 255.15f, 277.15f, 2400f, true);
 
             foodInfo.AddEffects(new List<string>
             {
                 "WarmTouchFood"
-            },
-            DlcManager.AVAILABLE_ALL_VERSIONS);
+            });
 
             GameObject food = EntityTemplates.ExtendEntityToFood(
                 EntityTemplates.CreateLooseEntity(

@@ -10,7 +10,7 @@ namespace DupesCuisine.Foods
         public const string Id = "MealSlurry";
         public static ComplexRecipe recipe;
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public GameObject CreatePrefab()
         {
@@ -21,7 +21,7 @@ namespace DupesCuisine.Foods
                     Food_MealSlurryConfig.Id,
                     STRINGS.FOOD.MEALSLURRY.NAME,
                     STRINGS.FOOD.MEALSLURRY.DESC, 1f, true, Assets.GetAnim(("meal_slurry_kanim")), "object", (Grid.SceneLayer)26, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true),
-                new EdiblesManager.FoodInfo(Food_MealSlurryConfig.Id, "", 0.0f, -1, 255.15f, 277.15f, 4800f, true));
+                new EdiblesManager.FoodInfo(Food_MealSlurryConfig.Id, 0.0f, -1, 255.15f, 277.15f, 4800f, true));
         }
 
         public void OnPrefabInit(GameObject inst)

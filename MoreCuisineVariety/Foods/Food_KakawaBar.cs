@@ -11,13 +11,12 @@ namespace DupesCuisine.Foods
 
         public GameObject CreatePrefab()
         {
-            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_KakawaBar.Id, "", 3000000f, 2, 275.15f, 298.15f, 4800f, true);
+            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_KakawaBar.Id, 3000000f, 2, 275.15f, 298.15f, 4800f, true);
 
             foodInfo.AddEffects(new List<string>
             {
                 Effects.ChocolateTasteId
-            }, 
-            DlcManager.AVAILABLE_ALL_VERSIONS);
+            });
 
             GameObject food = EntityTemplates.ExtendEntityToFood(
                 EntityTemplates.CreateLooseEntity(
@@ -49,7 +48,7 @@ namespace DupesCuisine.Foods
             return food;
         }
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public void OnPrefabInit(GameObject inst)
         {

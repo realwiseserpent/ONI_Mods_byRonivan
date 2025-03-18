@@ -9,7 +9,7 @@ namespace DupesCuisine.Foods
         public const string Id = "GrilledPlantMeat";
         public static ComplexRecipe Recipe;
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public GameObject CreatePrefab()
         {
@@ -18,7 +18,7 @@ namespace DupesCuisine.Foods
                     Food_GrilledPlantMeat.Id,
                     STRINGS.FOOD.GRILLEDPLANTMEAT.NAME,
                     STRINGS.FOOD.GRILLEDPLANTMEAT.DESC, 1f, false, Assets.GetAnim(("food_grilled_plantmeat_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true, 0, (SimHashes)976099455, null),
-                new EdiblesManager.FoodInfo(Food_GrilledPlantMeat.Id, "", 1600000f, 2, 255.15f, 277.15f, 2400f, true));
+                new EdiblesManager.FoodInfo(Food_GrilledPlantMeat.Id, 1600000f, 2, 255.15f, 277.15f, 2400f, true));
 
             ComplexRecipe.RecipeElement[] recipeElementArray1;
             if (DlcManager.IsContentSubscribed(DlcManager.EXPANSION1_ID))

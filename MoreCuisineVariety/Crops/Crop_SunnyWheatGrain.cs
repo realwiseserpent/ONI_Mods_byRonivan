@@ -11,9 +11,9 @@ namespace DupesCuisine.Crops
         public const float PreserveTemperature = 283.15f;
         public const float RotTemperature = 308.15f;
         public const float SpoilTime = 9600f;
-        public static EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Id, "", CaloriesPerUnit, FoodQuality, PreserveTemperature, RotTemperature, SpoilTime, true);
+        public static EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Id, CaloriesPerUnit, FoodQuality, PreserveTemperature, RotTemperature, SpoilTime, true);
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         //public GameObject CreatePrefab()
         //{

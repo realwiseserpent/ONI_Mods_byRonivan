@@ -9,7 +9,7 @@ namespace DupesCuisine.Foods
         public const string Id = "DuskOmelette";
         public static ComplexRecipe Recipe;
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
 
         public GameObject CreatePrefab()
@@ -19,7 +19,7 @@ namespace DupesCuisine.Foods
                     Food_DuskOmelette.Id,
                     STRINGS.FOOD.DUSKOMELETTE.NAME,
                     STRINGS.FOOD.DUSKOMELETTE.DESC, 1f, false, Assets.GetAnim(("food_duskomelette_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
-                new EdiblesManager.FoodInfo(Food_DuskOmelette.Id, "", 5600000f, 3, 255.15f, 277.15f, 2400f, true));
+                new EdiblesManager.FoodInfo(Food_DuskOmelette.Id, 5600000f, 3, 255.15f, 277.15f, 2400f, true));
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[2]
             {
                 new ComplexRecipe.RecipeElement("RawEgg", 1f),

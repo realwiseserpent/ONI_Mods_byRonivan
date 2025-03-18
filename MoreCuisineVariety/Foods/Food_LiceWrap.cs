@@ -16,7 +16,7 @@ namespace DupesCuisine.Foods
                     Food_LiceWrap.Id,
                     STRINGS.FOOD.LICEWRAP.NAME,
                     STRINGS.FOOD.LICEWRAP.DESC, 1f, false, Assets.GetAnim(("food_lice_wrap_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true, 0, (SimHashes)976099455, null),
-                new EdiblesManager.FoodInfo(Food_LiceWrap.Id, "", 2400000f, 1, 255.15f, 277.15f, 4800f, true));
+                new EdiblesManager.FoodInfo(Food_LiceWrap.Id, 2400000f, 1, 255.15f, 277.15f, 4800f, true));
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[2]
             {
                 new ComplexRecipe.RecipeElement(Food_FlatBread.Id, 1f),
@@ -37,7 +37,7 @@ namespace DupesCuisine.Foods
             return food;
         }
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public void OnPrefabInit(GameObject inst)
         {

@@ -10,7 +10,7 @@ namespace DupesCuisine.Foods
         public const string Id = "NoshMilk";
         public static ComplexRecipe recipe;
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public GameObject CreatePrefab()
         {
@@ -21,7 +21,7 @@ namespace DupesCuisine.Foods
                     Food_NoshMilkConfig.Id,
                     STRINGS.FOOD.NOSHMILK.NAME,
                     STRINGS.FOOD.NOSHMILK.DESC, 1f, true, Assets.GetAnim(("nosh_milk_kanim")), "object", (Grid.SceneLayer)26, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true),
-                new EdiblesManager.FoodInfo(Food_NoshMilkConfig.Id, "", 0.0f, 0, 255.15f, 277.15f, 4800f, true));
+                new EdiblesManager.FoodInfo(Food_NoshMilkConfig.Id, 0.0f, 0, 255.15f, 277.15f, 4800f, true));
         }
 
         public void OnPrefabInit(GameObject inst)

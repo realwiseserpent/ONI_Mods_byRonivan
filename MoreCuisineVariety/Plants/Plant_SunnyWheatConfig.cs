@@ -20,7 +20,7 @@ namespace DupesCuisine.Plants
         public const float Fertilization = 15 / 600f;         //   Fertilization Needed
         public static CuisinePlantsTuning.CropsTuning tuning = CuisinePlantsTuning.SunnyWheatTuning;
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public GameObject CreatePrefab()
         {
@@ -66,7 +66,8 @@ namespace DupesCuisine.Plants
             Tag replantGroundTag = new Tag();
 
 
-            GameObject seed = EntityTemplates.CreateAndRegisterSeedForPlant(template, SeedProducer.ProductionType.Crop,
+            GameObject seed = EntityTemplates.CreateAndRegisterSeedForPlant(template, this as IHasDlcRestrictions,
+                SeedProducer.ProductionType.Crop,
                 Crop_SunnyWheatGrain.Id,
                 STRINGS.SEEDS.SUNNYWHEAT.SEED_NAME,
                 STRINGS.SEEDS.SUNNYWHEAT.SEED_DESC, Assets.GetAnim("crop_sunnygrain_kanim"),
