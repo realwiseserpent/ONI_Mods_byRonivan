@@ -12,7 +12,7 @@ namespace Dupes_Cuisine.Food
         public static string RecipeDescription = "Bake a " + UI.FormatAsLink("Dusk Omelette", "SpicedOmelette");
         public static ComplexRecipe Recipe;
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public static GameObject CreateFabricationVisualizer(GameObject result)
         {
@@ -34,7 +34,7 @@ namespace Dupes_Cuisine.Food
 
         public GameObject CreatePrefab()
         {
-            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("DuskOmelette", Food_DuskOmelette.Name, Food_DuskOmelette.Description, 1f, false, Assets.GetAnim((HashedString)"food_duskomelette_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("DuskOmelette", "", 3400000f, 3, 255.15f, 277.15f, 2400f, true));
+            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("DuskOmelette", Food_DuskOmelette.Name, Food_DuskOmelette.Description, 1f, false, Assets.GetAnim((HashedString)"food_duskomelette_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("DuskOmelette", 3400000f, 3, 255.15f, 277.15f, 2400f, true));
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[2]
             {
                 new ComplexRecipe.RecipeElement((Tag) "RawEgg", 1f),

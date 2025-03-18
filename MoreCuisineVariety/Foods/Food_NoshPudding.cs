@@ -12,7 +12,7 @@ namespace Dupes_Cuisine.Food
         public static string RecipeDescription = "Bake a " + UI.FormatAsLink("Nosh Custard Flan", "NoshPudding");
         public static ComplexRecipe Recipe;
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_EXPANSION1_ONLY;
+        public string[] GetDlcIds() => DlcManager.EXPANSION1;
 
         public static GameObject CreateFabricationVisualizer(GameObject result)
         {
@@ -34,7 +34,7 @@ namespace Dupes_Cuisine.Food
 
         public GameObject CreatePrefab()
         {
-            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("NoshPudding", Food_NoshPudding.Name, Food_NoshPudding.Description, 1f, false, Assets.GetAnim((HashedString)"food_noshpudding_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("NoshPudding", "EXPANSION1_ID", 4000000f, 4, 255.15f, 277.15f, 2400f, true));
+            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("NoshPudding", Food_NoshPudding.Name, Food_NoshPudding.Description, 1f, false, Assets.GetAnim((HashedString)"food_noshpudding_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("NoshPudding", 4000000f, 4, 255.15f, 277.15f, 2400f, true, DlcManager.EXPANSION1));
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[4]
             {
                 new ComplexRecipe.RecipeElement((Tag) "NoshMilk", 1f),

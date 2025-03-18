@@ -12,7 +12,7 @@ namespace Dupes_Cuisine.Food
         public static string RecipeDescription = "Bake a " + UI.FormatAsLink("Milk Bun", "MealBread");
         public static ComplexRecipe Recipe;
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => DlcManager.EXPANSION1;
 
         public static GameObject CreateFabricationVisualizer(GameObject result)
         {
@@ -34,7 +34,7 @@ namespace Dupes_Cuisine.Food
 
         public GameObject CreatePrefab()
         {
-            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("MilkBun", Food_MilkBun.Name, Food_MilkBun.Description, 1f, false, Assets.GetAnim((HashedString)"food_milkbun_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("MilkBun", "EXPANSION1_ID", 2200000f, 2, 255.15f, 277.15f, 2400f, true));
+            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("MilkBun", Food_MilkBun.Name, Food_MilkBun.Description, 1f, false, Assets.GetAnim((HashedString)"food_milkbun_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("MilkBun", 2200000f, 2, 255.15f, 277.15f, 2400f, true, DlcManager.EXPANSION1));
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[3]
             {
                 new ComplexRecipe.RecipeElement((Tag) "MealSlurry", 1f),

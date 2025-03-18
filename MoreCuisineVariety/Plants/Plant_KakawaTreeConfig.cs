@@ -21,7 +21,7 @@ namespace Dupes_Cuisine.Plants
         public const float TemperatureLethalHigh = 321.15f;
         public static CuisinePlantsTuning.CropsTuning tuning = CuisinePlantsTuning.OakTreeTuning;
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public GameObject CreatePrefab()
         {
@@ -53,7 +53,8 @@ namespace Dupes_Cuisine.Plants
             List<Tag> tagList = new List<Tag>();
             tagList.Add(GameTags.CropSeed);
             Tag tag = new Tag();
-            EntityTemplates.CreateAndRegisterPreviewForPlant(EntityTemplates.CreateAndRegisterSeedForPlant(placedEntity, SeedProducer.ProductionType.Harvest, "KakawaTreeSeed", "Kakawa Tree Sprout", Plant_KakawaTreeConfig.SeedDescription, Assets.GetAnim((HashedString)"seed_kakawatree_kanim"), "object", 1, tagList, SingleEntityReceptacle.ReceptacleDirection.Top, tag, 2, Plant_KakawaTreeConfig.DomesticatedDescription, EntityTemplates.CollisionShape.CIRCLE, 0.2f, 0.2f, (Recipe.Ingredient[])null, "", false), "KakawaTree_preview", Assets.GetAnim((HashedString)"plant_kakawatree_kanim"), "place", 3, 3);
+            EntityTemplates.CreateAndRegisterPreviewForPlant(EntityTemplates.CreateAndRegisterSeedForPlant(placedEntity, this as IHasDlcRestrictions,
+                SeedProducer.ProductionType.Harvest, "KakawaTreeSeed", "Kakawa Tree Sprout", Plant_KakawaTreeConfig.SeedDescription, Assets.GetAnim((HashedString)"seed_kakawatree_kanim"), "object", 1, tagList, SingleEntityReceptacle.ReceptacleDirection.Top, tag, 2, Plant_KakawaTreeConfig.DomesticatedDescription, EntityTemplates.CollisionShape.CIRCLE, 0.2f, 0.2f, (Recipe.Ingredient[])null, "", false), "KakawaTree_preview", Assets.GetAnim((HashedString)"plant_kakawatree_kanim"), "place", 3, 3);
             SoundEventVolumeCache.instance.AddVolume("bristleblossom_kanim", "PrickleFlower_harvest", NOISE_POLLUTION.CREATURES.TIER1);
             return placedEntity;
         }

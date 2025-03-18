@@ -14,7 +14,7 @@ namespace Dupes_Cuisine.Food
 
         public GameObject CreatePrefab()
         {
-            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("KakawaCookie", Food_Cookie.Name, Food_Cookie.Description, 1f, false, Assets.GetAnim((HashedString)"food_cookie_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.7f, 0.5f, true), new EdiblesManager.FoodInfo("KakawaCookie", "", 4000000f, 4, 255.15f, 277.15f, 3200f, true));
+            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("KakawaCookie", Food_Cookie.Name, Food_Cookie.Description, 1f, false, Assets.GetAnim((HashedString)"food_cookie_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.7f, 0.5f, true), new EdiblesManager.FoodInfo("KakawaCookie", 4000000f, 4, 255.15f, 277.15f, 3200f, true));
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[3]
             {
                 new ComplexRecipe.RecipeElement((Tag) "ColdWheatSeed", 3f),
@@ -40,7 +40,7 @@ namespace Dupes_Cuisine.Food
             return food;
         }
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public void OnPrefabInit(GameObject inst)
         {

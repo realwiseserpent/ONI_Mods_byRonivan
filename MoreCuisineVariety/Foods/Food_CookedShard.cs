@@ -12,7 +12,7 @@ namespace Dupes_Cuisine.Food
         public static string RecipeDescription = "Bake a " + UI.FormatAsLink("Baked Chard", "CookedShard");
         public static ComplexRecipe Recipe;
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_EXPANSION1_ONLY;
+        public string[] GetDlcIds() => DlcManager.EXPANSION1;
 
         public static GameObject CreateFabricationVisualizer(GameObject result)
         {
@@ -34,7 +34,7 @@ namespace Dupes_Cuisine.Food
 
         public GameObject CreatePrefab()
         {
-            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("CookedShard", Food_CookedShard.Name, Food_CookedShard.Description, 1f, false, Assets.GetAnim((HashedString)"food_cooked_shard_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("CookedShard", "EXPANSION1_ID", 3000000f, 1, 267.15f, 315.15f, 4800f, true));
+            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("CookedShard", Food_CookedShard.Name, Food_CookedShard.Description, 1f, false, Assets.GetAnim((HashedString)"food_cooked_shard_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("CookedShard", 3000000f, 1, 267.15f, 315.15f, 4800f, true, DlcManager.EXPANSION1));
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[1]
             {
                 new ComplexRecipe.RecipeElement((Tag) "SwampForagePlant", 1f)

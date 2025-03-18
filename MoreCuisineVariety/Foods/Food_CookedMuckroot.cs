@@ -12,7 +12,7 @@ namespace Dupes_Cuisine.Food
         public static string RecipeDescription = "Bake a " + UI.FormatAsLink("Muckroot", "CookedMuckroot");
         public static ComplexRecipe Recipe;
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public static GameObject CreateFabricationVisualizer(GameObject result)
         {
@@ -34,7 +34,7 @@ namespace Dupes_Cuisine.Food
 
         public GameObject CreatePrefab()
         {
-            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("CookedMuckroot", Food_CookedMuckroot.Name, Food_CookedMuckroot.Description, 1f, false, Assets.GetAnim((HashedString)"food_cooked_muckroot_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("CookedMuckroot", "", 1400000f, 1, 267.15f, 315.15f, 4800f, true));
+            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("CookedMuckroot", Food_CookedMuckroot.Name, Food_CookedMuckroot.Description, 1f, false, Assets.GetAnim((HashedString)"food_cooked_muckroot_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("CookedMuckroot", 1400000f, 1, 267.15f, 315.15f, 4800f, true));
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[1]
             {
                 new ComplexRecipe.RecipeElement((Tag) "BasicForagePlant", 1f)

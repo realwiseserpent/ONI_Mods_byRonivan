@@ -14,7 +14,7 @@ namespace Dupes_Cuisine.Food
 
         public GameObject CreatePrefab()
         {
-            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("FlatBread", Food_FlatBread.Name, Food_FlatBread.Description, 1f, false, Assets.GetAnim((HashedString)"food_flat_bread_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("FlatBread", "", 900000f, 0, 255.15f, 277.15f, 2400f, true));
+            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("FlatBread", Food_FlatBread.Name, Food_FlatBread.Description, 1f, false, Assets.GetAnim((HashedString)"food_flat_bread_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("FlatBread", 900000f, 0, 255.15f, 277.15f, 2400f, true));
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[1]
             {
                 new ComplexRecipe.RecipeElement((Tag) "SunnyWheat_Grain", 3f)
@@ -37,7 +37,7 @@ namespace Dupes_Cuisine.Food
             return food;
         }
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public void OnPrefabInit(GameObject inst)
         {

@@ -8,7 +8,7 @@ namespace Dupes_Cuisine
     public class CuisinePlantsTuning
     {
         public static bool DebugMode = false;
-        public static string[] SupportedVersions = DlcManager.AVAILABLE_ALL_VERSIONS;
+        public static string[] SupportedVersions = null;
         public static CuisinePlantsTuning.CropsTuning OakTreeTuning;
         public static CuisinePlantsTuning.CropsTuning CreamcapTuning;
         public static CuisinePlantsTuning.CropsTuning SunnyWheatTuning;

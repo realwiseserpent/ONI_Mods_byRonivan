@@ -12,7 +12,7 @@ namespace Dupes_Cuisine.Food
         public static string RecipeDescription = "Bake a " + UI.FormatAsLink("Plant Burger", "PlantBurger");
         public static ComplexRecipe Recipe;
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_EXPANSION1_ONLY;
+        public string[] GetDlcIds() => DlcManager.EXPANSION1;
 
         public static GameObject CreateFabricationVisualizer(GameObject result)
         {
@@ -34,7 +34,7 @@ namespace Dupes_Cuisine.Food
 
         public GameObject CreatePrefab()
         {
-            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("PlantBurger", Food_PlantBurger.Name, Food_PlantBurger.Description, 1f, false, Assets.GetAnim((HashedString)"food_plantburger_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("PlantBurger", "EXPANSION1_ID", 6000000f, 6, 255.15f, 277.15f, 2400f, true));
+            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("PlantBurger", Food_PlantBurger.Name, Food_PlantBurger.Description, 1f, false, Assets.GetAnim((HashedString)"food_plantburger_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("PlantBurger", 6000000f, 6, 255.15f, 277.15f, 2400f, true, DlcManager.EXPANSION1));
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[3]
             {
                 new ComplexRecipe.RecipeElement((Tag) "GrilledPlantMeat", 1f),

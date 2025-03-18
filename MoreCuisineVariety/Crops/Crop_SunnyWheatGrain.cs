@@ -14,11 +14,11 @@ namespace Dupes_Cuisine.Crops
         public const float RotTemperature = 277.15f;
         public const float SpoilTime = 3000f;
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public GameObject CreatePrefab()
         {
-            return EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("SunnyWheat_Grain", Crop_SunnyWheatGrain.Name, Crop_SunnyWheatGrain.Description, 1f, false, Assets.GetAnim((HashedString)"crop_sunnygrain_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("SunnyWheat_Grain", "", 0.0f, -1, 255.15f, 277.15f, 3000f, true));
+            return EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("SunnyWheat_Grain", Crop_SunnyWheatGrain.Name, Crop_SunnyWheatGrain.Description, 1f, false, Assets.GetAnim((HashedString)"crop_sunnygrain_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("SunnyWheat_Grain", 0.0f, -1, 255.15f, 277.15f, 3000f, true));
         }
 
         public void OnPrefabInit(GameObject inst)

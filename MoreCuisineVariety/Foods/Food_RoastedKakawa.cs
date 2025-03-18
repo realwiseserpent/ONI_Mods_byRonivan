@@ -15,7 +15,7 @@ namespace Dupes_Cuisine.Food
 
         public GameObject CreatePrefab()
         {
-            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("Roasted_Kakawa", Food_RoastedKakawa.Name, Food_RoastedKakawa.Description, 1f, false, Assets.GetAnim((HashedString)"food_roasted_kakawa_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("Roasted_Kakawa", "", 300000f, 1, 255.15f, 277.15f, 2400f, true));
+            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("Roasted_Kakawa", Food_RoastedKakawa.Name, Food_RoastedKakawa.Description, 1f, false, Assets.GetAnim((HashedString)"food_roasted_kakawa_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("Roasted_Kakawa", 300000f, 1, 255.15f, 277.15f, 2400f, true));
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[1]
             {
                 new ComplexRecipe.RecipeElement((Tag) "Kakawa_Acorn", 1f)
@@ -38,7 +38,7 @@ namespace Dupes_Cuisine.Food
             return food;
         }
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public void OnPrefabInit(GameObject inst)
         {

@@ -14,11 +14,11 @@ namespace Dupes_Cuisine.Crops
         public const float RotTemperature = 277.15f;
         public const float SpoilTime = 4800f;
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public GameObject CreatePrefab()
         {
-            return EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("Kakawa_Acorn", Crop_KakawaAcorn.Name, Crop_KakawaAcorn.Description, 1f, false, Assets.GetAnim((HashedString)"crop_kakawaacorn_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("Kakawa_Acorn", "", 0.0f, -1, 255.15f, 277.15f, 4800f, true));
+            return EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("Kakawa_Acorn", Crop_KakawaAcorn.Name, Crop_KakawaAcorn.Description, 1f, false, Assets.GetAnim((HashedString)"crop_kakawaacorn_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("Kakawa_Acorn", 0.0f, -1, 255.15f, 277.15f, 4800f, true));
         }
 
         public void OnPrefabInit(GameObject inst)

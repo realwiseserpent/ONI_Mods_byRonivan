@@ -14,11 +14,11 @@ namespace Dupes_Cuisine.Crops
         public const float RotTemperature = 277.15f;
         public const float SpoilTime = 3200f;
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public GameObject CreatePrefab()
         {
-            return EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("Creamtop_Cap", Crop_Creamcap.Name, Crop_Creamcap.Description, 1f, false, Assets.GetAnim((HashedString)"crop_creamcap_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("Creamtop_Cap", "", 1200000f, -1, 255.15f, 277.15f, 3200f, true));
+            return EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("Creamtop_Cap", Crop_Creamcap.Name, Crop_Creamcap.Description, 1f, false, Assets.GetAnim((HashedString)"crop_creamcap_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true), new EdiblesManager.FoodInfo("Creamtop_Cap", 1200000f, -1, 255.15f, 277.15f, 3200f, true));
         }
 
         public void OnPrefabInit(GameObject inst)

@@ -21,7 +21,7 @@ namespace Dupes_Cuisine.Plants
         public const float TemperatureLethalHigh = 348.15f;
         public static CuisinePlantsTuning.CropsTuning tuning = CuisinePlantsTuning.SunnyWheatTuning;
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public GameObject CreatePrefab()
         {
@@ -54,7 +54,8 @@ namespace Dupes_Cuisine.Plants
             List<Tag> tagList = new List<Tag>();
             tagList.Add(GameTags.CropSeed);
             Tag tag = new Tag();
-            EntityTemplates.CreateAndRegisterPreviewForPlant(EntityTemplates.CreateAndRegisterSeedForPlant(placedEntity, SeedProducer.ProductionType.Harvest, "SunnyWheatSeed", "Sunny Wheat Bulb", Plant_SunnyWheatConfig.SeedDescription, Assets.GetAnim((HashedString)"seed_sunnywheat_kanim"), "object", 1, tagList, SingleEntityReceptacle.ReceptacleDirection.Top, tag, 2, Plant_SunnyWheatConfig.DomesticatedDescription, EntityTemplates.CollisionShape.CIRCLE, 0.2f, 0.2f, (Recipe.Ingredient[])null, "", false), "SunnyWheat_preview", Assets.GetAnim((HashedString)"plant_sunnywheat_kanim"), "place", 1, 1);
+            EntityTemplates.CreateAndRegisterPreviewForPlant(EntityTemplates.CreateAndRegisterSeedForPlant(placedEntity, this as IHasDlcRestrictions,
+                SeedProducer.ProductionType.Harvest, "SunnyWheatSeed", "Sunny Wheat Bulb", Plant_SunnyWheatConfig.SeedDescription, Assets.GetAnim((HashedString)"seed_sunnywheat_kanim"), "object", 1, tagList, SingleEntityReceptacle.ReceptacleDirection.Top, tag, 2, Plant_SunnyWheatConfig.DomesticatedDescription, EntityTemplates.CollisionShape.CIRCLE, 0.2f, 0.2f, (Recipe.Ingredient[])null, "", false), "SunnyWheat_preview", Assets.GetAnim((HashedString)"plant_sunnywheat_kanim"), "place", 1, 1);
             SoundEventVolumeCache.instance.AddVolume("bristleblossom_kanim", "PrickleFlower_harvest", NOISE_POLLUTION.CREATURES.TIER1);
             return placedEntity;
         }

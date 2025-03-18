@@ -14,7 +14,7 @@ namespace Dupes_Cuisine.Food
 
         public GameObject CreatePrefab()
         {
-            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("MushroomStew", Food_MushroomStew.Name, Food_MushroomStew.Description, 1f, false, Assets.GetAnim((HashedString)"food_mushroom_stew_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.7f, 0.5f, true), new EdiblesManager.FoodInfo("MushroomStew", "", 5000000f, 6, 255.15f, 277.15f, 1200f, true));
+            GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity("MushroomStew", Food_MushroomStew.Name, Food_MushroomStew.Description, 1f, false, Assets.GetAnim((HashedString)"food_mushroom_stew_kanim"), "object", Grid.SceneLayer.Front, EntityTemplates.CollisionShape.RECTANGLE, 0.7f, 0.5f, true), new EdiblesManager.FoodInfo("MushroomStew", 5000000f, 6, 255.15f, 277.15f, 1200f, true));
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[4]
             {
                 new ComplexRecipe.RecipeElement((Tag) "ColdWheatBread", 1f),
@@ -40,7 +40,7 @@ namespace Dupes_Cuisine.Food
             return food;
         }
 
-        public string[] GetDlcIds() => DlcManager.AVAILABLE_ALL_VERSIONS;
+        public string[] GetDlcIds() => null;
 
         public void OnPrefabInit(GameObject inst)
         {
