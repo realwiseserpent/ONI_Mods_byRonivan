@@ -28,7 +28,11 @@ namespace DupesCuisine.Foods
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[2]
             {
                 new ComplexRecipe.RecipeElement(Food_FlatBread.Id, 1f),
-                new ComplexRecipe.RecipeElement(CookedFishConfig.ID, 1f)
+                new ComplexRecipe.RecipeElement(new Tag[]
+                {
+                    "CookedFish",
+                    "SmokedFish"
+                }, new float[]{ 1f, 4/7f }),
             };
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
             {

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using TUNING;
 using UnityEngine;
+using static STRINGS.ITEMS.FOOD;
 
 namespace DupesCuisine.Foods
 {
@@ -15,7 +16,8 @@ namespace DupesCuisine.Foods
 
             foodInfo.AddEffects(new List<string>
             {
-                "GoodEats"
+                "GoodEats",
+                "WarmTouchFood"
             });
 
             foodInfo.AddEffects(new List<string>
@@ -34,7 +36,11 @@ namespace DupesCuisine.Foods
             {
                 new ComplexRecipe.RecipeElement(Food_FlatBread.Id, 1f),
                 new ComplexRecipe.RecipeElement("Lettuce", 4f),
-                new ComplexRecipe.RecipeElement("CookedFish", 2f),
+                new ComplexRecipe.RecipeElement(new Tag[]
+                {
+                    "CookedFish",
+                    "SmokedFish"
+                }, new float[]{ 2f, 8/7f }),
                 new ComplexRecipe.RecipeElement(SpiceNutConfig.ID, 1f),
             };
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]

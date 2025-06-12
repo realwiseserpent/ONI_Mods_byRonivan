@@ -13,7 +13,7 @@ namespace DupesCuisine.Foods
 
         public GameObject CreatePrefab()
         {
-            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_BreadedPacu.Id, 2300000f, 3, 255.15f, 277.15f, 2400f, true);
+            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_BreadedPacu.Id, 1900000f, 3, 275.15f, 303.15f, 4800f, true);
 
             foodInfo.AddEffects(new List<string>
             {
@@ -30,8 +30,13 @@ namespace DupesCuisine.Foods
 
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[2]
             {
-                new ComplexRecipe.RecipeElement(Food_MealSlurryConfig.Id, 1f),
-                new ComplexRecipe.RecipeElement(CookedFishConfig.ID, 1f)
+                new ComplexRecipe.RecipeElement(new Tag[]
+                {
+                    "FishMeat",
+                    "ShellfishMeat",
+                    "PrehistoricPacuFillet"
+                }, 1f),
+                new ComplexRecipe.RecipeElement(Food_MealSlurryConfig.Id, 1f)
             };
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
             {

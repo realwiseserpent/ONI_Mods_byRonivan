@@ -36,8 +36,12 @@ namespace DupesCuisine.Foods
         {
             ComplexRecipe.RecipeElement[] recipeElementArray3 = new ComplexRecipe.RecipeElement[2]
             {
-                new ComplexRecipe.RecipeElement("BasicPlantFood", 5f),
-                new ComplexRecipe.RecipeElement(SimHashes.Water.CreateTag(), 10f)
+                new ComplexRecipe.RecipeElement(new Tag[]
+                {
+                    "BasicPlantFood",
+                    "ButterflyPlantSeed"
+                },new float[]{ 5f, 2f }),
+                new ComplexRecipe.RecipeElement(SimHashes.Water.CreateTag(), 20f)
             };
             ComplexRecipe.RecipeElement[] recipeElementArray4 = new ComplexRecipe.RecipeElement[1]
             {

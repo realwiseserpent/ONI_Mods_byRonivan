@@ -23,7 +23,11 @@ namespace DupesCuisine.Foods
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[2]
             {
                 new ComplexRecipe.RecipeElement("RawEgg", 1f),
-                new ComplexRecipe.RecipeElement(FriedMushroomConfig.ID, 1f)
+                new ComplexRecipe.RecipeElement(new Tag[]
+                {
+                    FriedMushroomConfig.ID,
+                    "Grilled_Creamtop"
+                }, new float[]{ 1f, 14/9f })
             };
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
             {

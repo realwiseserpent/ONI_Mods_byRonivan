@@ -28,8 +28,12 @@ namespace DupesCuisine.Foods
                 foodInfo);
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[4]
             {
+                new ComplexRecipe.RecipeElement(new Tag[]
+                {
+                    "ColdWheatSeed",
+                    FernFoodConfig.ID
+                }, 1f),
                 new ComplexRecipe.RecipeElement(Food_NoshMilkConfig.Id, 2f),
-                new ComplexRecipe.RecipeElement("ColdWheatSeed", 1f),
                 new ComplexRecipe.RecipeElement("RawEgg", 1.5f),
                 new ComplexRecipe.RecipeElement(SimHashes.Sucrose.CreateTag(), 12f)
             };

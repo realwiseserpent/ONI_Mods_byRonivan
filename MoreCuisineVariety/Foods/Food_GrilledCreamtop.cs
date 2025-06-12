@@ -17,7 +17,7 @@ namespace DupesCuisine.Foods
                     Food_GrilledCreamtop.Id,
                     STRINGS.FOOD.GRILLEDCREAMTOP.NAME,
                     STRINGS.FOOD.GRILLEDCREAMTOP.DESC, 1f, false, Assets.GetAnim(("food_grilled_creamtop_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
-                new EdiblesManager.FoodInfo(Food_GrilledCreamtop.Id, 1800000f, 1, 255.15f, 277.15f, 2400f, true));
+                new EdiblesManager.FoodInfo(Food_GrilledCreamtop.Id, 1800000f, 1, 255.15f, 277.15f, 4800f, true));
 
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[1]
             {

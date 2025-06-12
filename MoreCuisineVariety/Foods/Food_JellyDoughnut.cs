@@ -18,22 +18,23 @@ namespace DupesCuisine.Foods
                     Food_JellyDoughnut.Id,
                     STRINGS.FOOD.JELLYDOUGHNUT.NAME,
                     STRINGS.FOOD.JELLYDOUGHNUT.DESC, 1f, false, Assets.GetAnim(("food_jellydoughnut_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true, 0, (SimHashes)976099455, null),
-                new EdiblesManager.FoodInfo(Food_JellyDoughnut.Id, 2940000f, 2, 255.15f, 277.15f, 4800f, true));
+                new EdiblesManager.FoodInfo(Food_JellyDoughnut.Id, 3000000f, 3, 255.15f, 277.15f, 4800f, true));
 
 
             ComplexRecipe.RecipeElement[] recipeElementArray1;
-            if (DlcManager.IsContentSubscribed(DlcManager.EXPANSION1_ID))
-                recipeElementArray1 = new ComplexRecipe.RecipeElement[]
-                {
-                    new ComplexRecipe.RecipeElement(Food_MealSlurryConfig.Id, 1f),
-                    new ComplexRecipe.RecipeElement(SwampDelightsConfig.ID, 1f)
-                };
-            else
-                recipeElementArray1 = new ComplexRecipe.RecipeElement[]
-                {
-                    new ComplexRecipe.RecipeElement(Food_MealSlurryConfig.Id, 2f),
-                    new ComplexRecipe.RecipeElement(GrilledPrickleFruitConfig.ID, 1f)
-                };
+
+            recipeElementArray1 = new ComplexRecipe.RecipeElement[]
+            {
+                new ComplexRecipe.RecipeElement(new Tag[]
+                { 
+                    SwampDelightsConfig.ID,
+                    GrilledPrickleFruitConfig.ID,
+                    "CookedPikeapple",
+                    VineFruitConfig.ID
+                }, new float[]{ 1f, 1.15f, 23/12f, 2300/325f }),
+                new ComplexRecipe.RecipeElement(Food_MealSlurryConfig.Id, 1f),
+            };
+
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
             {
                 new ComplexRecipe.RecipeElement(Id, 1f, (ComplexRecipe.RecipeElement.TemperatureOperation) 1, false)

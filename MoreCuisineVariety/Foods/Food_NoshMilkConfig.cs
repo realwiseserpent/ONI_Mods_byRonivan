@@ -2,6 +2,7 @@
 using UnityEngine;
 using TUNING;
 using DupesCuisine.Buildings;
+using DupesCuisine.Plants;
 
 namespace DupesCuisine.Foods
 {
@@ -36,7 +37,11 @@ namespace DupesCuisine.Foods
         {
             ComplexRecipe.RecipeElement[] ingredients = new ComplexRecipe.RecipeElement[]
             {
-                new ComplexRecipe.RecipeElement("BeanPlantSeed", 7f),
+                new ComplexRecipe.RecipeElement(new Tag[]
+                {
+                    "BeanPlantSeed",
+                    Plant_SunnyWheatConfig.SeedId
+                },new float[]{ 7f, 18f }),
                 new ComplexRecipe.RecipeElement(SimHashes.Water.CreateTag(), 12f),
             };
             ComplexRecipe.RecipeElement[] results = new ComplexRecipe.RecipeElement[]

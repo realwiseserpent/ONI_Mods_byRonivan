@@ -22,7 +22,7 @@ namespace DupesCuisine.Foods
 
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[1]
             {
-                new ComplexRecipe.RecipeElement(Crop_KakawaAcorn.Id, 4f)
+                new ComplexRecipe.RecipeElement(Crop_KakawaAcorn.Id, 3f)
             };
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[]
             {

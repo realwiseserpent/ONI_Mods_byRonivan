@@ -43,7 +43,7 @@ namespace DupesCuisine.Foods
                 sortOrder = 3
             };
 
-            ComplexRecipeManager.Get().GetRecipe(this.Recipe.id).FabricationVisualizer = MushBarConfig.CreateFabricationVisualizer(food);
+            Recipe.SetFabricationAnim("food_kakawa_bar_kanim");
 
             return food;
         }

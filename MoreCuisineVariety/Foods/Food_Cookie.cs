@@ -26,7 +26,11 @@ namespace DupesCuisine.Foods
                 foodInfo);
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[3]
             {
-                new ComplexRecipe.RecipeElement("ColdWheatSeed", 4f),
+                new ComplexRecipe.RecipeElement(new Tag[]
+                {
+                    "ColdWheatSeed",
+                    FernFoodConfig.ID
+                }, 4f),
                 new ComplexRecipe.RecipeElement(Food_RoastedKakawa.Id, 4f),
                 new ComplexRecipe.RecipeElement(Food_KakawaButter.Id, 1f)
             };

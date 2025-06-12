@@ -15,7 +15,8 @@ namespace DupesCuisine.Foods
             EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_MushroomStew.Id, 6000000f, 6, 255.15f, 277.15f, 2400f, true);
             foodInfo.AddEffects(new List<string>
             {
-                "GoodEats"
+                "GoodEats",
+                "WarmTouchFood"
             });
 
             GameObject food = EntityTemplates.ExtendEntityToFood(

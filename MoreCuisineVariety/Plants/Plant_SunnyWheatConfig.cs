@@ -81,7 +81,11 @@ namespace DupesCuisine.Plants
 
             ComplexRecipe.RecipeElement[] inputs = new ComplexRecipe.RecipeElement[]
             {
-                new ComplexRecipe.RecipeElement("ColdWheatSeed", 1f),
+                new ComplexRecipe.RecipeElement(new Tag[]
+                {
+                    "ColdWheatSeed",
+                    FernFoodConfig.ID
+                }, 1f),
                 new ComplexRecipe.RecipeElement(SimHashes.Carbon.CreateTag(), 25f)
             };
             ComplexRecipe.RecipeElement[] outputs = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement(SeedId, 1f) };

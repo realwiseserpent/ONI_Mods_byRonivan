@@ -24,6 +24,7 @@ namespace DupesCuisine
             biomes = new HashSet<string>()
                 {
                     BIOMES_STRINGS.FOREST,
+                    BIOMES_STRINGS.GARDEN,
                     BAATOR_BIOME_STRINGS.MINAUROS,
                     BAATOR_BIOME_STRINGS.SHADOWFEL,
                     EARTH_BIOME_STRINGS.ASTHENOSPHERE,
@@ -104,6 +105,10 @@ namespace DupesCuisine
             public static string RADIOACTIVE = (PREFIX + "Radioactive");
             public static string SWAMP = (PREFIX + "Swamp");
             public static string WASTELAND = (PREFIX + "Wasteland");
+            public static string GARDEN = (PREFIX + "Garden");
+            public static string RAPTOR = (PREFIX + "Raptor");
+            public static string WETLANDS = (PREFIX + "Wetlands");
+            
         }
         public class EARTH_BIOME_STRINGS //Earth mod
         {

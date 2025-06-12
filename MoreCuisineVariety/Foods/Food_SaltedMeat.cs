@@ -22,7 +22,11 @@ namespace DupesCuisine.Foods
 
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[2]
             {
-                new ComplexRecipe.RecipeElement("Meat", 1f),
+                new ComplexRecipe.RecipeElement(new Tag[]
+                {
+                    "Meat",
+                    "DinosaurMeat"
+                }, 1f),
                 new ComplexRecipe.RecipeElement(SimHashes.Salt.CreateTag(), 10f)
             };
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
@@ -34,7 +38,7 @@ namespace DupesCuisine.Foods
                 time = FOOD.RECIPES.STANDARD_COOK_TIME,
                 description = STRINGS.FOOD.SALTEDMEAT.RECIPEDESC,
                 nameDisplay = (ComplexRecipe.RecipeNameDisplay)1,
-                fabricators = new List<Tag>() { CookingStationConfig.ID },
+                fabricators = new List<Tag>() { CookingStationConfig.ID },  
                 sortOrder = 26
             };
             return food;
