@@ -27,10 +27,10 @@ namespace DupesCuisine.Foods
 
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[]
             {
-                new ComplexRecipe.RecipeElement(Crop_SunnyWheatGrain.Id, 4f),
-                new ComplexRecipe.RecipeElement("ColdWheatBread", 1f),
-                new ComplexRecipe.RecipeElement(Food_GrilledCreamtop.Id, 2f),
-                new ComplexRecipe.RecipeElement(SpiceNutConfig.ID, 1f)
+                new ComplexRecipe.RecipeElement(Food_MealBread.Id, 1f),
+                //new ComplexRecipe.RecipeElement("ColdWheatBread", 1f), // enable both breads?
+                new ComplexRecipe.RecipeElement(Food_GrilledCreamtop.Id, 2f),//16/9f),
+                new ComplexRecipe.RecipeElement(SpiceNutConfig.ID, 2f)
             };
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
             {

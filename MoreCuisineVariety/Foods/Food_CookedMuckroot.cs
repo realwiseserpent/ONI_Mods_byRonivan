@@ -14,9 +14,9 @@ namespace DupesCuisine.Foods
         public GameObject CreatePrefab()
         {
             GameObject food = EntityTemplates.ExtendEntityToFood(EntityTemplates.CreateLooseEntity(
-                Food_CookedMuckroot.Id, 
+                Food_CookedMuckroot.Id,
                 STRINGS.FOOD.COOKEDMUCKROOT.NAME,
-                STRINGS.FOOD.COOKEDMUCKROOT.DESC, 1f, false, Assets.GetAnim(("food_cooked_muckroot_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true), 
+                STRINGS.FOOD.COOKEDMUCKROOT.DESC, 1f, false, Assets.GetAnim(("food_cooked_muckroot_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
                 new EdiblesManager.FoodInfo(Food_CookedMuckroot.Id, 1050000f, 0, 275.15f, 303.15f, 4800f, true));
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[1]
             {

@@ -17,7 +17,6 @@ namespace DupesCuisine.Foods
             foodInfo.AddEffects(new List<string>
             {
                 "GoodEats",
-                "WarmTouchFood"
             });
 
             foodInfo.AddEffects(new List<string>
@@ -31,7 +30,7 @@ namespace DupesCuisine.Foods
                     STRINGS.FOOD.SEATACO.NAME,
                     STRINGS.FOOD.SEATACO.DESC, 1f, false, Assets.GetAnim(("food_sea_taco_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
                 foodInfo);
-            
+
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[]
             {
                 new ComplexRecipe.RecipeElement(Food_FlatBread.Id, 1f),
@@ -41,7 +40,6 @@ namespace DupesCuisine.Foods
                     "CookedFish",
                     "SmokedFish"
                 }, new float[]{ 2f, 8/7f }),
-                new ComplexRecipe.RecipeElement(SpiceNutConfig.ID, 1f),
             };
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
             {

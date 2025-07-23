@@ -2,7 +2,7 @@
 using ITEMS = STRINGS.ITEMS;
 using System.Collections.Generic;
 using TUNING;
-using UnityEngine; 
+using UnityEngine;
 
 namespace DupesCuisine.Buildings
 {
@@ -34,7 +34,7 @@ namespace DupesCuisine.Buildings
         public override BuildingDef CreateBuildingDef()
         {
             EffectorValues none = NOISE_POLLUTION.NONE;
-            BuildingDef buildingDef = BuildingTemplates.CreateBuildingDef(ID, 2, 3, "food_grinder_kanim", 100, 10f, TUNING.BUILDINGS.CONSTRUCTION_MASS_KG.TIER4, MATERIALS.RAW_MINERALS, 1600f, (BuildLocationRule)1, TUNING.BUILDINGS.DECOR.NONE, none, 0.2f);
+            BuildingDef buildingDef = BuildingTemplates.CreateBuildingDef(ID, 2, 3, "food_grinder_kanim", 100, 30f, TUNING.BUILDINGS.CONSTRUCTION_MASS_KG.TIER4, MATERIALS.RAW_MINERALS, 1600f, (BuildLocationRule)1, TUNING.BUILDINGS.DECOR.NONE, none, 0.2f);
             BuildingTemplates.CreateElectricalBuildingDef(buildingDef);
             buildingDef.Floodable = false;
             buildingDef.Entombable = true;
@@ -57,17 +57,21 @@ namespace DupesCuisine.Buildings
             {
                 ComplexRecipe.RecipeElement[] inputs = new ComplexRecipe.RecipeElement[]
                 {
-                    new ComplexRecipe.RecipeElement(PrickleFruitConfig.ID, 1f),
+                    new ComplexRecipe.RecipeElement(new Tag[]
+                    {
+                        PrickleFruitConfig.ID,
+                        VineFruitConfig.ID
+                    }, new float[]{ 1f, 64/13f }),
                     new ComplexRecipe.RecipeElement(SimHashes.Water.CreateTag(), 10)
                 };
                 ComplexRecipe.RecipeElement[] outputs = new ComplexRecipe.RecipeElement[]
                 {
-                    new ComplexRecipe.RecipeElement(SimHashes.Sucrose.CreateTag(), 10f)
+                    new ComplexRecipe.RecipeElement(SimHashes.Sucrose.CreateTag(), 30f)
                 };
 
                 ComplexRecipe recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(ManualJuicerConfig.ID, inputs, outputs), inputs, outputs, 0)
                 {
-                    time = TUNING.FOOD.RECIPES.SMALL_COOK_TIME,
+                    time = TUNING.FOOD.RECIPES.STANDARD_COOK_TIME,
                     description = STRINGS.CROPS.RECIPEDESC,
                     nameDisplay = ComplexRecipe.RecipeNameDisplay.Result,
                     fabricators = new List<Tag> { ManualJuicerConfig.ID },

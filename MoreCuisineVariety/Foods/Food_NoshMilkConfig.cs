@@ -9,7 +9,8 @@ namespace DupesCuisine.Foods
     public class Food_NoshMilkConfig : IEntityConfig
     {
         public const string Id = "NoshMilk";
-        public static ComplexRecipe recipe;
+        public static ComplexRecipe originalRecipe;
+        public static ComplexRecipe extendedRecipe;
 
         public string[] GetDlcIds() => null;
 
@@ -21,7 +22,7 @@ namespace DupesCuisine.Foods
                 EntityTemplates.CreateLooseEntity(
                     Food_NoshMilkConfig.Id,
                     STRINGS.FOOD.NOSHMILK.NAME,
-                    STRINGS.FOOD.NOSHMILK.DESC, 1f, true, Assets.GetAnim(("nosh_milk_kanim")), "object", (Grid.SceneLayer)26, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true),
+                    STRINGS.FOOD.NOSHMILK.DESC, 1f, false, Assets.GetAnim(("nosh_milk_kanim")), "object", (Grid.SceneLayer)26, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true),
                 new EdiblesManager.FoodInfo(Food_NoshMilkConfig.Id, 0.0f, 0, 255.15f, 277.15f, 4800f, true));
         }
 
@@ -35,28 +36,53 @@ namespace DupesCuisine.Foods
 
         private void ConfigureRecipes()
         {
-            ComplexRecipe.RecipeElement[] ingredients = new ComplexRecipe.RecipeElement[]
+            ComplexRecipe.RecipeElement[] originalRecipeIngredients = new ComplexRecipe.RecipeElement[]
             {
                 new ComplexRecipe.RecipeElement(new Tag[]
                 {
                     "BeanPlantSeed",
                     Plant_SunnyWheatConfig.SeedId
-                },new float[]{ 7f, 18f }),
-                new ComplexRecipe.RecipeElement(SimHashes.Water.CreateTag(), 12f),
+                }, new float[]{ 4f, 8f }),
+                new ComplexRecipe.RecipeElement(SimHashes.Water.CreateTag(), 15f),
             };
-            ComplexRecipe.RecipeElement[] results = new ComplexRecipe.RecipeElement[]
+            ComplexRecipe.RecipeElement[] originalRecipeResults = new ComplexRecipe.RecipeElement[]
             {
-                new ComplexRecipe.RecipeElement(Food_NoshMilkConfig.Id, 6f, 0, false),
+                new ComplexRecipe.RecipeElement(Food_NoshMilkConfig.Id, 3f, 0, false),
             };
 
-            recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(ManualJuicerConfig.ID, ingredients, results), ingredients, results, 0)
+            originalRecipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(ManualJuicerConfig.ID, originalRecipeIngredients, originalRecipeResults), originalRecipeIngredients, originalRecipeResults, 0)
             {
-                time = 100f,
+                time = 50f,
                 description = STRINGS.FOOD.NOSHMILK.RECIPEDESC,
                 nameDisplay = ComplexRecipe.RecipeNameDisplay.Result,
-                fabricators = new List<Tag>{ ManualJuicerConfig.ID },
+                fabricators = new List<Tag> { ManualJuicerConfig.ID },
                 sortOrder = 1
             };
+            //-------------
+
+            ComplexRecipe.RecipeElement[] extendedRecipeIngredients = new ComplexRecipe.RecipeElement[]
+            {
+                new ComplexRecipe.RecipeElement(new Tag[]
+                {
+                    SimHashes.Sand.CreateTag(),
+                    SimHashes.Regolith.CreateTag(),
+                }, 6f),
+                new ComplexRecipe.RecipeElement(SimHashes.Milk.CreateTag(), 30f),
+            };
+            ComplexRecipe.RecipeElement[] extendedRecipeResults = new ComplexRecipe.RecipeElement[]
+            {
+                new ComplexRecipe.RecipeElement(Food_NoshMilkConfig.Id, 3f, 0, false),
+            };
+
+            if (false)
+                extendedRecipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(ManualJuicerConfig.ID, extendedRecipeIngredients, extendedRecipeResults), extendedRecipeIngredients, extendedRecipeResults, 0)
+                {
+                    time = 50f,
+                    description = STRINGS.FOOD.NOSHMILK.RECIPEDESC,
+                    nameDisplay = ComplexRecipe.RecipeNameDisplay.Result,
+                    fabricators = new List<Tag> { ManualJuicerConfig.ID },
+                    sortOrder = 1
+                };
         }
     }
 }

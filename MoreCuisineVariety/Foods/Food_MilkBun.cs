@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using TUNING;
 using UnityEngine;
-using DupesCuisine.Crops;
 
 namespace DupesCuisine.Foods
 {
@@ -19,6 +18,7 @@ namespace DupesCuisine.Foods
             {
                 Effects.SugarRushId
             });
+
             GameObject food = EntityTemplates.ExtendEntityToFood(
                 EntityTemplates.CreateLooseEntity(
                     Food_MilkBun.Id,
@@ -29,14 +29,14 @@ namespace DupesCuisine.Foods
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[]
             {
                 new ComplexRecipe.RecipeElement(Food_MealSlurryConfig.Id, 2f),
-                new ComplexRecipe.RecipeElement(Food_NoshMilkConfig.Id, 2f),
+                new ComplexRecipe.RecipeElement(Food_NoshMilkConfig.Id, 1f),
                 new ComplexRecipe.RecipeElement(SimHashes.Sucrose.CreateTag(), 4f)
             };
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
             {
                 new ComplexRecipe.RecipeElement(Id, 1f, (ComplexRecipe.RecipeElement.TemperatureOperation) 1, false)
             };
-            Food_BreadedPacu.Recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(CookingStationConfig.ID, recipeElementArray1, recipeElementArray2), recipeElementArray1, recipeElementArray2)
+            Food_MilkBun.Recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(CookingStationConfig.ID, recipeElementArray1, recipeElementArray2), recipeElementArray1, recipeElementArray2)
             {
                 time = FOOD.RECIPES.STANDARD_COOK_TIME,
                 description = STRINGS.FOOD.MILKBUN.RECIPEDESC,

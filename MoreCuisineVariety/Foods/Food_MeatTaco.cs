@@ -14,7 +14,8 @@ namespace DupesCuisine.Foods
             EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_MeatTaco.Id, 6000000f, 6, 255.15f, 277.15f, 2400f, true);
             foodInfo.AddEffects(new List<string>
             {
-                "GoodEats"
+                "GoodEats",
+                "WarmTouchFood"
             });
 
             GameObject food = EntityTemplates.ExtendEntityToFood(
@@ -23,7 +24,8 @@ namespace DupesCuisine.Foods
                     STRINGS.FOOD.MEATTACO.NAME,
                     STRINGS.FOOD.MEATTACO.DESC, 1f, false, Assets.GetAnim(("food_meat_taco_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
                 foodInfo);
-            ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[3]
+
+            ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[]
             {
                 new ComplexRecipe.RecipeElement(Food_FlatBread.Id, 1f),
                 new ComplexRecipe.RecipeElement(new Tag[]
@@ -31,7 +33,8 @@ namespace DupesCuisine.Foods
                     CookedMeatConfig.ID,
                     (Tag)"SmokedDinosaurMeat"
                 },new float[]{ 0.5f, 2/5f }),
-                new ComplexRecipe.RecipeElement("CookedEgg", 1f)
+                new ComplexRecipe.RecipeElement("CookedEgg", 1f),
+                new ComplexRecipe.RecipeElement(SpiceNutConfig.ID, 1f),
             };
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
             {

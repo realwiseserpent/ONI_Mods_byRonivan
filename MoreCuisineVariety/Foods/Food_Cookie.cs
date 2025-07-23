@@ -24,6 +24,7 @@ namespace DupesCuisine.Foods
                     STRINGS.FOOD.COOKIE.NAME,
                     STRINGS.FOOD.COOKIE.DESC, 1f, false, Assets.GetAnim(("food_cookie_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.7f, 0.5f, true),
                 foodInfo);
+
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[3]
             {
                 new ComplexRecipe.RecipeElement(new Tag[]

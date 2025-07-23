@@ -13,10 +13,9 @@ namespace DupesCuisine.Foods
 
         public GameObject CreatePrefab()
         {
-            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_NoshPudding.Id, 6000000f, 6, 255.15f, 277.15f, 2400f, true);
+            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_NoshPudding.Id, 4000000f, 5, 255.15f, 277.15f, 2400f, true);
             foodInfo.AddEffects(new List<string>
             {
-                "GoodEats",
                 Effects.SugarRushId
             });
 
@@ -26,6 +25,7 @@ namespace DupesCuisine.Foods
                     STRINGS.FOOD.NOSHPUDDING.NAME,
                     STRINGS.FOOD.NOSHPUDDING.DESC, 1f, false, Assets.GetAnim(("food_noshpudding_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
                 foodInfo);
+
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[4]
             {
                 new ComplexRecipe.RecipeElement(new Tag[]
@@ -33,9 +33,9 @@ namespace DupesCuisine.Foods
                     "ColdWheatSeed",
                     FernFoodConfig.ID
                 }, 1f),
-                new ComplexRecipe.RecipeElement(Food_NoshMilkConfig.Id, 2f),
-                new ComplexRecipe.RecipeElement("RawEgg", 1.5f),
-                new ComplexRecipe.RecipeElement(SimHashes.Sucrose.CreateTag(), 12f)
+                new ComplexRecipe.RecipeElement(Food_NoshMilkConfig.Id, 1f),
+                new ComplexRecipe.RecipeElement("RawEgg", 1f),
+                new ComplexRecipe.RecipeElement(SimHashes.Sucrose.CreateTag(), 8f)
             };
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
             {

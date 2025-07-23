@@ -7,8 +7,8 @@ namespace DupesCuisine.Foods
     public class Food_GrilledPlantMeat : IEntityConfig
     {
         public const string Id = "GrilledPlantMeat";
-        public static ComplexRecipe OriginalRecipe;
-        public static ComplexRecipe ExtendedRecipe;
+        public static ComplexRecipe originalRecipe;
+        public static ComplexRecipe extendedRecipe;
 
         public string[] GetDlcIds() => null;
 
@@ -33,10 +33,10 @@ namespace DupesCuisine.Foods
             };
 
             ComplexRecipe.RecipeElement[] originalRecipeElementArray2 = new ComplexRecipe.RecipeElement[1]
-{
+            {
                 new ComplexRecipe.RecipeElement(Id, 1f, (ComplexRecipe.RecipeElement.TemperatureOperation) 1, false)
-};
-            Food_GrilledPlantMeat.OriginalRecipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(CookingStationConfig.ID, originalRecipeElementArray, originalRecipeElementArray2), originalRecipeElementArray, originalRecipeElementArray2, DlcManager.EXPANSION1)
+            };
+            Food_GrilledPlantMeat.originalRecipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(CookingStationConfig.ID, originalRecipeElementArray, originalRecipeElementArray2), originalRecipeElementArray, originalRecipeElementArray2, DlcManager.EXPANSION1)
             {
                 time = FOOD.RECIPES.STANDARD_COOK_TIME,
                 description = STRINGS.FOOD.GRILLEDPLANTMEAT.RECIPEDESC,
@@ -46,7 +46,6 @@ namespace DupesCuisine.Foods
             };
             //-------------------------------------------------
 
-
             extendedRecipeElementArray = new ComplexRecipe.RecipeElement[]
                 {
                     new ComplexRecipe.RecipeElement(new Tag[]
@@ -54,14 +53,14 @@ namespace DupesCuisine.Foods
                         "BasicPlantFood",
                         "ButterflyPlantSeed"
                     },new float[] { 2.5f, 1f}),
-                    new ComplexRecipe.RecipeElement(SpiceNutConfig.ID, 0.5f),
+                    new ComplexRecipe.RecipeElement(SpiceNutConfig.ID, 1f),
                 };
 
             ComplexRecipe.RecipeElement[] extendedRecipeElementArray2 = new ComplexRecipe.RecipeElement[1]
             {
                 new ComplexRecipe.RecipeElement(Id, 1f, (ComplexRecipe.RecipeElement.TemperatureOperation) 1, false)
             };
-            Food_GrilledPlantMeat.ExtendedRecipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(CookingStationConfig.ID, extendedRecipeElementArray, extendedRecipeElementArray2), extendedRecipeElementArray, extendedRecipeElementArray2)
+            Food_GrilledPlantMeat.extendedRecipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(CookingStationConfig.ID, extendedRecipeElementArray, extendedRecipeElementArray2), extendedRecipeElementArray, extendedRecipeElementArray2)
             {
                 time = FOOD.RECIPES.STANDARD_COOK_TIME,
                 description = STRINGS.FOOD.GRILLEDPLANTMEAT.RECIPEDESC,

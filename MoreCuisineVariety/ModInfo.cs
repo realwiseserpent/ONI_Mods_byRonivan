@@ -9,6 +9,7 @@ namespace DupesCuisine
 {
     class ModInfo : KMod.UserMod2
     {
+        public static bool IsFragrantFlowersEnabled { get; private set; }
         public static string Namespace { get; private set; }
 
         public override void OnLoad(Harmony harmony)
@@ -37,6 +38,26 @@ namespace DupesCuisine
                     { Plant_CreamcapMushroomConfig.SeedId, CuisinePlantsTuning.CreamcapSeedTuning },
                     { Crop_SunnyWheatGrain.Id, CuisinePlantsTuning.SunnyWheatSeedTuning },
                 };
+        }
+
+        public override void OnAllModsLoaded(Harmony harmony, IReadOnlyList<Mod> mods)
+        {
+            base.OnAllModsLoaded(harmony, mods);
+            //CheckForRelatedMods(mods);
+        }
+
+        private void CheckForRelatedMods(IReadOnlyList<Mod> mods)
+        {
+            //if (Settings.Instance.AutoDetectRelatedMods)
+            {
+                foreach (Mod mod in mods)
+                    if (mod.staticID == "pether-pg.FragrantFlowers")
+                    {
+                        IsFragrantFlowersEnabled = mod.IsActive();
+                        string activeString = mod.IsActive() ? "Active" : "NOT Active";
+                        Debug.Log($"{Namespace}: Mod Id = \"{mod.staticID}\", Title = \"{mod.title}\", detected to be {activeString}.");
+                    }
+            }
         }
     }
 }

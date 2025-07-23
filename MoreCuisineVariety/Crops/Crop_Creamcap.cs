@@ -5,7 +5,7 @@ namespace DupesCuisine.Crops
     public class Crop_Creamcap : IEntityConfig
     {
         public const string Id = "Creamtop_Cap";
-        public const float CaloriesPerUnit = 1400000f;
+        public const float CaloriesPerUnit = 1200000f;
         public const int FoodQuality = -1;
         public const float PreserveTemperature = 255.15f;
         public const float RotTemperature = 277.15f;

@@ -18,12 +18,12 @@ namespace DupesCuisine.Foods
                     Food_MealBread.Id,
                     STRINGS.FOOD.MEALBREAD.NAME,
                     STRINGS.FOOD.MEALBREAD.DESC, 1f, false, Assets.GetAnim(("food_mealbread_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
-                new EdiblesManager.FoodInfo(Food_MealBread.Id, 2400000f, 3, 275.15f, 298.15f, 7200f, true));
-            ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[3]
+                new EdiblesManager.FoodInfo(Food_MealBread.Id, 2400000f, 2, 255.15f, 277.15f, 7200f, true));
+
+            ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[]
             {
-                new ComplexRecipe.RecipeElement(Food_MealSlurryConfig.Id, 1f),
-                new ComplexRecipe.RecipeElement(Food_NoshMilkConfig.Id, 1f),
-                new ComplexRecipe.RecipeElement("RawEgg", 0.5f)
+                new ComplexRecipe.RecipeElement("RawEgg", 3/4f),
+                new ComplexRecipe.RecipeElement(Food_MealSlurryConfig.Id, 0.5f)
             };
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
             {

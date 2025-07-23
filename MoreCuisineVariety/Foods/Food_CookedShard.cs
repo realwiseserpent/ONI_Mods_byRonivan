@@ -15,9 +15,9 @@ namespace DupesCuisine.Foods
         {
             GameObject food = EntityTemplates.ExtendEntityToFood(
                 EntityTemplates.CreateLooseEntity(
-                    Food_CookedShard.Id, 
+                    Food_CookedShard.Id,
                     STRINGS.FOOD.COOKEDSHARD.NAME,
-                    STRINGS.FOOD.COOKEDSHARD.DESC, 1f, false, Assets.GetAnim(("food_cooked_shard_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true), 
+                    STRINGS.FOOD.COOKEDSHARD.DESC, 1f, false, Assets.GetAnim(("food_cooked_shard_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
                 new EdiblesManager.FoodInfo(Food_CookedShard.Id, 1050000f, 0, 275.15f, 303.15f, 4800f, true, DlcManager.EXPANSION1));
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[1]
             {

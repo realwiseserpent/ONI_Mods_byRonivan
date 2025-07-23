@@ -252,7 +252,7 @@ namespace DupesCuisine
         {
             public class CHOCOLATETASTE
             {
-                public static LocString NAME = (LocString)"Chocolate taste";
+                public static LocString NAME = (LocString)"Chocolate Insight";
                 public static LocString TOOLTIP = (LocString)"This duplicant just ate some chocolate";
                 public static LocString CAUSE = (LocString)"Obtained by eating a kakawa meal";
                 public static LocString DESCRIPTION = (LocString)"Duplicants find this kakawa meal tasty";
@@ -260,43 +260,26 @@ namespace DupesCuisine
 
             public class SUGARRUSH
             {
-                public static LocString NAME = (LocString)"Sugar rush";
+                public static LocString NAME = (LocString)"Sugar Rush";
                 public static LocString TOOLTIP = (LocString)"This duplicant just ate some sucrose";
                 public static LocString CAUSE = (LocString)"Obtained by eating a sucrose meal";
                 public static LocString DESCRIPTION = (LocString)"Duplicants find this sucrose meal energizing";
             }
-        }
 
-        //public class CODEX
-        //{
-        //    public class CREAMCAPMUSHROOM
-        //    {
-        //        public class BODY
-        //        {
-        //            public static LocString CONTAINER1 = PLANTS.CREAMCAPMUSHROOM.DESC;
-        //        }
-        //    }
-        //    public class KAKAWATREE
-        //    {
-        //        public class BODY
-        //        {
-        //            public static LocString CONTAINER1 = PLANTS.KAKAWATREE.DESC;
-        //        }
-        //    }
-        //    public class SUNNYWHEAT
-        //    {
-        //        public class BODY
-        //        {
-        //            public static LocString CONTAINER1 = PLANTS.SUNNYWHEAT.DESC;
-        //        }
-        //    }
-        //}
+            //public class WRAPWARMTH
+            //{
+            //    public static LocString NAME = (LocString)"Sugar Rush";
+            //    public static LocString TOOLTIP = (LocString)"This duplicant just ate some sucrose";
+            //    public static LocString CAUSE = (LocString)"Obtained by eating a sucrose meal";
+            //    public static LocString DESCRIPTION = (LocString)"Duplicants find this sucrose meal energizing";
+            //}
+        }
 
         public class TRANSLATION
         {
             public class AUTHOR
             {
-                public static LocString NAME = "Ronivan";
+                public static LocString NAME = "Ronivan Fontanez";
             }
         }
     }

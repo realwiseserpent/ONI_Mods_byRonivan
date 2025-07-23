@@ -13,7 +13,7 @@ namespace DupesCuisine.Foods
 
         public GameObject CreatePrefab()
         {
-            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_Nutpie.Id, 6000000f, 5, 255.15f, 277.15f, 9600f, true);
+            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_Nutpie.Id, 6000000f, 5, 255.15f, 277.15f, 7200f, true);
             foodInfo.AddEffects(new List<string>
             {
                 Effects.SugarRushId
@@ -27,30 +27,36 @@ namespace DupesCuisine.Foods
                 foodInfo);
 
             ComplexRecipe.RecipeElement[] recipeElementArray1;
-            //if (DlcManager.IsContentSubscribed(DlcManager.EXPANSION1_ID))
-                recipeElementArray1 = new ComplexRecipe.RecipeElement[4]
+
+            List<Tag> fruits = new List<Tag>()
+            {
+                "WormBasicFood",
+                VineFruitConfig.ID,
+            };
+
+            List<float> fruitAmount = new List<float>() { 2f, 96 / 13f };
+
+            if (!DlcManager.IsContentSubscribed(DlcManager.EXPANSION1_ID))
+            {
+                fruits.Add(GrilledPrickleFruitConfig.ID);
+                fruits.Add("CookedPikeapple");
+
+                fruitAmount.Add(6 / 5f);
+                fruitAmount.Add(2f);
+            }
+
+            recipeElementArray1 = new ComplexRecipe.RecipeElement[]
+            {
+                new ComplexRecipe.RecipeElement(new Tag[]
                 {
-                    new ComplexRecipe.RecipeElement(new Tag[]
-                    {
-                        "WormBasicFood",
-                        GrilledPrickleFruitConfig.ID
-                    }, new float[]{ 2f, 6/5f }),
-                    new ComplexRecipe.RecipeElement(new Tag[]
-                    {
-                        "ColdWheatSeed",
-                        FernFoodConfig.ID
-                    }, 2f),
-                    new ComplexRecipe.RecipeElement("RawEgg", 1f),
-                    new ComplexRecipe.RecipeElement(SimHashes.Sucrose.CreateTag(), 12f)
-                };
-            //else
-            //    recipeElementArray1 = new ComplexRecipe.RecipeElement[4]
-            //    {
-            //        new ComplexRecipe.RecipeElement(GrilledPrickleFruitConfig.ID, ),
-            //        new ComplexRecipe.RecipeElement("ColdWheatSeed", 2f),
-            //        new ComplexRecipe.RecipeElement("RawEgg", 1f),
-            //        new ComplexRecipe.RecipeElement(SimHashes.Sucrose.CreateTag(), 12f)
-            //    };
+                    "ColdWheatSeed",
+                    FernFoodConfig.ID
+                }, 2f),
+                new ComplexRecipe.RecipeElement(fruits.ToArray(), fruitAmount.ToArray()),
+                new ComplexRecipe.RecipeElement("RawEgg", 1f),
+                new ComplexRecipe.RecipeElement(SimHashes.Sucrose.CreateTag(), 12f)
+            };
+
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
             {
                 new ComplexRecipe.RecipeElement(Id, 1f, (ComplexRecipe.RecipeElement.TemperatureOperation) 1, false)

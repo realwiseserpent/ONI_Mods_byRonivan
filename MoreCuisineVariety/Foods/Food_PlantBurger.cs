@@ -31,7 +31,7 @@ namespace DupesCuisine.Foods
                     STRINGS.FOOD.PLANTBURGER.NAME,
                     STRINGS.FOOD.PLANTBURGER.DESC, 1f, false, Assets.GetAnim(("food_plantburger_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
                 foodInfo);
-            
+
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[]
             {
                 new ComplexRecipe.RecipeElement(Food_MealBread.Id, 1f),

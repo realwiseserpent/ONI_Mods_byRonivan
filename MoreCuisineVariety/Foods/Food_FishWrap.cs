@@ -13,10 +13,15 @@ namespace DupesCuisine.Foods
         {
             EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_FishWrap.Id, 2800000f, 3, 255.15f, 277.15f, 2400f, true);
 
+            //foodInfo.AddEffects(new List<string>
+            //{
+            //    Effects.WrapWarmthId
+            //});
+
             foodInfo.AddEffects(new List<string>
             {
                 "SeafoodRadiationResistance"
-            }, 
+            },
             DlcManager.EXPANSION1);
 
             GameObject food = EntityTemplates.ExtendEntityToFood(
@@ -25,6 +30,7 @@ namespace DupesCuisine.Foods
                     STRINGS.FOOD.FISHWRAP.NAME,
                     STRINGS.FOOD.FISHWRAP.DESC, 1f, false, Assets.GetAnim(("food_fish_wrap_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
                 foodInfo);
+
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[2]
             {
                 new ComplexRecipe.RecipeElement(Food_FlatBread.Id, 1f),

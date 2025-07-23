@@ -11,7 +11,7 @@ namespace DupesCuisine.Foods
 
         public GameObject CreatePrefab()
         {
-            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_KakawaBar.Id, 3000000f, 2, 275.15f, 298.15f, 4800f, true);
+            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_KakawaBar.Id, 3000000f, 3, 255.15f, 277.15f, 4800f, true);
 
             foodInfo.AddEffects(new List<string>
             {

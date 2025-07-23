@@ -14,9 +14,9 @@ namespace DupesCuisine.Plants
         public const float TemperatureWarningLow = 283.15f;
         public const float TemperatureWarningHigh = 309.15f;
         public const float TemperatureLethalHigh = 313.15f;
-        public const float GROW_TIME = 3600f;
+        public const float GROW_TIME = 2700f;
         public const byte CROP_NUM = 1;
-        public const float Irrigation = 20 / 600f;             //   Irrigation Needed
+        public const float Irrigation = 15 / 600f;             //   Irrigation Needed
         public const float Fertilization = 3 / 600f;         //   Fertilization Needed
         public static CuisinePlantsTuning.CropsTuning tuning = CuisinePlantsTuning.CreamcapTuning;
 
@@ -29,8 +29,9 @@ namespace DupesCuisine.Plants
                 Plant_CreamcapMushroomConfig.Id,
                 STRINGS.PLANTS.CREAMCAPMUSHROOM.NAME,
                 STRINGS.PLANTS.CREAMCAPMUSHROOM.DESC, 1f, Assets.GetAnim(("plant_creamcap_kanim")), "idle_empty", (Grid.SceneLayer)21, 1, 2, DECOR.BONUS.TIER1, effectorValues, (SimHashes)976099455, null, 298.15f);
-            SimHashes[] simHashesArray = new SimHashes[2]
+            SimHashes[] simHashesArray = new SimHashes[]
             {
+                SimHashes.Oxygen,
                 SimHashes.ContaminatedOxygen,
                 SimHashes.CarbonDioxide
             };
@@ -74,7 +75,12 @@ namespace DupesCuisine.Plants
             ComplexRecipe.RecipeElement[] inputs = new ComplexRecipe.RecipeElement[]
             {
                 new ComplexRecipe.RecipeElement("MushroomSeed", 1f),
-                new ComplexRecipe.RecipeElement(SimHashes.Carbon.CreateTag(), 25f)
+                new ComplexRecipe.RecipeElement(new Tag[]
+                {
+                    SimHashes.Carbon.CreateTag(),
+                    SimHashes.WoodLog.CreateTag(),
+                    SimHashes.Peat.CreateTag(),
+                }, 25f)
             };
             ComplexRecipe.RecipeElement[] outputs = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement(SeedId, 1f) };
             string id = ComplexRecipeManager.MakeRecipeID(KilnConfig.ID, inputs, outputs);
@@ -84,7 +90,7 @@ namespace DupesCuisine.Plants
                 description = STRINGS.CROPS.RECIPEDESC,
                 nameDisplay = ComplexRecipe.RecipeNameDisplay.Result,
                 fabricators = new List<Tag>() { KilnConfig.ID },
-                sortOrder = 2,
+                sortOrder = 999,
             };
 
             return placedEntity;

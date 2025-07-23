@@ -46,7 +46,7 @@ namespace DupesCuisine.Plants
                     massConsumptionRate = Irrigation
                 }
             });
-
+            
             EntityTemplates.ExtendPlantToFertilizable(template, new PlantElementAbsorber.ConsumeInfo[]
             {
                 new PlantElementAbsorber.ConsumeInfo
@@ -86,7 +86,12 @@ namespace DupesCuisine.Plants
                     "ColdWheatSeed",
                     FernFoodConfig.ID
                 }, 1f),
-                new ComplexRecipe.RecipeElement(SimHashes.Carbon.CreateTag(), 25f)
+                new ComplexRecipe.RecipeElement(new Tag[]
+                {
+                    SimHashes.Carbon.CreateTag(),
+                    SimHashes.WoodLog.CreateTag(),
+                    SimHashes.Peat.CreateTag(),
+                }, 25f)
             };
             ComplexRecipe.RecipeElement[] outputs = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement(SeedId, 1f) };
             string id = ComplexRecipeManager.MakeRecipeID(KilnConfig.ID, inputs, outputs);
@@ -96,7 +101,7 @@ namespace DupesCuisine.Plants
                 description = STRINGS.CROPS.RECIPEDESC,
                 nameDisplay = ComplexRecipe.RecipeNameDisplay.Result,
                 fabricators = new List<Tag>() { KilnConfig.ID },
-                sortOrder = 2
+                sortOrder = 999
             };
 
             SoundEventVolumeCache.instance.AddVolume("bristleblossom", "PrickleFlower_harvest", NOISE_POLLUTION.CREATURES.TIER1);

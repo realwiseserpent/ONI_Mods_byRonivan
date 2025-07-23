@@ -18,7 +18,7 @@ namespace DupesCuisine.Foods
                     Food_SaltedMeat.Id,
                     STRINGS.FOOD.SALTEDMEAT.NAME,
                     STRINGS.FOOD.SALTEDMEAT.DESC, 1f, false, Assets.GetAnim(("food_saltedmeat_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
-                new EdiblesManager.FoodInfo(Food_SaltedMeat.Id, 2000000f, 1, 275.15f, 303.15f, 9600f, true));
+                new EdiblesManager.FoodInfo(Food_SaltedMeat.Id, 2000000f, 2, 275.15f, 298.15f, 9600f, true));
 
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[2]
             {
@@ -38,7 +38,7 @@ namespace DupesCuisine.Foods
                 time = FOOD.RECIPES.STANDARD_COOK_TIME,
                 description = STRINGS.FOOD.SALTEDMEAT.RECIPEDESC,
                 nameDisplay = (ComplexRecipe.RecipeNameDisplay)1,
-                fabricators = new List<Tag>() { CookingStationConfig.ID },  
+                fabricators = new List<Tag>() { CookingStationConfig.ID },
                 sortOrder = 26
             };
             return food;

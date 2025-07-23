@@ -12,7 +12,7 @@ namespace DupesCuisine.Foods
 
         public GameObject CreatePrefab()
         {
-            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_Nutcake.Id, 4800000f, 4, 255.15f, 277.15f, 4800f, true);
+            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_Nutcake.Id, 4200000f, 4, 255.15f, 277.15f, 4800f, true);
 
             foodInfo.AddEffects(new List<string>
             {
@@ -28,8 +28,8 @@ namespace DupesCuisine.Foods
 
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[3]
             {
-                new ComplexRecipe.RecipeElement(Crop_SunnyWheatGrain.Id, 8f),
-                new ComplexRecipe.RecipeElement(Food_RoastedKakawa.Id, 4f),
+                new ComplexRecipe.RecipeElement(Crop_SunnyWheatGrain.Id, 4f),
+                new ComplexRecipe.RecipeElement(Food_RoastedKakawa.Id, 6f),
                 new ComplexRecipe.RecipeElement(Food_KakawaButter.Id, 1f)
             };
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]

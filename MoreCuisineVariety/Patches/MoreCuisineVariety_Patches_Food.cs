@@ -50,6 +50,8 @@ namespace DupesCuisine.Patches
                     STRINGS.EFFECTS.CHOCOLATETASTE.CAUSE, STRINGS.EFFECTS.CHOCOLATETASTE.DESCRIPTION);
                 RegisterStrings.MakeDublicantsModifiersStrings(Effects.SugarRushId, STRINGS.EFFECTS.SUGARRUSH.NAME, STRINGS.EFFECTS.SUGARRUSH.TOOLTIP,
                     STRINGS.EFFECTS.SUGARRUSH.CAUSE, STRINGS.EFFECTS.SUGARRUSH.DESCRIPTION);
+                //RegisterStrings.MakeDublicantsModifiersStrings(Effects.WrapWarmthId, STRINGS.EFFECTS.WRAPWARMTH.NAME, STRINGS.EFFECTS.WRAPWARMTH.TOOLTIP,
+                //    STRINGS.EFFECTS.WRAPWARMTH.CAUSE, STRINGS.EFFECTS.WRAPWARMTH.DESCRIPTION);
             }
         }
 
@@ -61,6 +63,7 @@ namespace DupesCuisine.Patches
             {
                 Db.Get().effects.Add(Effects.ChocolateTasteEffect());
                 Db.Get().effects.Add(Effects.SugarRushEffect());
+                //Db.Get().effects.Add(Effects.WrapWarmthEffect());
             }
         }
 

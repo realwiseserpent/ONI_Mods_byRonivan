@@ -50,6 +50,7 @@ namespace DupesCuisine
                 {
                     BIOMES_STRINGS.MARSH,
                     BIOMES_STRINGS.SWAMP,
+                    BIOMES_STRINGS.WETLANDS,
                     BAATOR_BIOME_STRINGS.AVERNUS,
                     BAATOR_BIOME_STRINGS.SHADOWFEL,
                     EARTH_BIOME_STRINGS.ASTHENOSPHERE,

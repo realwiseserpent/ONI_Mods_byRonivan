@@ -20,7 +20,7 @@ namespace DupesCuisine.Foods
                 EntityTemplates.CreateLooseEntity(
                     Food_MealSlurryConfig.Id,
                     STRINGS.FOOD.MEALSLURRY.NAME,
-                    STRINGS.FOOD.MEALSLURRY.DESC, 1f, true, Assets.GetAnim(("meal_slurry_kanim")), "object", (Grid.SceneLayer)26, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true),
+                    STRINGS.FOOD.MEALSLURRY.DESC, 1f, false, Assets.GetAnim(("meal_slurry_kanim")), "object", (Grid.SceneLayer)26, EntityTemplates.CollisionShape.RECTANGLE, 0.8f, 0.4f, true),
                 new EdiblesManager.FoodInfo(Food_MealSlurryConfig.Id, 0.0f, -1, 255.15f, 277.15f, 4800f, true));
         }
 
@@ -40,17 +40,17 @@ namespace DupesCuisine.Foods
                 {
                     "BasicPlantFood",
                     "ButterflyPlantSeed"
-                },new float[]{ 5f, 2f }),
-                new ComplexRecipe.RecipeElement(SimHashes.Water.CreateTag(), 20f)
+                },new float[]{ 2.5f, 1f }),
+                new ComplexRecipe.RecipeElement(SimHashes.Water.CreateTag(), 30f)
             };
             ComplexRecipe.RecipeElement[] recipeElementArray4 = new ComplexRecipe.RecipeElement[1]
             {
-                new ComplexRecipe.RecipeElement(Food_MealSlurryConfig.Id, 10f, 0, false)
+                new ComplexRecipe.RecipeElement(Food_MealSlurryConfig.Id, 3f, 0, false)
             };
 
             recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(ManualJuicerConfig.ID, recipeElementArray3, recipeElementArray4), recipeElementArray3, recipeElementArray4, 0)
             {
-                time = 100f,
+                time = 50f,
                 description = STRINGS.FOOD.MEALSLURRY.RECIPEDESC,
                 nameDisplay = ComplexRecipe.RecipeNameDisplay.Result,
                 fabricators = new List<Tag> { ManualJuicerConfig.ID },

@@ -127,76 +127,76 @@ namespace DupesCuisine.Patches
             }
         }
 
-        [HarmonyPatch(typeof(CodexEntry))]
-        [HarmonyPatch(MethodType.Constructor)]
-        [HarmonyPatch(new Type[] {
-            typeof(string),
-            typeof(List<ContentContainer>),
-            typeof(string)
-        })]
-        public static class CodexEntry_Constructor_Patch
+        [HarmonyPatch(typeof(CodexCache), "CollectEntries")]
+        public class CodexCache_CollectEntries_Patch
         {
-            private static void Postfix(CodexEntry __instance)
+            public static void Postfix(string folder, List<CodexEntry> __result)
             {
-                if (__instance.category != "PLANTS")
+                if (folder != string.Empty)
                     return;
 
-                GameObject kakawa = Assets.GetPrefab(Plant_KakawaTreeConfig.Id);
-                GameObject mushroom = Assets.GetPrefab(Plant_CreamcapMushroomConfig.Id);
-                GameObject sunny = Assets.GetPrefab(Plant_SunnyWheatConfig.Id);
+                string speciesNameTemplate = "STRINGS.CREATURES.SPECIES.{0}.NAME";
+                string speciesDescTemplate = "STRINGS.CREATURES.SPECIES.{0}.DESC";
 
-                if (kakawa.GetProperName() == __instance.name)
-                    __instance.contentContainers.InsertRange(0, GetCodexContainers(Plant_KakawaTreeConfig.Id));
-                else if (mushroom.GetProperName() == __instance.name)
-                    __instance.contentContainers.InsertRange(0, GetCodexContainers(Plant_CreamcapMushroomConfig.Id));
-                else if (sunny.GetProperName() == __instance.name)
-                    __instance.contentContainers.InsertRange(0, GetCodexContainers(Plant_SunnyWheatConfig.Id));
+                CodexEntry temp;
+                if ((temp = CreateCodex(Plant_KakawaTreeConfig.Id, speciesNameTemplate, $"STRINGS.CODEX.MEALWOOD.SUBTITLE",
+                    speciesDescTemplate, "PLANTS", true)) != null)
+                    __result.Add(temp);
+                if ((temp = CreateCodex(Plant_CreamcapMushroomConfig.Id, speciesNameTemplate, $"STRINGS.CODEX.MEALWOOD.SUBTITLE",
+                    speciesDescTemplate, "PLANTS", true)) != null)
+                    __result.Add(temp);
+                if ((temp = CreateCodex(Plant_SunnyWheatConfig.Id, speciesNameTemplate, $"STRINGS.CODEX.MEALWOOD.SUBTITLE",
+                    speciesDescTemplate, "PLANTS", true)) != null)
+                    __result.Add(temp);
             }
         }
 
-        //[HarmonyPatch(typeof(CodexEntryGenerator), "GeneratePlantEntries")]
-        public class DupesCuisine_CodexEntryGenerator_GeneratePlantEntries_Patch
+        private static CodexEntry CreateCodex(string id, string title, string subtitle, string body,
+            string category, bool cutVersion = false)
         {
-            public static void Postfix(Dictionary<string, CodexEntry> __result)
+            GameObject go = Assets.GetPrefab(id);
+
+            if (go == null)
+                return null;
+
+            List<ContentContainer> containers = new List<ContentContainer>
             {
-                foreach (var key in CropsDictionary.Keys)
-                {
-                    CodexEntry entry = CodexCache.FindEntry(key.ToUpperInvariant());
+                new ContentContainer(new List<ICodexWidget>()
+                    {
+                        new CodexText() { stringKey = string.Format(title, id.ToUpperInvariant()), style = CodexTextStyle.Title },
+                        new CodexText() { stringKey = string.Format(subtitle, id.ToUpperInvariant()), style = CodexTextStyle.Subtitle },
+                        new CodexDividerLine()
+                    }, ContentContainer.ContentLayout.Vertical)
+            };
 
-                    if (entry != null)
-                        entry.contentContainers.InsertRange(0, GetCodexContainers(key));
+            Sprite first = Def.GetUISprite(go).first;
+
+            if (!cutVersion)
+                CodexEntryGenerator.GenerateImageContainers(first, containers);
+
+            List<ICodexWidget> content = new List<ICodexWidget>
+            {
+                new CodexText()
+                {
+                    stringKey = string.Format(body, id.ToUpperInvariant()),
+                    style = CodexTextStyle.Body
                 }
-            }
-        }
+            };
 
-        private static List<ContentContainer> GetCodexContainers(string id)
-        {
-            return new List<ContentContainer>()
-                {
-                    new ContentContainer()
-                    {
-                        contentLayout = ContentContainer.ContentLayout.Vertical,
-                        content = new List<ICodexWidget>()
-                        {
-                        new CodexText() { stringKey = $"STRINGS.CREATURES.SPECIES.{id.ToUpperInvariant()}.NAME",
-                        //new CodexText() {stringKey = $"STRINGS.CODEX.{id.ToUpperInvariant()}.TITLE",
-                            style = CodexTextStyle.Title },
-                        new CodexText() { stringKey = $"STRINGS.CODEX.MEALWOOD.SUBTITLE",
-                            style = CodexTextStyle.Subtitle },
-                        new CodexDividerLine() { preferredWidth = -1 }
-                        }
-                    },
-                    new ContentContainer()
-                    {
-                        contentLayout = ContentContainer.ContentLayout.Vertical,
-                        content = new List<ICodexWidget>()
-                        {
-                            new CodexText() { stringKey = $"STRINGS.CREATURES.SPECIES.{id.ToUpperInvariant()}.DESC",
-                            //new CodexText() {stringKey = $"STRINGS.CODEX.{id.ToUpperInvariant()}.BODY.CONTAINER1",
-                            style = CodexTextStyle.Body }
-                        }
-                    }
-                };
+            ContentContainer contentContainer = new ContentContainer(content, ContentContainer.ContentLayout.Vertical);
+            containers.Add(contentContainer);
+
+            CodexEntry entry = new CodexEntry(category, containers, go.GetProperName());
+
+            entry.icon = first;
+
+            entry.id = id;
+            entry.disabled = false;
+
+            if (!cutVersion)
+                entry.contentMadeAndUsed.Add(new CodexEntry_MadeAndUsed() { tag = id });
+
+            return entry;
         }
     }
 }

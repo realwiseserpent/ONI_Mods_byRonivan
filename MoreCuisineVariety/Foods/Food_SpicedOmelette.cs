@@ -13,7 +13,7 @@ namespace DupesCuisine.Foods
 
         public GameObject CreatePrefab()
         {
-            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_SpicedOmelette.Id, 2800000f, 3, 255.15f, 277.15f, 2400f, true);
+            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_SpicedOmelette.Id, 2800000f, 3, 255.15f, 277.15f, 4800f, true);
 
             foodInfo.AddEffects(new List<string>
             {
