@@ -18,7 +18,7 @@ namespace DupesCuisine.Foods
                     Food_KakawaButter.Id,
                     STRINGS.FOOD.KAKAWABUTTER.NAME,
                     STRINGS.FOOD.KAKAWABUTTER.DESC, 1f, false, Assets.GetAnim(("food_kakawa_butter_kanim")), "object", (Grid.SceneLayer)26, (EntityTemplates.CollisionShape)1, 0.8f, 0.4f, true),
-                    new EdiblesManager.FoodInfo(Food_KakawaButter.Id, 0.0f, -1, 255.15f, 277.15f, 7200f, true));
+                    new EdiblesManager.FoodInfo(Food_KakawaButter.Id, 0.0f, -1, 255.15f, 277.15f, 9600f, true));
 
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[1]
             {

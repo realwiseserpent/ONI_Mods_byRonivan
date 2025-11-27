@@ -1,6 +1,3 @@
-# recommended you make this the same as your mod name in Steam
-title: "[reupload] More Cuisine Variety by Ronivan" 
-# currently unused, but may be someday
-description: "Reuploaded per original author's request." 
-# a name for other mods to recognize you by, recommended to not change this once you set it
-staticID: "Ronivan.MoreCuisineVariety" 
+title: "Dupes Cuisine [Reloaded]"
+description: "New crops and foods."
+staticID: Ronivan.DupesCuisine

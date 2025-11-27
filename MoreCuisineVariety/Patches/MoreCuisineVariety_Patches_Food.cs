@@ -46,9 +46,9 @@ namespace DupesCuisine.Patches
                 RegisterStrings.MakeFoodStrings(Food_SeaTaco.Id, STRINGS.FOOD.SEATACO.NAME, STRINGS.FOOD.SEATACO.DESC, STRINGS.FOOD.SEATACO.RECIPEDESC);
                 RegisterStrings.MakeFoodStrings(Food_SpicedOmelette.Id, STRINGS.FOOD.SPICEDOMELETTE.NAME, STRINGS.FOOD.SPICEDOMELETTE.DESC, STRINGS.FOOD.SPICEDOMELETTE.RECIPEDESC);
 
-                RegisterStrings.MakeDublicantsModifiersStrings(Effects.ChocolateTasteId, STRINGS.EFFECTS.CHOCOLATETASTE.NAME, STRINGS.EFFECTS.CHOCOLATETASTE.TOOLTIP,
+                RegisterStrings.MakeDuplicantsModifiersStrings(DupesCuisine.Foods.Effects.ChocolateTasteId, STRINGS.EFFECTS.CHOCOLATETASTE.NAME, STRINGS.EFFECTS.CHOCOLATETASTE.TOOLTIP,
                     STRINGS.EFFECTS.CHOCOLATETASTE.CAUSE, STRINGS.EFFECTS.CHOCOLATETASTE.DESCRIPTION);
-                RegisterStrings.MakeDublicantsModifiersStrings(Effects.SugarRushId, STRINGS.EFFECTS.SUGARRUSH.NAME, STRINGS.EFFECTS.SUGARRUSH.TOOLTIP,
+                RegisterStrings.MakeDuplicantsModifiersStrings(DupesCuisine.Foods.Effects.SugarRushId, STRINGS.EFFECTS.SUGARRUSH.NAME, STRINGS.EFFECTS.SUGARRUSH.TOOLTIP,
                     STRINGS.EFFECTS.SUGARRUSH.CAUSE, STRINGS.EFFECTS.SUGARRUSH.DESCRIPTION);
                 //RegisterStrings.MakeDublicantsModifiersStrings(Effects.WrapWarmthId, STRINGS.EFFECTS.WRAPWARMTH.NAME, STRINGS.EFFECTS.WRAPWARMTH.TOOLTIP,
                 //    STRINGS.EFFECTS.WRAPWARMTH.CAUSE, STRINGS.EFFECTS.WRAPWARMTH.DESCRIPTION);

@@ -35,7 +35,7 @@ namespace DupesCuisine.Foods
                 }, 1f),
                 new ComplexRecipe.RecipeElement(Food_NoshMilkConfig.Id, 1f),
                 new ComplexRecipe.RecipeElement("RawEgg", 1f),
-                new ComplexRecipe.RecipeElement(SimHashes.Sucrose.CreateTag(), 8f)
+                new ComplexRecipe.RecipeElement(SimHashes.Sucrose.CreateTag(), 4f)
             };
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
             {

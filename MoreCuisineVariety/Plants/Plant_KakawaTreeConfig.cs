@@ -10,14 +10,14 @@ namespace DupesCuisine.Plants
         public const string Id = "KakawaTree";
         public const string SeedId = "KakawaTreeSeed";
         public const float DefaultTemperature = 305.15f;
-        public const float TemperatureLethalLow = 273.15f;
+        public const float TemperatureLethalLow = 253.15f;
         public const float TemperatureWarningLow = 283.15f;
         public const float TemperatureWarningHigh = 313.15f;
-        public const float TemperatureLethalHigh = 321.15f;
-        public const float GROW_TIME = 14400f;
+        public const float TemperatureLethalHigh = 373.15f;
+        public const float GROW_TIME = 600 * 20f;
         public const byte CROP_NUM = 24;
-        public const float Irrigation = 14 / 600f;             //   Irrigation Needed
-        public const float Fertilization = 10 / 600f;         //   Fertilization Needed
+        public const float Irrigation = 10 / 600f;          //   Irrigation Needed
+        public const float Fertilization = 12 / 600f;       //   Fertilization Needed
         public static CuisinePlantsTuning.CropsTuning tuning = CuisinePlantsTuning.OakTreeTuning;
 
         public string[] GetDlcIds() => null;
@@ -35,7 +35,14 @@ namespace DupesCuisine.Plants
                 SimHashes.ContaminatedOxygen,
                 SimHashes.CarbonDioxide,
             };
-            EntityTemplates.ExtendEntityToBasicPlant(gameObject, 253.15f, 283.15f, 313.15f, 373.15f, hashesArray1, true, 0f, 0.15f, Crop_KakawaAcorn.Id, true, true, true, false, 2400f, 0f, TUNING.PLANTS.RADIATION_THRESHOLDS.TIER_5, "KakawaTreeOriginal", STRINGS.PLANTS.KAKAWATREE.NAME);
+            EntityTemplates.ExtendEntityToBasicPlant(
+                gameObject,
+                TemperatureLethalLow,
+                TemperatureWarningLow,
+                TemperatureWarningHigh,
+                TemperatureLethalHigh,
+                hashesArray1,
+                true, 0f, 0.15f, Crop_KakawaAcorn.Id, true, true, true, true, 2400f, 0f, TUNING.PLANTS.RADIATION_THRESHOLDS.TIER_5, "KakawaTreeOriginal", STRINGS.PLANTS.KAKAWATREE.NAME);
 
             EntityTemplates.ExtendPlantToIrrigated(gameObject, new PlantElementAbsorber.ConsumeInfo[]
                 {
@@ -75,6 +82,7 @@ namespace DupesCuisine.Plants
             //gameObject.UpdateComponentRequirement<Harvestable>(false);
             //gameObject.AddComponent<StandardCropPlant>().wiltsOnReadyToHarvest = true;
 
+            gameObject.AddComponent<PlantFiberProducer>().amount = 80f;
             gameObject.AddOrGet<StandardCropPlant>();
             List<Tag> additionalTags = new List<Tag>
             {
@@ -84,7 +92,7 @@ namespace DupesCuisine.Plants
 
             gameObject.AddOrGet<BlightVulnerable>();
 
-            GameObject seed = EntityTemplates.CreateAndRegisterSeedForPlant(gameObject, this as IHasDlcRestrictions, 
+            GameObject seed = EntityTemplates.CreateAndRegisterSeedForPlant(gameObject, this as IHasDlcRestrictions,
                 SeedProducer.ProductionType.Crop,
                 Crop_KakawaAcorn.Id,
                 STRINGS.SEEDS.KAKAWATREE.SEED_NAME,
@@ -103,6 +111,7 @@ namespace DupesCuisine.Plants
                     SimHashes.Carbon.CreateTag(),
                     SimHashes.WoodLog.CreateTag(),
                     SimHashes.Peat.CreateTag(),
+                    SimHashes.FabricatedWood.CreateTag(),
                 }, 25f)
             };
             ComplexRecipe.RecipeElement[] outputs = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement(SeedId, 1f) };

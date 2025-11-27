@@ -14,7 +14,7 @@ namespace DupesCuisine.Foods
 
         public GameObject CreatePrefab()
         {
-            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_BreadedPacu.Id, 2200000f, 3, 255.15f, 277.15f, 9600f, true);
+            EdiblesManager.FoodInfo foodInfo = new EdiblesManager.FoodInfo(Food_BreadedPacu.Id, 2200000f, 3, 255.15f, 277.15f, 7200f, true);
 
             foodInfo.AddEffects(new List<string>
             {
@@ -54,7 +54,7 @@ namespace DupesCuisine.Foods
             //------------------------------
 
             ComplexRecipe.RecipeElement[] extendedIngredients = new ComplexRecipe.RecipeElement[2]
-{
+            {
                 new ComplexRecipe.RecipeElement(new Tag[]
                 {
                     "FishMeat",
@@ -62,11 +62,13 @@ namespace DupesCuisine.Foods
                     "PrehistoricPacuFillet"
                 }, 1f),
                 new ComplexRecipe.RecipeElement(SimHashes.Tallow.CreateTag(), 0.6f)
-};
+            };
             ComplexRecipe.RecipeElement[] extendedResult = new ComplexRecipe.RecipeElement[1]
             {
                 new ComplexRecipe.RecipeElement(TagExtensions.ToTag(Food_BreadedPacu.Id), 1f, (ComplexRecipe.RecipeElement.TemperatureOperation) 1, false)
             };
+            
+            if(false)
             Food_BreadedPacu.extendedRecipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(DeepfryerConfig.ID, extendedIngredients, extendedResult), extendedIngredients, extendedResult, DlcManager.DLC2)
             {
                 time = FOOD.RECIPES.SMALL_COOK_TIME,

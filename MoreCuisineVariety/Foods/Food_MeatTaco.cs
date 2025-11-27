@@ -15,7 +15,7 @@ namespace DupesCuisine.Foods
             foodInfo.AddEffects(new List<string>
             {
                 "GoodEats",
-                "WarmTouchFood"
+                //"WarmTouchFood"
             });
 
             GameObject food = EntityTemplates.ExtendEntityToFood(
@@ -27,14 +27,14 @@ namespace DupesCuisine.Foods
 
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[]
             {
-                new ComplexRecipe.RecipeElement(Food_FlatBread.Id, 1f),
+                new ComplexRecipe.RecipeElement(Food_FlatBread.Id, 2f),
                 new ComplexRecipe.RecipeElement(new Tag[]
                 {
                     CookedMeatConfig.ID,
                     (Tag)"SmokedDinosaurMeat"
-                },new float[]{ 0.5f, 2/5f }),
+                },new float[]{ 0.25f, 1/5f }),
                 new ComplexRecipe.RecipeElement("CookedEgg", 1f),
-                new ComplexRecipe.RecipeElement(SpiceNutConfig.ID, 1f),
+                // ComplexRecipe.RecipeElement(SpiceNutConfig.ID, 1f),
             };
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
             {
@@ -42,7 +42,7 @@ namespace DupesCuisine.Foods
             };
             Food_MeatTaco.Recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(GourmetCookingStationConfig.ID, recipeElementArray1, recipeElementArray2), recipeElementArray1, recipeElementArray2, 0)
             {
-                time = FOOD.RECIPES.SMALL_COOK_TIME,
+                time = FOOD.RECIPES.STANDARD_COOK_TIME,
                 description = STRINGS.FOOD.MEATTACO.RECIPEDESC,
                 nameDisplay = (ComplexRecipe.RecipeNameDisplay)1,
                 fabricators = new List<Tag>() { GourmetCookingStationConfig.ID },

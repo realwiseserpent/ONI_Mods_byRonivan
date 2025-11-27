@@ -1,0 +1,873 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: AiAe <2323086800@qq.com>\n"
+"Language-Team: \n"
+"Language: zh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Application: Oxygen Not IncludedPOT Version: 2.0\n"
+"X-Generator: Poedit 3.6\n"
+
+#. DupesCuisine.STRINGS.BUILDINGS.MANUALJUICER.DESC
+msgctxt "DupesCuisine.STRINGS.BUILDINGS.MANUALJUICER.DESC"
+msgid "A cooking appliance used to grind down Food in to liquids."
+msgstr "一种烹饪设备，可将食物研磨成液体。"
+
+#. DupesCuisine.STRINGS.BUILDINGS.MANUALJUICER.EFFECT
+msgctxt "DupesCuisine.STRINGS.BUILDINGS.MANUALJUICER.EFFECT"
+msgid ""
+"The grinder uses a mixture of <link=\"WATER\">Water</link> and other <link=\"FOOD\">Food</link> to make special ingredients used in culinary.\n"
+"\n"
+"Duplicants will not fabricate items unless recipes queued."
+msgstr ""
+"该研磨机使用<link=\"WATER\">水</link>与其他<link=\"FOOD\">食物</link>的混合物来制作烹饪专用配料。\n"
+"\n"
+"若无配方队列，复制人不会制造物品。"
+
+#. DupesCuisine.STRINGS.BUILDINGS.MANUALJUICER.NAME
+msgctxt "DupesCuisine.STRINGS.BUILDINGS.MANUALJUICER.NAME"
+msgid "<link=\"MANUALJUICER\">Food Grinder</link>"
+msgstr "<link=\"MANUALJUICER\">食物研磨机</link>"
+
+#. DupesCuisine.STRINGS.CROPS.CREAMCAP.DESC
+msgctxt "DupesCuisine.STRINGS.CROPS.CREAMCAP.DESC"
+msgid ""
+"The fruiting body of a <link=\"CREAMCAP\">Creamcap Mushroom</link>.\n"
+"\n"
+"Has a rich earthy flavor and a pungent, mildly sweet aroma."
+msgstr ""
+"<link=\"CREAMCAP\">奶油菇</link>的子实体。\n"
+"\n"
+"有着浓郁的泥土风味和微甜的辛香。"
+
+#. DupesCuisine.STRINGS.CROPS.CREAMCAP.NAME
+msgctxt "DupesCuisine.STRINGS.CROPS.CREAMCAP.NAME"
+msgid "<link=\"CREAMTOPCAP\">Creamcap</link>"
+msgstr "<link=\"CREAMTOPCAP\">奶油菌盖</link>"
+
+#. DupesCuisine.STRINGS.CROPS.KAKAWAACORN.DESC
+msgctxt "DupesCuisine.STRINGS.CROPS.KAKAWAACORN.DESC"
+msgid ""
+"The fruits of a <link=\"KAKAWATREE\">Kakawa Tree</link>.\n"
+"\n"
+"Differently from other nuts, this one is so hard that can't be eat raw. The edible inside is also very bitter."
+msgstr ""
+"<link=\"KAKAWATREE\">橡可可树</link>的果实。\n"
+"\n"
+"与其他坚果不同，它硬度极高无法生食，可食用部分也极为苦涩。"
+
+#. DupesCuisine.STRINGS.CROPS.KAKAWAACORN.NAME
+msgctxt "DupesCuisine.STRINGS.CROPS.KAKAWAACORN.NAME"
+msgid "<link=\"KAKAWATREESEED\">Kakawa Acorn</link>"
+msgstr "<link=\"KAKAWATREESEED\">橡可可果</link>"
+
+#. DupesCuisine.STRINGS.CROPS.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.CROPS.RECIPEDESC"
+msgid "Science works in mysterious ways."
+msgstr "科学总以神秘的方式运作。"
+
+#. DupesCuisine.STRINGS.CROPS.SUNNYWHEATGRAIN.DESC
+msgctxt "DupesCuisine.STRINGS.CROPS.SUNNYWHEATGRAIN.DESC"
+msgid ""
+"The edible grain of a <link=\"SUNNYWHEAT\">Sunny Wheat</link>.\n"
+"\n"
+"This edible grain leaves a warm taste on the tongue."
+msgstr ""
+"<link=\"SUNNYWHEAT\">阳光小麦</link>的可食用谷粒部分。\n"
+"\n"
+"这种谷物会在舌尖留下温热感。"
+
+#. DupesCuisine.STRINGS.CROPS.SUNNYWHEATGRAIN.NAME
+msgctxt "DupesCuisine.STRINGS.CROPS.SUNNYWHEATGRAIN.NAME"
+msgid "<link=\"SUNNYWHEATSEED\">Sunny Wheat Grain</link>"
+msgstr "<link=\"SUNNYWHEATSEED\">阳光麦粒</link>"
+
+#. DupesCuisine.STRINGS.EFFECTS.CHOCOLATETASTE.CAUSE
+msgctxt "DupesCuisine.STRINGS.EFFECTS.CHOCOLATETASTE.CAUSE"
+msgid "Obtained by eating Kakawa foods"
+msgstr "通过食用橡可可食品获得"
+
+#. DupesCuisine.STRINGS.EFFECTS.CHOCOLATETASTE.DESCRIPTION
+msgctxt "DupesCuisine.STRINGS.EFFECTS.CHOCOLATETASTE.DESCRIPTION"
+msgid "Duplicants find this Kakawa food brain-boosting"
+msgstr "复制人们觉得这份橡可可食品能够提神益智"
+
+#. DupesCuisine.STRINGS.EFFECTS.CHOCOLATETASTE.NAME
+msgctxt "DupesCuisine.STRINGS.EFFECTS.CHOCOLATETASTE.NAME"
+msgid "Chocolate Insight"
+msgstr "巧克力顿悟"
+
+#. DupesCuisine.STRINGS.EFFECTS.CHOCOLATETASTE.TOOLTIP
+msgctxt "DupesCuisine.STRINGS.EFFECTS.CHOCOLATETASTE.TOOLTIP"
+msgid "This duplicant ate Kakawa food and feels a little bit smarter"
+msgstr "这名复制人在食用橡可可食品后感觉聪明了些"
+
+#. DupesCuisine.STRINGS.EFFECTS.SUGARRUSH.CAUSE
+msgctxt "DupesCuisine.STRINGS.EFFECTS.SUGARRUSH.CAUSE"
+msgid "Obtained by eating sugary foods"
+msgstr "通过食用含糖食物获得"
+
+#. DupesCuisine.STRINGS.EFFECTS.SUGARRUSH.DESCRIPTION
+msgctxt "DupesCuisine.STRINGS.EFFECTS.SUGARRUSH.DESCRIPTION"
+msgid "Duplicants find this sugary food energizing"
+msgstr "复制人们觉得这份含糖食品充满能量"
+
+#. DupesCuisine.STRINGS.EFFECTS.SUGARRUSH.NAME
+msgctxt "DupesCuisine.STRINGS.EFFECTS.SUGARRUSH.NAME"
+msgid "Sugar Rush"
+msgstr "糖分亢奋"
+
+#. DupesCuisine.STRINGS.EFFECTS.SUGARRUSH.TOOLTIP
+msgctxt "DupesCuisine.STRINGS.EFFECTS.SUGARRUSH.TOOLTIP"
+msgid "This duplicant ate sugary food and feels a surge of energy"
+msgstr "这名复制人在食用含糖食品后感受到体内的能量在涌动"
+
+#. DupesCuisine.STRINGS.FOOD.BREADEDPACU.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.BREADEDPACU.DESC"
+msgid ""
+"A crispy <link=\"BREADEDPACU\">Fish Sticks</link> made with <link=\"FISHMEAT\">Seafood</link> and <link=\"MEALSLURRY\">Meal Lice Batter</link>.\n"
+"\n"
+"Gives off crunchy noises as one eats them."
+msgstr ""
+"一种用<link=\"FISHMEAT\">海鲜</link>与<link=\"MEALSLURRY\">米虱面糊</link>炸制的酥脆<link=\"BREADEDPACU\">香炸鱼条</link>。\n"
+"\n"
+"吃它的的时候会发出嘎吱嘎吱的声音。"
+
+#. DupesCuisine.STRINGS.FOOD.BREADEDPACU.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.BREADEDPACU.NAME"
+msgid "<link=\"BREADEDPACU\">Fish Sticks</link>"
+msgstr "<link=\"BREADEDPACU\">香炸鱼条</link>"
+
+#. DupesCuisine.STRINGS.FOOD.BREADEDPACU.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.BREADEDPACU.RECIPEDESC"
+msgid "A crispy <link=\"FISHMEAT\">Seafood</link> in <link=\"MEALSLURRY\">Meal Lice Batter</link>."
+msgstr "一份将<link=\"FISHMEAT\">海鲜</link>裹上<link=\"MEALSLURRY\">米虱面糊</link>后炸制的酥脆美食。"
+
+#. DupesCuisine.STRINGS.FOOD.COOKEDMUCKROOT.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.COOKEDMUCKROOT.DESC"
+msgid ""
+"The highlight point of a <link=\"BASICFORAGEPLANT\">Muckroot</link>, or at least as far as it can get through cooking.\n"
+"\n"
+"The baking process renders it aftertaste less bland."
+msgstr ""
+"这算是<link=\"BASICFORAGEPLANT\">淤泥根</link>最出彩的部分，至少是烹饪能达到的最好程度。\n"
+"\n"
+"烘烤使其味道不再平淡。"
+
+#. DupesCuisine.STRINGS.FOOD.COOKEDMUCKROOT.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.COOKEDMUCKROOT.NAME"
+msgid "<link=\"COOKEDMUCKROOT\">Baked Muckroot</link>"
+msgstr "<link=\"COOKEDMUCKROOT\">烤淤泥根</link>"
+
+#. DupesCuisine.STRINGS.FOOD.COOKEDMUCKROOT.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.COOKEDMUCKROOT.RECIPEDESC"
+msgid "A baked <link=\"BASICFORAGEPLANT\">Muckroot</link>."
+msgstr "一份烤<link=\"BASICFORAGEPLANT\">淤泥根</link>。"
+
+#. DupesCuisine.STRINGS.FOOD.COOKEDSHARD.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.COOKEDSHARD.DESC"
+msgid ""
+"A baked <link=\"SWAMPFORAGEPLANT\">Swamp Chard Heart</link>.\n"
+"\n"
+"It don't taste as bad as it looks, but it does smell as bad as it taste."
+msgstr ""
+"一份烘烤过的<link=\"SWAMPFORAGEPLANT\">沼泽菜心</link>。\n"
+"\n"
+"它尝起来不如看起来那么差劲，但闻起来和尝起来一样糟糕。"
+
+#. DupesCuisine.STRINGS.FOOD.COOKEDSHARD.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.COOKEDSHARD.NAME"
+msgid "<link=\"COOKEDSHARD\">Baked Chard</link>"
+msgstr "<link=\"COOKEDSHARD\">烤菜心</link>"
+
+#. DupesCuisine.STRINGS.FOOD.COOKEDSHARD.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.COOKEDSHARD.RECIPEDESC"
+msgid "A baked <link=\"SWAMPFORAGEPLANT\">Swamp Chard Heart</link>."
+msgstr "一份烘烤过的<link=\"SWAMPFORAGEPLANT\">沼泽菜心</link>。"
+
+#. DupesCuisine.STRINGS.FOOD.COOKIE.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.COOKIE.DESC"
+msgid "A buttery cookie baked from bitter <link=\"ROASTEDKAKAWA\">Roasted Kakawa</link>, <link=\"KAKAWABUTTER\">Kakawa Butter</link> and <link=\"COLDWHEATSEED\">Sleet Wheat Grains</link>."
+msgstr "一种用苦涩的<link=\"ROASTEDKAKAWA\">烤橡可可</link>、<link=\"KAKAWABUTTER\">橡可可脂</link>与<link=\"COLDWHEATSEED\">冰霜麦粒</link>烤制而成的黄油曲奇。"
+
+#. DupesCuisine.STRINGS.FOOD.COOKIE.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.COOKIE.NAME"
+msgid "<link=\"KAKAWACOOKIE\">Frost Cookie</link>"
+msgstr "<link=\"KAKAWACOOKIE\">寒霜曲奇</link>"
+
+#. DupesCuisine.STRINGS.FOOD.COOKIE.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.COOKIE.RECIPEDESC"
+msgid "A buttery cookie with a subtle bittersweet, cold flavor."
+msgstr "一款黄油香气浓郁的曲奇，带有一丝微妙的苦甜与清凉风味。"
+
+#. DupesCuisine.STRINGS.FOOD.DUSKOMELETTE.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.DUSKOMELETTE.DESC"
+msgid ""
+"A fluffy dish made from beaten <link=\"RAWEGG\">Eggs</link> and folded over nice <link=\"FRIEDMUSHROOM\">Fried Mushroom</link>.\n"
+"\n"
+"The savory flavors of the mushrooms get along well with the omelette soft texture."
+msgstr ""
+"一种用打散的<link=\"RAWEGG\">生蛋</link>包裹优质<link=\"FRIEDMUSHROOM\">煎蘑菇</link>煎制而成的蓬松料理。\n"
+"\n"
+"蘑菇的咸香与蛋饼的柔软质地相得益彰。"
+
+#. DupesCuisine.STRINGS.FOOD.DUSKOMELETTE.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.DUSKOMELETTE.NAME"
+msgid "<link=\"DUSKOMELETTE\">Dusk Omelette</link>"
+msgstr "<link=\"DUSKOMELETTE\">夜幕蛋饼</link>"
+
+#. DupesCuisine.STRINGS.FOOD.DUSKOMELETTE.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.DUSKOMELETTE.RECIPEDESC"
+msgid "A fluffy dish made from beaten <link=\"RAWEGG\">Eggs</link> and <link=\"FRIEDMUSHROOM\">Fried Mushroom</link>."
+msgstr "一种用打散的<link=\"RAWEGG\">生蛋</link>包裹优质<link=\"FRIEDMUSHROOM\">煎蘑菇</link>煎制而成的蓬松料理。"
+
+#. DupesCuisine.STRINGS.FOOD.FISHWRAP.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.FISHWRAP.DESC"
+msgid ""
+"A tasty snack made by wrapping <link=\"COOKEDFISH\">Cooked Seafood</link> with <link=\"FLATBREAD\">Warm Flat Bread</link>.\n"
+"\n"
+"Each bite leaves a mild warm sensation in one's mouth, even when the snack itself is served cold."
+msgstr ""
+"用<link=\"FLATBREAD\">暖心烤饼</link>包裹<link=\"COOKEDFISH\">烤海鲜</link>制成的美味小吃。\n"
+"\n"
+"即使这是冷食，每一口仍会在口中留下温和暖意。"
+
+#. DupesCuisine.STRINGS.FOOD.FISHWRAP.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.FISHWRAP.NAME"
+msgid "<link=\"FISHWRAP\">Fish Wrap</link>"
+msgstr "<link=\"FISHWRAP\">烤鱼卷饼</link>"
+
+#. DupesCuisine.STRINGS.FOOD.FISHWRAP.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.FISHWRAP.RECIPEDESC"
+msgid "A tasty snack made by wrapping <link=\"COOKEDFISH\">Cooked Seafood</link> with <link=\"FLATBREAD\">Warm Flat Bread</link>."
+msgstr "一种用<link=\"FLATBREAD\">暖心烤饼</link>包裹<link=\"COOKEDFISH\">烤海鲜</link>制成的美味小吃。"
+
+#. DupesCuisine.STRINGS.FOOD.FLATBREAD.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.FLATBREAD.DESC"
+msgid ""
+"A simple flat bread baked from <link=\"SUNNYWHEATSEED\">Sunny Wheat Grain</link>.\n"
+"\n"
+"Each bite leaves a mild warmth sensation in one's mouth, even when the bread itself is cold."
+msgstr ""
+"一块以<link=\"SUNNYWHEATSEED\">阳光麦粒</link>为原料烘焙而成的简单烤饼。\n"
+"\n"
+"即使这饼本身是冷的，每一口也会在食用者的嘴里留下微弱的温热感。"
+
+#. DupesCuisine.STRINGS.FOOD.FLATBREAD.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.FLATBREAD.NAME"
+msgid "<link=\"FLATBREAD\">Warm Flat Bread</link>"
+msgstr "<link=\"FLATBREAD\">暖心烤饼</link>"
+
+#. DupesCuisine.STRINGS.FOOD.FLATBREAD.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.FLATBREAD.RECIPEDESC"
+msgid "A simple flat bread baked from <link=\"SUNNYWHEATSEED\">Sunny Wheat Grain</link>."
+msgstr "一块以<link=\"SUNNYWHEATSEED\">阳光麦粒</link>为原料烘焙而成的简单烤饼。"
+
+#. DupesCuisine.STRINGS.FOOD.GRILLEDCREAMTOP.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.GRILLEDCREAMTOP.DESC"
+msgid ""
+"The grilled fruiting of a <link=\"CREAMTOPCAP\">Creamcap Mushroom</link>.\n"
+"\n"
+"It has a crispy texture and a soft, mildly sweet, earthy flavor."
+msgstr ""
+"经烤制的<link=\"CREAMTOPCAP\">奶油菌盖</link>。\n"
+"\n"
+"外皮酥脆，内里柔软，带有微甜泥土味。"
+
+#. DupesCuisine.STRINGS.FOOD.GRILLEDCREAMTOP.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.GRILLEDCREAMTOP.NAME"
+msgid "<link=\"GRILLEDCREAMTOP\">Grilled Creamcap</link>"
+msgstr "<link=\"GRILLEDCREAMTOP\">烤奶油菇</link>"
+
+#. DupesCuisine.STRINGS.FOOD.GRILLEDCREAMTOP.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.GRILLEDCREAMTOP.RECIPEDESC"
+msgid "The grilled fruiting of a <link=\"CREAMTOPCAP\">Creamcap Mushroom</link>."
+msgstr "经烤制的<link=\"CREAMTOPCAP\">奶油菌盖</link>。"
+
+#. DupesCuisine.STRINGS.FOOD.GRILLEDPLANTMEAT.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.GRILLEDPLANTMEAT.DESC"
+msgid ""
+"A delightful grilled <link=\"PLANTMEAT\">Plant Meat</link>.\n"
+"\n"
+"It don't taste like meat, nor it taste like plant, but it really does taste good."
+msgstr ""
+"一块美味的烤制<link=\"PLANTMEAT\">植物肉</link>。\n"
+"\n"
+"既不像肉也不像植物，但确实很好吃。"
+
+#. DupesCuisine.STRINGS.FOOD.GRILLEDPLANTMEAT.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.GRILLEDPLANTMEAT.NAME"
+msgid "<link=\"GRILLEDPLANTMEAT\">Grilled Plant Meat</link>"
+msgstr "<link=\"GRILLEDPLANTMEAT\">烤素肉</link>"
+
+#. DupesCuisine.STRINGS.FOOD.GRILLEDPLANTMEAT.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.GRILLEDPLANTMEAT.RECIPEDESC"
+msgid "A delightful grilled <link=\"PLANTMEAT\">Plant Meat</link>."
+msgstr "一块美味的烤制<link=\"PLANTMEAT\">植物肉</link>。"
+
+#. DupesCuisine.STRINGS.FOOD.JELLYDOUGHNUT.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.JELLYDOUGHNUT.DESC"
+msgid "A leavened fried dough prepared from <link=\"MEALSLURRY\">Meal Lice Batter</link>. The interior is filled a hearty portion of dried <link=\"SWAMPFRUIT\">Bog Jelly</link>."
+msgstr "用<link=\"MEALSLURRY\">米虱面糊</link>制作的发酵油炸面团。内部塞满了的干<link=\"SWAMPFRUIT\">沼泽果冻</link>。"
+
+#. DupesCuisine.STRINGS.FOOD.JELLYDOUGHNUT.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.JELLYDOUGHNUT.NAME"
+msgid "<link=\"JELLYDOUGHNUT\">Jelly Doughnut</link>"
+msgstr "<link=\"JELLYDOUGHNUT\">果冻甜甜圈</link>"
+
+#. DupesCuisine.STRINGS.FOOD.JELLYDOUGHNUT.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.JELLYDOUGHNUT.RECIPEDESC"
+msgid "A fried doughnut with jelly filling."
+msgstr "一份夹有果冻馅料的油炸甜甜圈。"
+
+#. DupesCuisine.STRINGS.FOOD.KAKAWABAR.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.KAKAWABAR.DESC"
+msgid ""
+"<link=\"ROASTEDKAKAWA\">Roasted Kakawa</link> compressed to a dense, buttery mass.\n"
+"\n"
+"Further cooking remove most of Kakawa bitterness, rendering this bar incredible tasty."
+msgstr ""
+"将<link=\"ROASTEDKAKAWA\">烤橡可可</link>压制成致密的黄油状块体。\n"
+"\n"
+"进一步加热去除了大部分可可的苦味，使这根能量棒变得异常美味。"
+
+#. DupesCuisine.STRINGS.FOOD.KAKAWABAR.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.KAKAWABAR.NAME"
+msgid "<link=\"KAKAWABAR\">Kakawa Bar</link>"
+msgstr "<link=\"KAKAWABAR\">巧克力棒</link>"
+
+#. DupesCuisine.STRINGS.FOOD.KAKAWABAR.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.KAKAWABAR.RECIPEDESC"
+msgid "<link=\"ROASTEDKAKAWA\">Roasted Kakawa</link> compressed to a dense, buttery mass."
+msgstr "将<link=\"ROASTEDKAKAWA\">烤橡可可</link>压制成致密的黄油状块体。"
+
+#. DupesCuisine.STRINGS.FOOD.KAKAWABUTTER.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.KAKAWABUTTER.DESC"
+msgid ""
+"An oily butter extracted from <link=\"KAKAWATREESEED\">Kakawa Acorn</link>.\n"
+"\n"
+"This butter has a tasty aroma, although one must like bitterness to actually eat it in this form."
+msgstr ""
+"从<link=\"KAKAWATREESEED\">橡可可果</link>中提取的一种脂状黄油。\n"
+"\n"
+"这种黄油有着诱人的香气，不过只有喜欢苦味的人才能直接食用。"
+
+#. DupesCuisine.STRINGS.FOOD.KAKAWABUTTER.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.KAKAWABUTTER.NAME"
+msgid "<link=\"KAKAWABUTTER\">Kakawa Butter</link>"
+msgstr "<link=\"KAKAWABUTTER\">橡可可脂</link>"
+
+#. DupesCuisine.STRINGS.FOOD.KAKAWABUTTER.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.KAKAWABUTTER.RECIPEDESC"
+msgid "An oily butter extracted from <link=\"KAKAWATREESEED\">Kakawa Acorns</link>."
+msgstr "从<link=\"KAKAWATREESEED\">橡可可果</link>中提取的一种脂状黄油。"
+
+#. DupesCuisine.STRINGS.FOOD.LICEWRAP.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.LICEWRAP.DESC"
+msgid ""
+"A dubious snack made by wrapping fresh <link=\"BASICPLANTFOOD\">Meal Lice</link> with <link=\"FLATBREAD\">Warm Flat Bread</link>.\n"
+"\n"
+"The warm flavor from the bread mitigates regrettable texture of filling."
+msgstr ""
+"一种用<link=\"FLATBREAD\">暖心烤饼</link>包裹新鲜<link=\"BASICPLANTFOOD\">米虱</link>制成的可疑小吃。\n"
+"\n"
+"烤饼的温热风味略微缓解了馅料糟糕的口感。"
+
+#. DupesCuisine.STRINGS.FOOD.LICEWRAP.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.LICEWRAP.NAME"
+msgid "<link=\"LICEWRAP\">Lice Wrap</link>"
+msgstr "<link=\"LICEWRAP\">米虱卷饼</link>"
+
+#. DupesCuisine.STRINGS.FOOD.LICEWRAP.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.LICEWRAP.RECIPEDESC"
+msgid "A dubious snack made by wrapping fresh <link=\"BASICPLANTFOOD\">Meal Lice</link> with <link=\"FLATBREAD\">Warm Flat Bread</link>."
+msgstr "一种用<link=\"FLATBREAD\">暖心烤饼</link>包裹新鲜<link=\"BASICPLANTFOOD\">米虱</link>制成的可疑小吃。"
+
+#. DupesCuisine.STRINGS.FOOD.MEALBREAD.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MEALBREAD.DESC"
+msgid ""
+"A loaf of <link=\"MEALBREAD\">Bread</link> baked from a mixture of <link=\"MEALSLURRY\">Meal Batter</link> and <link=\"RAWEGG\">Eggs</link>.\n"
+"\n"
+"Despite its hard crust, this bread is actually tasty, and has a long shelf life."
+msgstr ""
+"一种用<link=\"MEALSLURRY\">米虱面糊</link>与<link=\"RAWEGG\">生蛋</link>混合烘烤的<link=\"MEALBREAD\">米虱面包</link>。\n"
+"\n"
+"虽外壳坚硬，但实际美味且保质期长。"
+
+#. DupesCuisine.STRINGS.FOOD.MEALBREAD.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.MEALBREAD.NAME"
+msgid "<link=\"MEALBREAD\">Mealbrot</link>"
+msgstr "<link=\"MEALBREAD\">米虱面包</link>"
+
+#. DupesCuisine.STRINGS.FOOD.MEALBREAD.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MEALBREAD.RECIPEDESC"
+msgid "A loaf of <link=\"MEALBREAD\">Bread</link> baked from a mixture of <link=\"MEALSLURRY\">Meal Batter</link> and <link=\"RAWEGG\">Eggs</link>."
+msgstr "一种用<link=\"MEALSLURRY\">米虱面糊</link>与<link=\"RAWEGG\">生蛋</link>混合烘烤的<link=\"MEALBREAD\">米虱面包</link>。"
+
+#. DupesCuisine.STRINGS.FOOD.MEALSLURRY.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MEALSLURRY.DESC"
+msgid ""
+"A fearsome sticky slurry made from <link=\"BASICPLANTFOOD\">Meal Lice</link>.\n"
+"\n"
+"Used as a basic ingredient in many recipes."
+msgstr ""
+"一种用<link=\"BASICPLANTFOOD\">米虱</link>制成的粘稠糊状物。\n"
+"\n"
+"作为多种配方的基础原料。"
+
+#. DupesCuisine.STRINGS.FOOD.MEALSLURRY.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.MEALSLURRY.NAME"
+msgid "<link=\"MEALSLURRY\">Meal Batter</link>"
+msgstr "<link=\"MEALSLURRY\">米虱面糊</link>"
+
+#. DupesCuisine.STRINGS.FOOD.MEALSLURRY.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MEALSLURRY.RECIPEDESC"
+msgid "A fearsome sticky slurry made from <link=\"BASICPLANTFOOD\">Meal Lice</link>."
+msgstr "一直用<link=\"BASICPLANTFOOD\">米虱</link>制成的粘稠糊状物。"
+
+#. DupesCuisine.STRINGS.FOOD.MEATTACO.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MEATTACO.DESC"
+msgid ""
+"A filling meal made with slowly <link=\"COOKEDMEAT\">Grilled Meat</link> and <link=\"COOKEDEGG\">Omelette</link>, all served within a <link=\"FLATBREAD\">Warm Flat Bread</link>.\n"
+"\n"
+"It promptly leaves a warm sensation while it goes inside, as well when it leaves."
+msgstr ""
+"一份用<link=\"FLATBREAD\">暖心烤饼</link>包裹着慢烤<link=\"COOKEDMEAT\">烤肉串</link>与<link=\"COOKEDEGG\">煎蛋卷</link>的管饱大餐。\n"
+"\n"
+"无论是入口还是排出，它都会立刻带来一股暖意。"
+
+#. DupesCuisine.STRINGS.FOOD.MEATTACO.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.MEATTACO.NAME"
+msgid "<link=\"MEATTACO\">Meat Taco</link>"
+msgstr "<link=\"MEATTACO\">肉馅塔可</link>"
+
+#. DupesCuisine.STRINGS.FOOD.MEATTACO.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MEATTACO.RECIPEDESC"
+msgid "A filling meal made with slowly <link=\"COOKEDMEAT\">Grilled Meat</link> and <link=\"COOKEDEGG\">Omelette</link>, all served within a <link=\"FLATBREAD\">Warm Flat Bread</link>."
+msgstr "一份用<link=\"FLATBREAD\">暖心烤饼</link>包裹着慢烤<link=\"COOKEDMEAT\">烤肉串</link>与<link=\"COOKEDEGG\">煎蛋卷</link>的管饱大餐。"
+
+#. DupesCuisine.STRINGS.FOOD.MEATWRAP.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MEATWRAP.DESC"
+msgid ""
+"A tasty snack made by wrapping <link=\"COOKEDMEAT\">Grilled Meat</link> with <link=\"FLATBREAD\">Warm Flat Bread</link>.\n"
+"\n"
+"Each bite leaves a mild warm sensation in one's mouth, even when the snack itself is served cold."
+msgstr ""
+"用<link=\"FLATBREAD\">暖心烤饼</link>包裹<link=\"COOKEDMEAT\">烤肉</link>制成的美味小吃。\n"
+"\n"
+"即使这是冷食，每一口仍会在口中留下温和暖意。"
+
+#. DupesCuisine.STRINGS.FOOD.MEATWRAP.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.MEATWRAP.NAME"
+msgid "<link=\"MEATWRAP\">Meat Wrap</link>"
+msgstr "<link=\"MEATWRAP\">烤肉卷饼</link>"
+
+#. DupesCuisine.STRINGS.FOOD.MEATWRAP.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MEATWRAP.RECIPEDESC"
+msgid "A tasty snack made by wrapping <link=\"COOKEDMEAT\">Grilled Meat</link> with <link=\"FLATBREAD\">Warm Flat Bread</link>."
+msgstr "用<link=\"FLATBREAD\">暖心烤饼</link>包裹<link=\"COOKEDMEAT\">烤肉串</link>制成的美味小吃。"
+
+#. DupesCuisine.STRINGS.FOOD.MILKBUN.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MILKBUN.DESC"
+msgid ""
+"A soft bun baked from <link=\"MEALSLURRY\">Meal Batter</link>, <link=\"NOSHMILK\">Nosh Milk</link> and <link=\"SUCROSE\">Sucrose</link>.\n"
+"\n"
+"It gives the duplicants who eats it a happy face, and a quite unhappy face to others who will have to endure the farts."
+msgstr ""
+"一种用<link=\"MEALSLURRY\">米虱面糊</link>、<link=\"NOSHMILK\">豆奶</link>与<link=\"SUCROSE\">蔗糖</link>烤制而成的松软餐包。\n"
+"\n"
+"它会让享用它的复制人喜笑颜开，但也会让那些不得不忍受其屁味的旁人愁眉苦脸。"
+
+#. DupesCuisine.STRINGS.FOOD.MILKBUN.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.MILKBUN.NAME"
+msgid "<link=\"MILKBUN\">Milk Bun</link>"
+msgstr "<link=\"MILKBUN\">奶香餐包</link>"
+
+#. DupesCuisine.STRINGS.FOOD.MILKBUN.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MILKBUN.RECIPEDESC"
+msgid "A soft sweet milk bun."
+msgstr "一份柔软香甜的奶油蛋糕。"
+
+#. DupesCuisine.STRINGS.FOOD.MUSHROOMSTEW.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MUSHROOMSTEW.DESC"
+msgid "A thick, flavorful soup made by simmering <link=\"GRILLEDCREAMTOP\">Grilled Creamcaps</link> and <link=\"SPICENUT\">spices</link>, placed within a hallowed <link=\"MEALBREAD\">Mealbrot</link> and baked in a oven."
+msgstr "一道风味浓郁的浓汤，将慢火煨煮的<link=\"GRILLEDCREAMTOP\">奶油菇</link>与<link=\"SPICENUT\">火椒粒</link>炖煮而成的浓郁鲜汤，盛入挖空的<link=\"MEALBREAD\">米虱面包</link>中烤制而成。"
+
+#. DupesCuisine.STRINGS.FOOD.MUSHROOMSTEW.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.MUSHROOMSTEW.NAME"
+msgid "<link=\"MUSHROOMSTEW\">Mushroom Stew</link>"
+msgstr "<link=\"MUSHROOMSTEW\">蘑菇浓汤</link>"
+
+#. DupesCuisine.STRINGS.FOOD.MUSHROOMSTEW.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MUSHROOMSTEW.RECIPEDESC"
+msgid "A thick, flavorful soup made with spiced mushrooms and mealbrot."
+msgstr "一碗由调味蘑菇和米虱面包制成的风味浓郁的浓汤。"
+
+#. DupesCuisine.STRINGS.FOOD.NOSHMILK.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.NOSHMILK.DESC"
+msgid "A plant-based drink produced by soaking and pressing of <link=\"BEANPLANTSEED\">Nosh Bean</link>."
+msgstr "通过浸泡压榨<link=\"BEANPLANTSEED\">小吃豆</link>制成的植物性饮品。"
+
+#. DupesCuisine.STRINGS.FOOD.NOSHMILK.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.NOSHMILK.NAME"
+msgid "<link=\"NOSHMILK\">Nosh Milk</link>"
+msgstr "<link=\"NOSHMILK\">豆奶</link>"
+
+#. DupesCuisine.STRINGS.FOOD.NOSHMILK.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.NOSHMILK.RECIPEDESC"
+msgid "A plant-based drink produced by soaking and pressing of <link=\"BEANPLANTSEED\">Nosh Bean</link>."
+msgstr "通过浸泡压榨<link=\"BEANPLANTSEED\">小吃豆</link>制成的植物性饮品。"
+
+#. DupesCuisine.STRINGS.FOOD.NOSHPUDDING.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.NOSHPUDDING.DESC"
+msgid ""
+"A fancy sweet dessert made with <link=\"NOSHMILK\">Nosh Milk</link>, <link=\"COLDWHEATSEED\">Sleet Wheat Grain</link>, whisked <link=\"RAWEGG\">Eggs</link> and quite a lot of <link=\"SUCROSE\">Sucrose</link>.\n"
+"\n"
+"Has a fine rimmed pastry that prevents it from breaking apart as one holds it (for a short time)."
+msgstr ""
+"一种用<link=\"NOSHMILK\">豆奶</link>、<link=\"COLDWHEATSEED\">冰霜麦粒</link>、打发的<link=\"RAWEGG\">生蛋</link>与大量<link=\"SUCROSE\">蔗糖</link>制成的精美甜点。\n"
+"\n"
+"它有着一圈精致的酥皮饼边，可以在拿着它的时候防止其碎裂（当然，只能撑一小会儿）。"
+
+#. DupesCuisine.STRINGS.FOOD.NOSHPUDDING.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.NOSHPUDDING.NAME"
+msgid "<link=\"NOSHPUDDING\">Nosh Custard Flan</link>"
+msgstr "<link=\"NOSHPUDDING\">香草奶油布丁</link>"
+
+#. DupesCuisine.STRINGS.FOOD.NOSHPUDDING.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.NOSHPUDDING.RECIPEDESC"
+msgid "A fancy sweet dessert."
+msgstr "一份精致的甜点。"
+
+#. DupesCuisine.STRINGS.FOOD.NUTCAKE.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.NUTCAKE.DESC"
+msgid ""
+"A saborous <link=\"NUTCAKE\">Nutcake</link> baked from bitter <link=\"ROASTEDKAKAWA\">Roasted Kakawa</link>, <link=\"KAKAWABUTTER\">Kakawa Butter</link> and <link=\"SUNNYWHEATSEED\">Sunny Grains</link>.\n"
+"\n"
+"Brings warmth to the heart (and stomach)."
+msgstr ""
+"用苦涩的<link=\"ROASTEDKAKAWA\">烤橡可可</link>、<link=\"KAKAWABUTTER\">橡可可脂</link>与<link=\"SUNNYWHEATSEED\">阳光麦粒</link>烤制的风味<link=\"NUTCAKE\">坚果蛋糕</link>。\n"
+"\n"
+"暖心（又暖胃）。"
+
+#. DupesCuisine.STRINGS.FOOD.NUTCAKE.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.NUTCAKE.NAME"
+msgid "<link=\"NUTCAKE\">Nutcake</link>"
+msgstr "<link=\"NUTCAKE\">坚果蛋糕</link>"
+
+#. DupesCuisine.STRINGS.FOOD.NUTCAKE.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.NUTCAKE.RECIPEDESC"
+msgid "A saborous <link=\"NUTCAKE\">Nutcake</link> baked from bitter <link=\"ROASTEDKAKAWA\">Roasted Kakawa</link>, <link=\"KAKAWABUTTER\">Kakawa Butter</link> and <link=\"SUNNYWHEATSEED\">Sunny Grains</link>."
+msgstr "用苦涩的<link=\"ROASTEDKAKAWA\">烤橡可可</link>、<link=\"KAKAWABUTTER\">橡可可脂</link>与<link=\"SUNNYWHEATSEED\">阳光麦粒</link>烤制的风味<link=\"NUTCAKE\">坚果蛋糕</link>。"
+
+#. DupesCuisine.STRINGS.FOOD.NUTPIE.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.NUTPIE.DESC"
+msgid ""
+"A gourmet pie with a nut filling of caramelised <link=\"WORMBASICFOOD\">Roast Grubfruit Nuts</link>, <link=\"COLDWHEATSEED\">Sleet Wheat Grain</link> and <link=\"RAWEGG\">Eggs</link> dough, and <link=\"SUCROSE\">Sucrose</link>.\n"
+"\n"
+"The buttery crust remains fresh for a long time."
+msgstr ""
+"一种以焦糖化<link=\"WORMBASICFOOD\">烤虫果仁</link>为馅料，配以<link=\"COLDWHEATSEED\">冰霜麦粒</link>与<link=\"RAWEGG\">生蛋</link>制成的面团，再撒上<link=\"SUCROSE\">蔗糖</link>制成的精美馅饼。\n"
+"\n"
+"黄油酥皮可长久保持酥脆。"
+
+#. DupesCuisine.STRINGS.FOOD.NUTPIE.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.NUTPIE.NAME"
+msgid "<link=\"NUTPIE\">Grubner Nusstorte</link>"
+msgstr "<link=\"NUTPIE\">焦糖虫果挞</link>"
+
+#. DupesCuisine.STRINGS.FOOD.NUTPIE.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.NUTPIE.RECIPEDESC"
+msgid "A gourmet pie with caramelised filling."
+msgstr "一份经过焦糖化处理的精美馅饼。"
+
+#. DupesCuisine.STRINGS.FOOD.PLANTBURGER.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.PLANTBURGER.DESC"
+msgid ""
+"Tasty <link=\"GRILLEDPLANTMEAT\">Grilled Plant Meat</link> and <link=\"LETTUCE\">Lettuce</link> pressed together inside a split <link=\"MEALBREAD\">Mealbrot</link>.\n"
+"\n"
+"Can cause shivers and shakes after consumption."
+msgstr ""
+"将美味的<link=\"GRILLEDPLANTMEAT\">烤素肉</link>与<link=\"LETTUCE\">海生菜</link>夹入切开的<link=\"MEALBREAD\">米虱面包</link>中。\n"
+"\n"
+"食用后会导致身体不由自主地颤抖。"
+
+#. DupesCuisine.STRINGS.FOOD.PLANTBURGER.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.PLANTBURGER.NAME"
+msgid "<link=\"PLANTBURGER\">Plant Burger</link>"
+msgstr "<link=\"PLANTBURGER\">素食堡</link>"
+
+#. DupesCuisine.STRINGS.FOOD.PLANTBURGER.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.PLANTBURGER.RECIPEDESC"
+msgid "Tasty <link=\"GRILLEDPLANTMEAT\">Grilled Plant Meat</link> and <link=\"LETTUCE\">Lettuce</link> pressed together inside a split <link=\"MEALBREAD\">Mealbrot</link>."
+msgstr "将美味的<link=\"GRILLEDPLANTMEAT\">烤素肉</link>与<link=\"LETTUCE\">海生菜</link>夹入切开的<link=\"MEALBREAD\">米虱面包</link>中。"
+
+#. DupesCuisine.STRINGS.FOOD.ROASTEDKAKAWA.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.ROASTEDKAKAWA.DESC"
+msgid ""
+"A fully roasted <link=\"KAKAWATREESEED\">Kakawa Acorn</link>.\n"
+"\n"
+"The roasting crack open its hard shell revealing a edible nut, although the eating may be a bitter experience."
+msgstr ""
+"一颗完全烘烤的<link=\"KAKAWATREESEED\">橡可可果</link>。\n"
+"\n"
+"烘烤使其硬壳裂开露出可食用果仁，但食用起来可能略显苦涩。"
+
+#. DupesCuisine.STRINGS.FOOD.ROASTEDKAKAWA.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.ROASTEDKAKAWA.NAME"
+msgid "<link=\"ROASTEDKAKAWA\">Roasted Kakawa</link>"
+msgstr "<link=\"ROASTEDKAKAWA\">烤橡可可</link>"
+
+#. DupesCuisine.STRINGS.FOOD.ROASTEDKAKAWA.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.ROASTEDKAKAWA.RECIPEDESC"
+msgid "A fully roasted <link=\"KAKAWATREESEED\">Kakawa Acorn</link>."
+msgstr "一颗完全烤熟的<link=\"KAKAWATREESEED\">橡可可果</link>。"
+
+#. DupesCuisine.STRINGS.FOOD.SALTEDMEAT.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.SALTEDMEAT.DESC"
+msgid ""
+"A chunk of <link=\"MEAT\">Meat</link> dried with a lot of <link=\"SALT\">Salt</link>.\n"
+"\n"
+"The large amount of salt present in this meat made it completely resistant to microorganisms that would spoil it under normal conditions."
+msgstr ""
+"用大量<link=\"SALT\">盐</link>撒在风干的<link=\"MEAT\">肉</link>上。\n"
+"\n"
+"肉中大量的盐分使其能完全抵抗在正常情况下会导致其变质的微生物。"
+
+#. DupesCuisine.STRINGS.FOOD.SALTEDMEAT.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.SALTEDMEAT.NAME"
+msgid "<link=\"SALTEDMEAT\">Salt-cured Meat</link>"
+msgstr "<link=\"SALTEDMEAT\">盐腌肉</link>"
+
+#. DupesCuisine.STRINGS.FOOD.SALTEDMEAT.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.SALTEDMEAT.RECIPEDESC"
+msgid "A chunk of <link=\"MEAT\">Meat</link> dried with a lot of <link=\"SALT\">Salt</link>."
+msgstr "一大块撒满了<link=\"SALT\">盐</link>的<link=\"MEAT\">肉</link>。"
+
+#. DupesCuisine.STRINGS.FOOD.SEATACO.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.SEATACO.DESC"
+msgid ""
+"A filling meal made with slowly <link=\"COOKEDFISH\">Cooked Seafood</link> and <link=\"LETTUCE\">Lettuce</link>, all served with a <link=\"FLATBREAD\">Warm Flat Bread</link>.\n"
+"\n"
+"It promptly leaves a warm sensation while it goes inside, as well when it leaves."
+msgstr ""
+"用小火慢煮的<link=\"COOKEDFISH\">烤海鲜</link>配上<link=\"LETTUCE\">海生菜</link>制成的饱腹餐点，佐以<link=\"FLATBREAD\">暖心烤饼</link>。\n"
+"\n"
+"无论是入口还是排出，它都会立刻带来一股暖意。"
+
+#. DupesCuisine.STRINGS.FOOD.SEATACO.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.SEATACO.NAME"
+msgid "<link=\"SEATACO\">Sea Taco</link>"
+msgstr "<link=\"SEATACO\">海鲜塔可</link>"
+
+#. DupesCuisine.STRINGS.FOOD.SEATACO.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.SEATACO.RECIPEDESC"
+msgid "A filling meal made with slowly <link=\"COOKEDFISH\">Cooked Seafood</link> and <link=\"LETTUCE\">Lettuce</link>, all served with a <link=\"FLATBREAD\">Warm Flat Bread</link>."
+msgstr "用小火慢煮的<link=\"COOKEDFISH\">烤海鲜</link>配上<link=\"LETTUCE\">海生菜</link>制成的饱腹餐点，佐以<link=\"FLATBREAD\">暖心烤饼</link>。"
+
+#. DupesCuisine.STRINGS.FOOD.SPICEDOMELETTE.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.SPICEDOMELETTE.DESC"
+msgid ""
+"A fluffy dish made from beaten <link=\"RAWEGG\">Eggs</link> and served with generous pinch of <link=\"SPICENUT\">Pincha Peppernut</link>.\n"
+"\n"
+"Has a deep spiced flavour that sticks to the mouth."
+msgstr ""
+"用打散的<link=\"RAWEGG\">生蛋</link>液搭配大量<link=\"SPICENUT\">火椒粒</link>制成的蓬松料理。浓郁的香料回味无穷。\n"
+"\n"
+"浓郁的香料回味无穷。"
+
+#. DupesCuisine.STRINGS.FOOD.SPICEDOMELETTE.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.SPICEDOMELETTE.NAME"
+msgid "<link=\"SPICEDOMELETTE\">Spiced Omelette</link>"
+msgstr "<link=\"SPICEDOMELETTE\">辛香煎蛋卷</link>"
+
+#. DupesCuisine.STRINGS.FOOD.SPICEDOMELETTE.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.SPICEDOMELETTE.RECIPEDESC"
+msgid "A fluffy dish made from beaten <link=\"RAWEGG\">Eggs</link> and served with generous pinch of <link=\"SPICENUT\">Pincha Peppernut</link>."
+msgstr "一种用打散的<link=\"RAWEGG\">生蛋</link>液搭配大量<link=\"SPICENUT\">火椒粒</link>制成的蓬松料理。"
+
+#. DupesCuisine.STRINGS.PLANTS.CREAMCAPMUSHROOM.DESC
+msgctxt "DupesCuisine.STRINGS.PLANTS.CREAMCAPMUSHROOM.DESC"
+msgid "A soft white mushroom with a creamy texture on its cap. Despite growing in filthy dark spots, it has edible <link=\"CREAMTOPCAP\">Creamcap</link>."
+msgstr "一种柔软的白色蘑菇，菌盖有着奶油般的质地。尽管它生长在污秽黑暗的角落，但其<link=\"CREAMTOPCAP\">奶油菌盖</link>却是可食用的。"
+
+#. DupesCuisine.STRINGS.PLANTS.CREAMCAPMUSHROOM.DOMESTICATED_DESC
+msgctxt "DupesCuisine.STRINGS.PLANTS.CREAMCAPMUSHROOM.DOMESTICATED_DESC"
+msgid "This plant produces edible <link=\"CREAMTOPCAP\">Creamcap</link>."
+msgstr "这种植物产出可食用的<link=\"CREAMTOPCAP\">奶油菌盖</link>。"
+
+#. DupesCuisine.STRINGS.PLANTS.CREAMCAPMUSHROOM.NAME
+msgctxt "DupesCuisine.STRINGS.PLANTS.CREAMCAPMUSHROOM.NAME"
+msgid "<link=\"CREAMCAP\">Creamcap Mushroom</link>"
+msgstr "<link=\"CREAMCAP\">奶油菇</link>"
+
+#. DupesCuisine.STRINGS.PLANTS.KAKAWATREE.DESC
+msgctxt "DupesCuisine.STRINGS.PLANTS.KAKAWATREE.DESC"
+msgid "A lush, golden leafed tree that grows in temperate forest biomes. It produces a rock hard edible <link=\"KAKAWATREESEED\">Kakawa Acorn</link>."
+msgstr "生长于温带森林生态的繁茂金叶树木。结有岩石般坚硬的可食用<link=\"KAKAWATREESEED\">橡可可果</link>。"
+
+#. DupesCuisine.STRINGS.PLANTS.KAKAWATREE.DOMESTICATED_DESC
+msgctxt "DupesCuisine.STRINGS.PLANTS.KAKAWATREE.DOMESTICATED_DESC"
+msgid "This plant produces edible <link=\"KAKAWATREESEED\">Kakawa Acorn</link>."
+msgstr "这种植物产出可食用的<link=\"KAKAWATREESEED\">橡可可果</link>。"
+
+#. DupesCuisine.STRINGS.PLANTS.KAKAWATREE.NAME
+msgctxt "DupesCuisine.STRINGS.PLANTS.KAKAWATREE.NAME"
+msgid "<link=\"KAKAWATREE\">Kakawa Tree</link>"
+msgstr "<link=\"KAKAWATREE\">橡可可树</link>"
+
+#. DupesCuisine.STRINGS.PLANTS.SUNNYWHEAT.DESC
+msgctxt "DupesCuisine.STRINGS.PLANTS.SUNNYWHEAT.DESC"
+msgid "A vibrant wheat that grows in temperate and hot biomes. It produces <link=\"SUNNYWHEATSEED\">Sunny Wheat Grain</link>, a warm grain that can be processed in to food."
+msgstr "一种生命力旺盛的小麦，主要生长于温带与热带生态。可产出<link=\"SUNNYWHEATSEED\">阳光麦粒</link>，这种温热谷物可加工为食物。"
+
+#. DupesCuisine.STRINGS.PLANTS.SUNNYWHEAT.DOMESTICATED_DESC
+msgctxt "DupesCuisine.STRINGS.PLANTS.SUNNYWHEAT.DOMESTICATED_DESC"
+msgid "This plant produces edible <link=\"SUNNYWHEATSEED\">Sunny Wheat Grain</link>."
+msgstr "这种植物产出可食用的<link=\"SUNNYWHEATSEED\">阳光麦粒</link>。"
+
+#. DupesCuisine.STRINGS.PLANTS.SUNNYWHEAT.NAME
+msgctxt "DupesCuisine.STRINGS.PLANTS.SUNNYWHEAT.NAME"
+msgid "<link=\"SUNNYWHEAT\">Sunny Wheat</link>"
+msgstr "<link=\"SUNNYWHEAT\">阳光小麦</link>"
+
+#. DupesCuisine.STRINGS.SEEDS.CREAMCAPMUSHROOM.SEED_DESC
+msgctxt "DupesCuisine.STRINGS.SEEDS.CREAMCAPMUSHROOM.SEED_DESC"
+msgid ""
+"The <link=\"PLANTS\">Spore</link> of a <link=\"CREAMCAP\">Creamcap Mushroom</link>.\n"
+"\n"
+"Digging up Buried Objects may uncover a Creamcap Mushroom Spore."
+msgstr ""
+"来自<link=\"CREAMCAP\">奶油菇</link>的<link=\"PLANTS\">孢子</link>。\n"
+"\n"
+"将其栽种于阴暗处，确信它能长到枝繁叶茂。"
+
+#. DupesCuisine.STRINGS.SEEDS.CREAMCAPMUSHROOM.SEED_NAME
+msgctxt "DupesCuisine.STRINGS.SEEDS.CREAMCAPMUSHROOM.SEED_NAME"
+msgid "<link=\"CREAMCAP\">Creamcap Mushroom Spore</link>"
+msgstr "<link=\"CREAMCAP\">奶油菇孢子</link>"
+
+#. DupesCuisine.STRINGS.SEEDS.KAKAWATREE.SEED_DESC
+msgctxt "DupesCuisine.STRINGS.SEEDS.KAKAWATREE.SEED_DESC"
+msgid ""
+"The <link=\"PLANTS\">Seed</link> of a <link=\"KAKAWATREE\">Kakawa Tree</link>.\n"
+"\n"
+"Acorn can be sown to cultivate more Kakawa Tree, or processed into <link=\"FOOD\">Food</link>."
+msgstr ""
+"<link=\"KAKAWATREE\">橡可可树</link>的<link=\"PLANTS\">种子</link>。\n"
+"\n"
+"橡子可以播种以培育更多的橡可可树，也可以加工成<link=\"FOOD\">食品</link>。"
+
+#. DupesCuisine.STRINGS.SEEDS.KAKAWATREE.SEED_NAME
+msgctxt "DupesCuisine.STRINGS.SEEDS.KAKAWATREE.SEED_NAME"
+msgid "<link=\"KAKAWATREE\">Kakawa Acorn</link>"
+msgstr "<link=\"KAKAWATREE\">橡可可果</link>"
+
+#. DupesCuisine.STRINGS.SEEDS.SUNNYWHEAT.SEED_DESC
+msgctxt "DupesCuisine.STRINGS.SEEDS.SUNNYWHEAT.SEED_DESC"
+msgid ""
+"The <link=\"PLANTS\">Seed</link> of a <link=\"SUNNYWHEAT\">Sunny Wheat</link> plant.\n"
+"\n"
+"Grain can be sown to cultivate more Sunny Wheat, or processed into <link=\"FOOD\">Food</link>."
+msgstr ""
+"<link=\"SUNNYWHEAT\">阳光小麦</link>植株的<link=\"PLANTS\">种子</link>。\n"
+"\n"
+"麦粒可以播种以培育更多的阳光小麦，也可以被加工成 <link=\"FOOD\">食物</link>。"
+
+#. DupesCuisine.STRINGS.SEEDS.SUNNYWHEAT.SEED_NAME
+msgctxt "DupesCuisine.STRINGS.SEEDS.SUNNYWHEAT.SEED_NAME"
+msgid "<link=\"SUNNYWHEAT\">Sunny Wheat Grain</link>"
+msgstr "<link=\"SUNNYWHEAT\">阳光麦粒</link>"
+
+#. DupesCuisine.STRINGS.TRANSLATION.AUTHOR.NAME
+msgctxt "DupesCuisine.STRINGS.TRANSLATION.AUTHOR.NAME"
+msgid "Ronivan Fontanez"
+msgstr "罗尼文·丰塔内兹"
+
+#~ msgctxt "DupesCuisine.STRINGS.EFFECTS.CHOCOLATETASTE.TOOLTIP"
+#~ msgid "This duplicant just ate some chocolate"
+#~ msgstr "这名复制人刚刚食用了巧克力"
+
+#~ msgctxt "DupesCuisine.STRINGS.EFFECTS.SUGARRUSH.TOOLTIP"
+#~ msgid "This duplicant just ate some sucrose"
+#~ msgstr "这名复制人刚食用了些蔗糖"
+
+#~ msgctxt "DupesCuisine.STRINGS.FOOD.BREADEDPACU.RECIPEDESC"
+#~ msgid "A crispy <link=\"BREADEDPACU\">Battered Pacu</link> made with <link=\"COOKEDFISH\">Cooked Seafood</link> and <link=\"MEALSLURRY\">Meal Lice Batter</link>. Gives off cruchy noises as one eats them."
+#~ msgstr "用<link=\"COOKEDFISH\">烤海鲜</link>与<link=\"MEALSLURRY\">米虱面糊</link>制成的酥脆<link=\"BREADEDPACU\">香炸帕库鱼</link>。吃它的的时候会发出嘎吱嘎吱的声音。"
+
+#~ msgctxt "DupesCuisine.STRINGS.FOOD.COOKEDMUCKROOT.RECIPEDESC"
+#~ msgid "The highlight point of a <link=\"BASICFORAGEPLANT\">Muckroot</link>, or at least as far as it can get through cooking. The baking process renders it aftertaste less bland."
+#~ msgstr "这算是<link=\"BASICFORAGEPLANT\">淤泥根</link>最出彩的部分，至少是烹饪能达到的最好程度。烘烤使其味道不再平淡。"
+
+#~ msgctxt "DupesCuisine.STRINGS.FOOD.COOKIE.DESC"
+#~ msgid "A buttery cookie with a subtle bittersweet, cold flavor."
+#~ msgstr "一款黄油香气浓郁的曲奇，带有一丝微妙的苦甜与清凉风味。"
+
+#~ msgctxt "DupesCuisine.STRINGS.FOOD.FLATBREAD.RECIPEDESC"
+#~ msgid "A simple flat bread baked from <link=\"SUNNYWHEATSEED\">Sunny Wheat Grain</link>. Each bite leaves a mild warmth sensation in one's mouth, even when the bread itself is cold."
+#~ msgstr "以<link=\"SUNNYWHEATSEED\">阳光麦粒</link>为原料烘焙而成的简单烤饼。即使这饼本身是冷的，每一口也会在食用者的嘴里留下微弱的温热感。"
+
+#~ msgctxt "DupesCuisine.STRINGS.FOOD.GRILLEDCREAMTOP.RECIPEDESC"
+#~ msgid "The grilled fruiting of a <link=\"CREAMTOPCAP\">Creamcap</link>. It has a crispy texture and a soft, mildly sweet, earthy flavor."
+#~ msgstr "烤制的<link=\"CREAMTOPCAP\">奶油菌盖</link>子实体。外皮酥脆，内里柔软，带有微甜泥土味。"
+
+#~ msgctxt "DupesCuisine.STRINGS.FOOD.GRILLEDPLANTMEAT.RECIPEDESC"
+#~ msgid "A delightful grilled <link=\"PLANTMEAT\">Plant Meat</link>. It tastes neither like meat nor like a plant, but it really does taste good."
+#~ msgstr "美味的烤制<link=\"PLANTMEAT\">植物肉</link>。既不像肉也不像植物，但确实很好吃。"
+
+#~ msgctxt "DupesCuisine.STRINGS.FOOD.JELLYDOUGHNUT.RECIPEDESC"
+#~ msgid "A leavened fried dough prepared from <link=\"MEALSLURRY\">Meal Lice Batter</link>. The interior is filled a hearty portion of dried <link=\"SWAMPFRUIT\">Bog Jelly</link>."
+#~ msgstr "用<link=\"MEALSLURRY\">米虱面糊</link>制作的发酵油炸面团。内部塞满了的干<link=\"SWAMPFRUIT\">沼泽果冻</link>。"
+
+#~ msgctxt "DupesCuisine.STRINGS.FOOD.KAKAWABAR.RECIPEDESC"
+#~ msgid "<link=\"ROASTEDKAKAWA\">Roasted Kakawa</link> compressed to a dense, buttery mass. Further cooking remove most of Kakawa bitterness, rendering this bar incredible tasty."
+#~ msgstr "将<link=\"ROASTEDKAKAWA\">烤橡可可</link>压制成致密的黄油状块体。进一步加热去除了大部分可可的苦味，使这根能量棒变得异常美味。"
+
+#~ msgctxt "DupesCuisine.STRINGS.FOOD.KAKAWABUTTER.RECIPEDESC"
+#~ msgid "An oily butter extracted from <link=\"KAKAWATREESEED\">Kakawa Acorn</link>. This butter has a tasty aroma, although one must like bitterness to actually eat it in this form."
+#~ msgstr "从<link=\"KAKAWATREESEED\">橡可可果</link>中提取的一种油状黄油。这种黄油有着诱人的香气，不过只有喜欢苦味的人才能直接食用。"
+
+#~ msgctxt "DupesCuisine.STRINGS.FOOD.MILKBUN.RECIPEDESC"
+#~ msgid "A soft bun baked from <link=\"MEALSLURRY\">Meal Batter</link>, <link=\"NOSHMILK\">Nosh Milk</link> and <link=\"SUCROSE\">Sucrose</link>. It gives the duplicants who eats it a happy face, and a quite unhappy face to others who will have to endure the farts."
+#~ msgstr "用<link=\"MEALSLURRY\">米虱面糊</link>、<link=\"NOSHMILK\">豆奶</link>与<link=\"SUCROSE\">蔗糖</link>烤制而成的松软餐包。它会让享用它的复制人喜笑颜开，但也会让那些不得不忍受其屁味的旁人愁眉苦脸。"
+
+#~ msgctxt "DupesCuisine.STRINGS.FOOD.MUSHROOMSTEW.RECIPEDESC"
+#~ msgid "A thick, flavorful soup made by simmering <link=\"GRILLEDCREAMTOP\">mushrooms</link> and <link=\"SPICENUT\">spices</link>, placed within a hallowed <link=\"COLDWHEATBREAD\">Frost Bun</link> and baked in a oven."
+#~ msgstr "一道风味浓郁的浓汤，将慢火煨煮的<link=\"GRILLEDCREAMTOP\">奶油菇</link>与<link=\"SPICENUT\">火椒粒</link>炖煮而成的浓郁鲜汤，盛入挖空的<link=\"COLDWHEATBREAD\">冰霜面包</link>中烤制而成。"
+
+#~ msgctxt "DupesCuisine.STRINGS.FOOD.NOSHPUDDING.RECIPEDESC"
+#~ msgid "A fancy sweet dessert made with <link=\"NOSHMILK\">Nosh Milk</link>, <link=\"COLDWHEATSEED\">Sleet Wheat Grain</link>, whisked <link=\"RAWEGG\">Eggs</link> and quite a lot of <link=\"SUCROSE\">Sucrose</link>. Has a fine rimmed pastry that prevents it from breaking apart as one holds it (for a short time)."
+#~ msgstr "用<link=\"NOSHMILK\">豆奶</link>、<link=\"COLDWHEATSEED\">冰霜麦粒</link>、打发的<link=\"RAWEGG\">生蛋</link>与大量<link=\"SUCROSE\">蔗糖</link>制成的精美甜点。它有着一圈精致的酥皮饼边，可以在拿着它的时候防止其碎裂（当然，只能撑一小会儿）。"
+
+#~ msgctxt "DupesCuisine.STRINGS.FOOD.NUTPIE.RECIPEDESC"
+#~ msgid "A gourmet pie with a nut filling of caramelised <link=\"WORMBASICFOOD\">Roast Grubfruit Nuts</link>, <link=\"COLDWHEATSEED\">Sleet Wheat Grain</link> and <link=\"RAWEGG\">Eggs</link> dough, and <link=\"SUCROSE\">Sucrose</link>. The buttery crust remains fresh for a long time."
+#~ msgstr "以焦糖化<link=\"WORMBASICFOOD\">烤虫果仁</link>为馅料，配以<link=\"COLDWHEATSEED\">冰霜麦粒</link>与<link=\"RAWEGG\">生蛋</link>制成的面团，再撒上<link=\"SUCROSE\">蔗糖</link>制成的精美馅饼。黄油酥皮可长久保持酥脆。"
+
+#~ msgctxt "DupesCuisine.STRINGS.FOOD.ROASTEDKAKAWA.RECIPEDESC"
+#~ msgid "A fully roasted <link=\"KAKAWATREESEED\">Kakawa Acorn</link>. The roasting crack open its hard shell reaveling a edible nut, although the eating may be a bitter experience."
+#~ msgstr "完全烘烤的<link=\"KAKAWATREESEED\">橡可可果</link>。烘烤使其硬壳裂开露出可食用果仁，但食用起来可能略显苦涩。"
+
+#~ msgctxt "DupesCuisine.STRINGS.FOOD.SALTEDMEAT.RECIPEDESC"
+#~ msgid "A shunk of <link=\"MEAT\">Meat</link> dried with a lot of <link=\"SALT\">Salt</link>. The large amount of salt present in this meat made it completely resistant to microorganisms that would spoil it under normal conditions."
+#~ msgstr "用大量<link=\"SALT\">盐</link>撒在风干的<link=\"MEAT\">肉</link>上。肉中大量的盐分使其能完全抵抗在正常情况下会导致其变质的微生物。"
+
+#~ msgctxt "DupesCuisine.STRINGS.PLANTS.CREAMCAPMUSHROOM.DOMESTICATED_DESC"
+#~ msgid "A soft white mushroom with a creamie texture on its cap. Despite growing in filthy dark spots, it has edible <link=\"CREAMTOPCAP\">cream cap</link>."
+#~ msgstr "一种柔软的白色蘑菇，菌盖有着奶油般的质地。尽管它生长在污秽黑暗的角落，但其<link=\"CREAMTOPCAP\">奶油菌盖</link>却是可食用的。"
+
+#~ msgctxt "DupesCuisine.STRINGS.PLANTS.KAKAWATREE.DOMESTICATED_DESC"
+#~ msgid "A lush, golden leafed tree that grows in temperate forest biomes. It produces a rock hard edible <link=\"KAKAWATREESEED\">Kakawa Acorn</link>."
+#~ msgstr "生长于温带森林生态的繁茂金叶树木。结有岩石般坚硬的可食用<link=\"KAKAWATREESEED\">橡可可果</link>。"
+
+#~ msgctxt "DupesCuisine.STRINGS.PLANTS.SUNNYWHEAT.DOMESTICATED_DESC"
+#~ msgid "A vibrant wheat that grows in temperate and hot biomes. It produces <link=\"SUNNYWHEATSEED\">Sunny Wheat Grain</link>, a warm grain that can be processed in to food."
+#~ msgstr "一种生命力旺盛的小麦，主要生长于温带与热带生态。可产出<link=\"SUNNYWHEATSEED\">阳光麦粒</link>，一种可以加工成食物的温热谷物。"
+
+#~ msgctxt "DupesCuisine.STRINGS.SEEDS.KAKAWATREE.SEED_DESC"
+#~ msgid "The <link=\"PLANTS\">Sprout</link> of a <link=\"KAKAWATREE\">Kakawa Tree</link>."
+#~ msgstr "<link=\"KAKAWATREE\">橡可可树</link>的<link=\"PLANTS\">幼苗</link>。"

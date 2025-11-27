@@ -33,8 +33,8 @@ namespace DupesCuisine.Foods
 
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[]
             {
-                new ComplexRecipe.RecipeElement(Food_FlatBread.Id, 1f),
-                new ComplexRecipe.RecipeElement("Lettuce", 4f),
+                new ComplexRecipe.RecipeElement(Food_FlatBread.Id, 2f),
+                new ComplexRecipe.RecipeElement("Lettuce", 1.5f),
                 new ComplexRecipe.RecipeElement(new Tag[]
                 {
                     "CookedFish",
@@ -47,7 +47,7 @@ namespace DupesCuisine.Foods
             };
             Food_SeaTaco.Recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(GourmetCookingStationConfig.ID, recipeElementArray1, recipeElementArray2), recipeElementArray1, recipeElementArray2, 0)
             {
-                time = FOOD.RECIPES.SMALL_COOK_TIME,
+                time = FOOD.RECIPES.STANDARD_COOK_TIME,
                 description = STRINGS.FOOD.SEATACO.RECIPEDESC,
                 nameDisplay = (ComplexRecipe.RecipeNameDisplay)1,
                 fabricators = new List<Tag>() { GourmetCookingStationConfig.ID },

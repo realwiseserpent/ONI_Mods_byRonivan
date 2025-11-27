@@ -1,0 +1,595 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+#. DupesCuisine.STRINGS.BUILDINGS.MANUALJUICER.DESC
+msgctxt "DupesCuisine.STRINGS.BUILDINGS.MANUALJUICER.DESC"
+msgid "Кухонный прибор для измельчения пищи до жидкого состояния."
+msgstr ""
+
+#. DupesCuisine.STRINGS.BUILDINGS.MANUALJUICER.EFFECT
+msgctxt "DupesCuisine.STRINGS.BUILDINGS.MANUALJUICER.EFFECT"
+msgid "Пищевой измельчитель использует смесь из <link=\"WATER\">воды</link> и других <link=\"FOOD\">продуктов</link> для создания особых ингредиентов, используемых в кулинарии.\n\nДупликанты не будут производить предметы, пока рецепт не добавлен в очередь."
+msgstr ""
+
+#. DupesCuisine.STRINGS.BUILDINGS.MANUALJUICER.NAME
+msgctxt "DupesCuisine.STRINGS.BUILDINGS.MANUALJUICER.NAME"
+msgid "<link=\"MANUALJUICER\">Пищевой измельчитель</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.CROPS.CREAMCAP.DESC
+msgctxt "DupesCuisine.STRINGS.CROPS.CREAMCAP.DESC"
+msgid "Плодовое тело <link=\"CREAMCAP\">кремпиньона</link>.\n\nОбладает насыщенным землистым вкусом и резким сладковатым ароматом."
+msgstr ""
+
+#. DupesCuisine.STRINGS.CROPS.CREAMCAP.NAME
+msgctxt "DupesCuisine.STRINGS.CROPS.CREAMCAP.NAME"
+msgid "<link=\"CREAMTOPCAP\">Шляпка кремпиньона</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.CROPS.KAKAWAACORN.DESC
+msgctxt "DupesCuisine.STRINGS.CROPS.KAKAWAACORN.DESC"
+msgid "Плоды <link=\"KAKAWATREE\">дерева какава</link>.\n\nВ отличие от других орехов, этот настолько твёрдый, что его нельзя есть сырым. К тому же, съедобное ядро очень горькое."
+msgstr ""
+
+#. DupesCuisine.STRINGS.CROPS.KAKAWAACORN.NAME
+msgctxt "DupesCuisine.STRINGS.CROPS.KAKAWAACORN.NAME"
+msgid "<link=\"KAKAWATREESEED\">Какава-жёлудь</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.CROPS.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.CROPS.RECIPEDESC"
+msgid "Пути науки неисповедимы."
+msgstr ""
+
+#. DupesCuisine.STRINGS.CROPS.SUNNYWHEATGRAIN.DESC
+msgctxt "DupesCuisine.STRINGS.CROPS.SUNNYWHEATGRAIN.DESC"
+msgid "Съедобное зерно <link=\"SUNNYWHEAT\">солнечной пшеницы</link>.\n\nСъедобное зерно, всегда теплое."
+msgstr ""
+
+#. DupesCuisine.STRINGS.CROPS.SUNNYWHEATGRAIN.NAME
+msgctxt "DupesCuisine.STRINGS.CROPS.SUNNYWHEATGRAIN.NAME"
+msgid "<link=\"SUNNYWHEATSEED\">Зерно солнечной пшеницы</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.EFFECTS.CHOCOLATETASTE.CAUSE
+msgctxt "DupesCuisine.STRINGS.EFFECTS.CHOCOLATETASTE.CAUSE"
+msgid "Результат употребления еды с какавой"
+msgstr ""
+
+#. DupesCuisine.STRINGS.EFFECTS.CHOCOLATETASTE.DESCRIPTION
+msgctxt "DupesCuisine.STRINGS.EFFECTS.CHOCOLATETASTE.DESCRIPTION"
+msgid "Дубликанты считают, что еда с какавой стимулирует мозговую активность"
+msgstr ""
+
+#. DupesCuisine.STRINGS.EFFECTS.CHOCOLATETASTE.NAME
+msgctxt "DupesCuisine.STRINGS.EFFECTS.CHOCOLATETASTE.NAME"
+msgid "Шоколадное озарение"
+msgstr ""
+
+#. DupesCuisine.STRINGS.EFFECTS.CHOCOLATETASTE.TOOLTIP
+msgctxt "DupesCuisine.STRINGS.EFFECTS.CHOCOLATETASTE.TOOLTIP"
+msgid "Этот дубликант съел какаву и чувствует себя немного умнее"
+msgstr ""
+
+#. DupesCuisine.STRINGS.EFFECTS.SUGARRUSH.CAUSE
+msgctxt "DupesCuisine.STRINGS.EFFECTS.SUGARRUSH.CAUSE"
+msgid "Результат употребления сладостей"
+msgstr ""
+
+#. DupesCuisine.STRINGS.EFFECTS.SUGARRUSH.DESCRIPTION
+msgctxt "DupesCuisine.STRINGS.EFFECTS.SUGARRUSH.DESCRIPTION"
+msgid "Дубликанты считают, что сладости заряжают их энергией"
+msgstr ""
+
+#. DupesCuisine.STRINGS.EFFECTS.SUGARRUSH.NAME
+msgctxt "DupesCuisine.STRINGS.EFFECTS.SUGARRUSH.NAME"
+msgid "Сахарная лихорадка"
+msgstr ""
+
+#. DupesCuisine.STRINGS.EFFECTS.SUGARRUSH.TOOLTIP
+msgctxt "DupesCuisine.STRINGS.EFFECTS.SUGARRUSH.TOOLTIP"
+msgid "Этот дубликант поел сладостей и почувствовал прилив энергии"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.BREADEDPACU.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.BREADEDPACU.DESC"
+msgid "Зажаренные <link=\"BREADEDPACU\">рыбные палочки</link>, приготовленные из <link=\"FISHMEAT\">морепродуктов</link> и <link=\"MEALSLURRY\">пищевого кляра</link>.\n\nХрустят, когда их едят."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.BREADEDPACU.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.BREADEDPACU.NAME"
+msgid "<link=\"BREADEDPACU\">Рыбные палочки</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.BREADEDPACU.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.BREADEDPACU.RECIPEDESC"
+msgid "Зажаренные <link=\"FISHMEAT\">морепродукты</link> в <link=\"MEALSLURRY\">пищевом кляре</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.COOKEDMUCKROOT.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.COOKEDMUCKROOT.DESC"
+msgid "Вершина вкуса для <link=\"BASICFORAGEPLANT\">грязекорня</link> или максимум, что можно из него приготовить.\n\nПроцесс запекания делает его послевкусие менее пресным."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.COOKEDMUCKROOT.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.COOKEDMUCKROOT.NAME"
+msgid "<link=\"COOKEDMUCKROOT\">Запечённый грязекорень</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.COOKEDMUCKROOT.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.COOKEDMUCKROOT.RECIPEDESC"
+msgid "Вершина вкуса для <link=\"BASICFORAGEPLANT\">грязекорня</link> или максимум, что можно из него приготовить."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.COOKEDSHARD.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.COOKEDSHARD.DESC"
+msgid "Запечённая <link=\"SWAMPFORAGEPLANT\">сердцевина болотного мангольда</link>.\n\nНа вкус лучше, чем на вид, но на запах так же плохо, как и на вкус."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.COOKEDSHARD.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.COOKEDSHARD.NAME"
+msgid "<link=\"COOKEDSHARD\">Запечённая сердцевина мангольда</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.COOKEDSHARD.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.COOKEDSHARD.RECIPEDESC"
+msgid "Запечённая <link=\"SWAMPFORAGEPLANT\">сердцевина болотного мангольда</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.COOKIE.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.COOKIE.DESC"
+msgid "Песочное печенье, приготовленное из горьковатой <link=\"ROASTEDKAKAWA\">жареной какавы</link>, <link=\"KAKAWABUTTER\">какава-масла</link> и <link=\"COLDWHEATSEED\">зерен морозной пшеницы</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.COOKIE.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.COOKIE.NAME"
+msgid "<link=\"KAKAWACOOKIE\">Морозное печенье</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.COOKIE.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.COOKIE.RECIPEDESC"
+msgid "Песочное печенье с едва уловимым горько-сладким вкусом, немного подмораживает язык."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.DUSKOMELETTE.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.DUSKOMELETTE.DESC"
+msgid "Воздушное блюдо из взбитых <link=\"RAWEGG\">яиц</link>, в которое завернули <link=\"FRIEDMUSHROOM\">жареные грибы</link>.\n\nПикантный вкус грибов прекрасно сочетается с мягкой текстурой омлета."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.DUSKOMELETTE.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.DUSKOMELETTE.NAME"
+msgid "<link=\"DUSKOMELETTE\">Грибной омлет</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.DUSKOMELETTE.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.DUSKOMELETTE.RECIPEDESC"
+msgid "Воздушное блюдо из взбитых <link=\"RAWEGG\">яиц</link> и <link=\"FRIEDMUSHROOM\">жареных грибов</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.FISHWRAP.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.FISHWRAP.DESC"
+msgid "Аппетитный перекус, приготовленный путем заворачивания <link=\"COOKEDFISH\">приготовленных морепродуктов</link> в <link=\"FLATBREAD\">тортилью</link>.\n\nКаждый кусочек отдает теплом, даже если подавать холодным."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.FISHWRAP.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.FISHWRAP.NAME"
+msgid "<link=\"FISHWRAP\">Рыбное буррито</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.FISHWRAP.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.FISHWRAP.RECIPEDESC"
+msgid "Аппетитный перекус, приготовленный путем заворачивания <link=\"COOKEDFISH\">приготовленных морепродуктов</link> в <link=\"FLATBREAD\">тортилью</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.FLATBREAD.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.FLATBREAD.DESC"
+msgid "Простая лепешка, испеченная из <link=\"SUNNYWHEATSEED\">зерен солнечной пшеницы</link>.\n\nКаждый кусочек отдает теплом, даже если подавать холодным."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.FLATBREAD.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.FLATBREAD.NAME"
+msgid "<link=\"FLATBREAD\">Тортилья</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.FLATBREAD.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.FLATBREAD.RECIPEDESC"
+msgid "Простая лепешка, испеченная из <link=\"SUNNYWHEATSEED\">зерен солнечной пшеницы</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.GRILLEDCREAMTOP.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.GRILLEDCREAMTOP.DESC"
+msgid "Жареная <link=\"CREAMTOPCAP\">шляпка кремпиньона</link>.\n\nИмеет хрустящую текстуру и мягкий, немного сладковатый, землистый вкус."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.GRILLEDCREAMTOP.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.GRILLEDCREAMTOP.NAME"
+msgid "<link=\"GRILLEDCREAMTOP\">Жареный кремпиньон</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.GRILLEDCREAMTOP.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.GRILLEDCREAMTOP.RECIPEDESC"
+msgid "Жареная <link=\"CREAMTOPCAP\">шляпка кремпиньона</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.GRILLEDPLANTMEAT.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.GRILLEDPLANTMEAT.DESC"
+msgid "Восхитительное жареное <link=\"PLANTMEAT\">растительное мясо</link>.\n\nНе похоже ни на мясо, ни на овощ, но тем не менее очень вкусное."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.GRILLEDPLANTMEAT.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.GRILLEDPLANTMEAT.NAME"
+msgid "<link=\"GRILLEDPLANTMEAT\">Жареное растительное мясо</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.GRILLEDPLANTMEAT.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.GRILLEDPLANTMEAT.RECIPEDESC"
+msgid "Восхитительное жареное <link=\"PLANTMEAT\">растительное мясо</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.JELLYDOUGHNUT.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.JELLYDOUGHNUT.DESC"
+msgid "Жареное дрожжевое тесто, приготовленное из <link=\"MEALSLURRY\">пищевого кляра</link>. Внутри — щедрая порция сушеного <link=\"SWAMPFRUIT\">желе болотника</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.JELLYDOUGHNUT.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.JELLYDOUGHNUT.NAME"
+msgid "<link=\"JELLYDOUGHNUT\">Пончик с джемом</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.JELLYDOUGHNUT.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.JELLYDOUGHNUT.RECIPEDESC"
+msgid "Жареный пончик с желейной начинкой."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.KAKAWABAR.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.KAKAWABAR.DESC"
+msgid "<link=\"ROASTEDKAKAWA\">Жареная какава</link>, спрессованная в плотную маслянистую массу.\n\nГотовка удаляет большую часть горечи какавы, делая этот батончик невероятно вкусным."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.KAKAWABAR.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.KAKAWABAR.NAME"
+msgid "<link=\"KAKAWABAR\">Кавава батончик</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.KAKAWABAR.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.KAKAWABAR.RECIPEDESC"
+msgid "<link=\"ROASTEDKAKAWA\">Жареная какава</link>, спрессованная в плотную маслянистую массу."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.KAKAWABUTTER.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.KAKAWABUTTER.DESC"
+msgid "Жирное масло, полученное из <link=\"KAKAWATREESEED\">желудей какавы</link>.\n\nОбладает приятным ароматом, хотя, чтобы есть его в таком виде, нужно очень любить горчинку."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.KAKAWABUTTER.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.KAKAWABUTTER.NAME"
+msgid "<link=\"KAKAWABUTTER\">Какава-масло</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.KAKAWABUTTER.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.KAKAWABUTTER.RECIPEDESC"
+msgid "Жирное масло, полученное из <link=\"KAKAWATREESEED\">желудей какавы</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.LICEWRAP.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.LICEWRAP.DESC"
+msgid "Сомнительная закуска, приготовленная путем заворачивания свежих <link=\"BASICPLANTFOOD\">пищевиков</link> в <link=\"FLATBREAD\">тортилью</link>.\n\nАромат теплого хлеба смягчает неприятную текстуру начинки."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.LICEWRAP.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.LICEWRAP.NAME"
+msgid "<link=\"LICEWRAP\">Пищевой буррито</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.LICEWRAP.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.LICEWRAP.RECIPEDESC"
+msgid "Сомнительная закуска, приготовленная путем заворачивания свежих <link=\"BASICPLANTFOOD\">пищевиков</link> в <link=\"FLATBREAD\">тортилью</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.MEALBREAD.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MEALBREAD.DESC"
+msgid "Буханка <link=\"MEALBREAD\">хлеба</link>, выпеченная из смеси <link=\"MEALSLURRY\">пищевого кляра</link> и <link=\"RAWEGG\">яиц</link>.\n\nНесмотря на твердую корочку, этот хлеб довольно вкусный и имеет длительный срок хранения."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.MEALBREAD.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.MEALBREAD.NAME"
+msgid "<link=\"MEALBREAD\">Пищбрöт</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.MEALBREAD.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MEALBREAD.RECIPEDESC"
+msgid "Буханка <link=\"MEALBREAD\">хлеба</link>, выпеченная из смеси <link=\"MEALSLURRY\">пищевого кляра</link> и <link=\"RAWEGG\">яиц</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.MEALSLURRY.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MEALSLURRY.DESC"
+msgid "Ужасная липкая кашица, приготовленная из <link=\"BASICPLANTFOOD\">пищевиков</link>.\n\nИспользуется как основной ингредиент во многих рецептах."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.MEALSLURRY.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.MEALSLURRY.NAME"
+msgid "<link=\"MEALSLURRY\">Пищевой кляр</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.MEALSLURRY.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MEALSLURRY.RECIPEDESC"
+msgid "Ужасная липкая кашица, приготовленная из <link=\"BASICPLANTFOOD\">пищевиков</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.MEATTACO.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MEATTACO.DESC"
+msgid "Сытное блюдо, приготовленное из медленно <link=\"COOKEDMEAT\">обжаренного мяса</link> и <link=\"COOKEDEGG\">омлета</link>, подается в <link=\"FLATBREAD\">тортилье</link>.\n\nОставляет ощущение теплоты и на входе, и на выходе."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.MEATTACO.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.MEATTACO.NAME"
+msgid "<link=\"MEATTACO\">Мясное тако</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.MEATTACO.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MEATTACO.RECIPEDESC"
+msgid "Сытное блюдо, приготовленное из медленно <link=\"COOKEDMEAT\">обжаренного мяса</link> и <link=\"COOKEDEGG\">омлета</link>, подается в <link=\"FLATBREAD\">тортилье</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.MEATWRAP.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MEATWRAP.DESC"
+msgid "Аппетитный перекус, приготовленный путем заворачивания <link=\"COOKEDMEAT\">жареного мяса</link> в <link=\"FLATBREAD\">тортилью</link>.\n\nКаждый кусочек отдает теплом, даже если подавать холодным."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.MEATWRAP.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.MEATWRAP.NAME"
+msgid "<link=\"MEATWRAP\">Мясное буррито</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.MEATWRAP.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MEATWRAP.RECIPEDESC"
+msgid "Аппетитный перекус, приготовленный путем заворачивания <link=\"COOKEDMEAT\">жареного мяса</link> в <link=\"FLATBREAD\">тортилью</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.MILKBUN.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MILKBUN.DESC"
+msgid "Мягкая булочка, испеченная из смеси <link=\"MEALSLURRY\">пищевого кляра</link>, <link=\"NOSHMILK\">закусочного молока</link> и <link=\"SUCROSE\">сахарозы</link>.\n\nВызывает улыбку у тех, кто ее съел, и ужас у тех, кто вынужден терпеть вонючие последствия."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.MILKBUN.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.MILKBUN.NAME"
+msgid "<link=\"MILKBUN\">Молочная булочка</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.MILKBUN.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MILKBUN.RECIPEDESC"
+msgid "Мягкая сладкая молочная булочка."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.MUSHROOMSTEW.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MUSHROOMSTEW.DESC"
+msgid "Густой, ароматный суп, приготовленный путем томления <link=\"GRILLEDCREAMTOP\">жареных кремпиньонов</link> и <link=\"SPICENUT\">специй</link>. Перед подачей переливается в буханку <link=\"MEALBREAD\">пищбрöта</link> и запекается в духовке."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.MUSHROOMSTEW.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.MUSHROOMSTEW.NAME"
+msgid "<link=\"MUSHROOMSTEW\">Грибное рагу</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.MUSHROOMSTEW.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.MUSHROOMSTEW.RECIPEDESC"
+msgid "Густой, ароматный суп, приготовленный из пряных грибов и пшеничного хлеба."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.NOSHMILK.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.NOSHMILK.DESC"
+msgid "Растительный напиток, получаемый путем замачивания и прессования <link=\"BEANPLANTSEED\">закусочных бобов</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.NOSHMILK.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.NOSHMILK.NAME"
+msgid "<link=\"NOSHMILK\">Закусочное молоко</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.NOSHMILK.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.NOSHMILK.RECIPEDESC"
+msgid "Растительный напиток, получаемый путем замачивания и прессования <link=\"BEANPLANTSEED\">закусочных бобов</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.NOSHPUDDING.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.NOSHPUDDING.DESC"
+msgid "Изысканный сладкий десерт, приготовленный из <link=\"NOSHMILK\">закусочного молока</link>, <link=\"COLDWHEATSEED\">зёрен морозной пшеницы</link>, взбитых <link=\"RAWEGG\">яиц</link> и большого количества <link=\"SUCROSE\">сахарозы</link>.\n\nТонкая корочка не дает ему развалиться прямо в руках (но ненадолго)."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.NOSHPUDDING.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.NOSHPUDDING.NAME"
+msgid "<link=\"NOSHPUDDING\">Заварной флан</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.NOSHPUDDING.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.NOSHPUDDING.RECIPEDESC"
+msgid "Изысканный сладкий десерт."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.NUTCAKE.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.NUTCAKE.DESC"
+msgid "Ароматный <link=\"NUTCAKE\">кекс</link>, приготовленный из горьковатой <link=\"ROASTEDKAKAWA\">жареной какавы</link>, <link=\"KAKAWABUTTER\">какава-масла</link> и <link=\"SUNNYWHEATSEED\">зерен солнечной пшеницы</link>.\n\nСогревает сердце (и желудок) дубликанта."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.NUTCAKE.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.NUTCAKE.NAME"
+msgid "<link=\"NUTCAKE\">Какавовый кекс</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.NUTCAKE.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.NUTCAKE.RECIPEDESC"
+msgid "Ароматный <link=\"NUTCAKE\">кекс</link>, приготовленный из горьковатой <link=\"ROASTEDKAKAWA\">жареной какавы</link>, <link=\"KAKAWABUTTER\">какава-масла</link> и <link=\"SUNNYWHEATSEED\">зерен солнечной пшеницы</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.NUTPIE.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.NUTPIE.DESC"
+msgid "Изысканный торт, испеченный из <link=\"COLDWHEATSEED\">зёрен морозной пшеницы</link> и <link=\"RAWEGG\">яиц</link>, с начинкой из карамелизированных в <link=\"SUCROSE\">сахарозе</link> <link=\"WORMBASICFOOD\">жареных орехов личинкокоса</link>.\n\nМаслянистая корочка позволяет ему долго оставаться свежим."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.NUTPIE.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.NUTPIE.NAME"
+msgid "<link=\"NUTPIE\">Нуссторте</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.NUTPIE.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.NUTPIE.RECIPEDESC"
+msgid "Изысканный торт с карамелизированной начинкой."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.PLANTBURGER.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.PLANTBURGER.DESC"
+msgid "Аппетитное <link=\"GRILLEDPLANTMEAT\">жареное растительное мясо</link> и <link=\"LETTUCE\">салат</link>, спрессованные вместе внутри разрезанного пополам <link=\"MEALBREAD\">пищбрöта</link>.\n\nОдин укус и по телу пробегает волна приятных мурашек."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.PLANTBURGER.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.PLANTBURGER.NAME"
+msgid "<link=\"PLANTBURGER\">Растительный бургер</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.PLANTBURGER.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.PLANTBURGER.RECIPEDESC"
+msgid "Аппетитное <link=\"GRILLEDPLANTMEAT\">жареное растительное мясо</link> и <link=\"LETTUCE\">салат</link>, спрессованные вместе внутри разрезанного пополам <link=\"MEALBREAD\">пищбрöта</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.ROASTEDKAKAWA.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.ROASTEDKAKAWA.DESC"
+msgid "Полностью обжаренный <link=\"KAKAWATREESEED\">жёлудь какавы</link>.\n\nВ процессе обжарки его твердая скорлупа трескается, обнажая съедобное ядро. Но опыт употребление его в пищу будет определенно горьким."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.ROASTEDKAKAWA.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.ROASTEDKAKAWA.NAME"
+msgid "<link=\"ROASTEDKAKAWA\">Жареная какава</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.ROASTEDKAKAWA.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.ROASTEDKAKAWA.RECIPEDESC"
+msgid "Полностью обжаренный <link=\"KAKAWATREESEED\">желудь какавы</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.SALTEDMEAT.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.SALTEDMEAT.DESC"
+msgid "Кусок <link=\"MEAT\">мяса</link>, выдержанный в большом количестве <link=\"SALT\">соли</link>.\n\nВысокая концентрация соли в этом мясе сделала его устойчивым к микроорганизмам, вызывающим порчу продуктов при обычных условиях."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.SALTEDMEAT.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.SALTEDMEAT.NAME"
+msgid "<link=\"SALTEDMEAT\">Солонина</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.SALTEDMEAT.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.SALTEDMEAT.RECIPEDESC"
+msgid "Кусок <link=\"MEAT\">мяса</link>, выдержанный в большом количестве <link=\"SALT\">соли</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.SEATACO.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.SEATACO.DESC"
+msgid "Сытное блюдо, приготовленное из медленно <link=\"COOKEDFISH\">обжаренных морепродуктов</link> и <link=\"LETTUCE\">салата</link>, подается с <link=\"FLATBREAD\">тортильей</link>.\n\nОставляет ощущение теплоты и на входе, и на выходе."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.SEATACO.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.SEATACO.NAME"
+msgid "<link=\"SEATACO\">Морское тако</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.SEATACO.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.SEATACO.RECIPEDESC"
+msgid "Сытное блюдо, приготовленное из медленно <link=\"COOKEDFISH\">обжаренных морепродуктов</link> и <link=\"LETTUCE\">салата</link>, подается с <link=\"FLATBREAD\">тортильей</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.SPICEDOMELETTE.DESC
+msgctxt "DupesCuisine.STRINGS.FOOD.SPICEDOMELETTE.DESC"
+msgid "Воздушное блюдо, приготовленное из взбитых <link=\"RAWEGG\">яиц</link> и с щедрой щепоткой <link=\"SPICENUT\">перцовых орехов</link>.\n\nОбладает глубоким пряным вкусом, который надолго остается во рту."
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.SPICEDOMELETTE.NAME
+msgctxt "DupesCuisine.STRINGS.FOOD.SPICEDOMELETTE.NAME"
+msgid "<link=\"SPICEDOMELETTE\">Омлет со специями</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.FOOD.SPICEDOMELETTE.RECIPEDESC
+msgctxt "DupesCuisine.STRINGS.FOOD.SPICEDOMELETTE.RECIPEDESC"
+msgid "Воздушное блюдо, приготовленное из взбитых <link=\"RAWEGG\">яиц</link> и с щедрой щепоткой <link=\"SPICENUT\">перцовых орехов</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.PLANTS.CREAMCAPMUSHROOM.DESC
+msgctxt "DupesCuisine.STRINGS.PLANTS.CREAMCAPMUSHROOM.DESC"
+msgid "Бархатистый гриб со светлой ножкой и шляпкой кремового цвета. Несмотря на то, что он растёт в сырых и тёмных местах, его <link=\"CREAMTOPCAP\">шляпка</link> очень даже съедобная."
+msgstr ""
+
+#. DupesCuisine.STRINGS.PLANTS.CREAMCAPMUSHROOM.DOMESTICATED_DESC
+msgctxt "DupesCuisine.STRINGS.PLANTS.CREAMCAPMUSHROOM.DOMESTICATED_DESC"
+msgid "Созревает, и получается съедобная <link=\"CREAMTOPCAP\">шляпка кремпиньона</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.PLANTS.CREAMCAPMUSHROOM.NAME
+msgctxt "DupesCuisine.STRINGS.PLANTS.CREAMCAPMUSHROOM.NAME"
+msgid "<link=\"CREAMCAP\">Кремпиньон</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.PLANTS.KAKAWATREE.DESC
+msgctxt "DupesCuisine.STRINGS.PLANTS.KAKAWATREE.DESC"
+msgid "Пышное дерево с золотистыми листьями, растущее в лесных биомах с умеренной температурой. На нем созревают твердые, как камень, но вполне съедобные <link=\"KAKAWATREESEED\">какава-жёлуди</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.PLANTS.KAKAWATREE.DOMESTICATED_DESC
+msgctxt "DupesCuisine.STRINGS.PLANTS.KAKAWATREE.DOMESTICATED_DESC"
+msgid "На этом растении созревают съедобные <link=\"KAKAWATREESEED\">какава-жёлуди</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.PLANTS.KAKAWATREE.NAME
+msgctxt "DupesCuisine.STRINGS.PLANTS.KAKAWATREE.NAME"
+msgid "<link=\"KAKAWATREE\">Дерево какава</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.PLANTS.SUNNYWHEAT.DESC
+msgctxt "DupesCuisine.STRINGS.PLANTS.SUNNYWHEAT.DESC"
+msgid "Яркий злак, произрастающий в умеренных и жарких биомах. На нем созревают <link=\"SUNNYWHEATSEED\">зёрна солнечной пшеницы</link>, пригодные для переработки в пищу."
+msgstr ""
+
+#. DupesCuisine.STRINGS.PLANTS.SUNNYWHEAT.DOMESTICATED_DESC
+msgctxt "DupesCuisine.STRINGS.PLANTS.SUNNYWHEAT.DOMESTICATED_DESC"
+msgid "На этом растении созревают съедобные <link=\"SUNNYWHEATSEED\">зёрна солнечной пшеницы</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.PLANTS.SUNNYWHEAT.NAME
+msgctxt "DupesCuisine.STRINGS.PLANTS.SUNNYWHEAT.NAME"
+msgid "<link=\"SUNNYWHEAT\">Солнечная пшеница</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.SEEDS.CREAMCAPMUSHROOM.SEED_DESC
+msgctxt "DupesCuisine.STRINGS.SEEDS.CREAMCAPMUSHROOM.SEED_DESC"
+msgid "<link=\"PLANTS\">Семя</link> <link=\"CREAMCAP\">кремпиньона</link>.\n\nНайти споры кремпиньона можно, выкапывая предметы из земли."
+msgstr ""
+
+#. DupesCuisine.STRINGS.SEEDS.CREAMCAPMUSHROOM.SEED_NAME
+msgctxt "DupesCuisine.STRINGS.SEEDS.CREAMCAPMUSHROOM.SEED_NAME"
+msgid "<link=\"CREAMCAP\">Спора кремпиньона</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.SEEDS.KAKAWATREE.SEED_DESC
+msgctxt "DupesCuisine.STRINGS.SEEDS.KAKAWATREE.SEED_DESC"
+msgid "<link=\"PLANTS\">Семя</link> <link=\"KAKAWATREE\">дерева какава</link>.\n\nЖёлудь можно посеять, чтобы вырастить больше деревьев какава, или переработать для получения <link=\"FOOD\">еды</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.SEEDS.KAKAWATREE.SEED_NAME
+msgctxt "DupesCuisine.STRINGS.SEEDS.KAKAWATREE.SEED_NAME"
+msgid "<link=\"KAKAWATREE\">Какава-жёлудь</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.SEEDS.SUNNYWHEAT.SEED_DESC
+msgctxt "DupesCuisine.STRINGS.SEEDS.SUNNYWHEAT.SEED_DESC"
+msgid "<link=\"PLANTS\">Семя</link> <link=\"SUNNYWHEAT\">солнечной пшеницы</link>.\n\nЗерно можно посеять, чтобы вырастить больше солнечной пшеницы, или переработать для получения <link=\"FOOD\">еды</link>."
+msgstr ""
+
+#. DupesCuisine.STRINGS.SEEDS.SUNNYWHEAT.SEED_NAME
+msgctxt "DupesCuisine.STRINGS.SEEDS.SUNNYWHEAT.SEED_NAME"
+msgid "<link=\"SUNNYWHEAT\">Зерно солнечной пшеницы</link>"
+msgstr ""
+
+#. DupesCuisine.STRINGS.TRANSLATION.AUTHOR.NAME
+msgctxt "DupesCuisine.STRINGS.TRANSLATION.AUTHOR.NAME"
+msgid "RealWiseSerpent"
+msgstr ""
+

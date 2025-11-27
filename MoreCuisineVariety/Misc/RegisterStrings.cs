@@ -65,11 +65,11 @@ namespace DupesCuisine
             Strings.Add($"STRINGS.BUILDINGS.STATUSITEMS.{id.ToUpperInvariant()}.TOOLTIP", tooltip);
         }
 
-        public static void MakeDublicantsModifiersStrings(string id, string name, string tooltip, string sause, string desc)
+        public static void MakeDuplicantsModifiersStrings(string id, string name, string tooltip, string cause, string desc)
         {
             Strings.Add($"STRINGS.DUPLICANTS.MODIFIERS.{id.ToUpperInvariant()}.NAME", name);
             Strings.Add($"STRINGS.DUPLICANTS.MODIFIERS.{id.ToUpperInvariant()}.TOOLTIP", tooltip);
-            Strings.Add($"STRINGS.DUPLICANTS.MODIFIERS.{id.ToUpperInvariant()}.CAUSE", sause);
+            Strings.Add($"STRINGS.DUPLICANTS.MODIFIERS.{id.ToUpperInvariant()}.CAUSE", cause);
             Strings.Add($"STRINGS.DUPLICANTS.MODIFIERS.{id.ToUpperInvariant()}.DESCRIPTION", desc);
         }
 

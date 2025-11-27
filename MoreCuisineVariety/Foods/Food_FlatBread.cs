@@ -21,15 +21,20 @@ namespace DupesCuisine.Foods
 
             ComplexRecipe.RecipeElement[] recipeElementArray1 = new ComplexRecipe.RecipeElement[1]
             {
-                new ComplexRecipe.RecipeElement(Crop_SunnyWheatGrain.Id, 3f)
+                new ComplexRecipe.RecipeElement(new Tag[]
+                {
+                    Crop_SunnyWheatGrain.Id,
+                    //(Tag)"GardenFoodPlantFood"
+                },new float[]{ 6f//, 3f
+                }),
             };
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]
             {
-                new ComplexRecipe.RecipeElement(Id, 1f)
+                new ComplexRecipe.RecipeElement(Id, 2f)
             };
             this.Recipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(CookingStationConfig.ID, recipeElementArray1, recipeElementArray2), recipeElementArray1, recipeElementArray2, 0)
             {
-                time = FOOD.RECIPES.SMALL_COOK_TIME,
+                time = FOOD.RECIPES.STANDARD_COOK_TIME,
                 description = STRINGS.FOOD.FLATBREAD.RECIPEDESC,
                 nameDisplay = (ComplexRecipe.RecipeNameDisplay)1,
                 fabricators = new List<Tag>() { CookingStationConfig.ID },

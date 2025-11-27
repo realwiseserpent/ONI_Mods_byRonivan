@@ -54,7 +54,7 @@ namespace DupesCuisine.Foods
                 }, 2f),
                 new ComplexRecipe.RecipeElement(fruits.ToArray(), fruitAmount.ToArray()),
                 new ComplexRecipe.RecipeElement("RawEgg", 1f),
-                new ComplexRecipe.RecipeElement(SimHashes.Sucrose.CreateTag(), 12f)
+                new ComplexRecipe.RecipeElement(SimHashes.Sucrose.CreateTag(), 4f)
             };
 
             ComplexRecipe.RecipeElement[] recipeElementArray2 = new ComplexRecipe.RecipeElement[1]

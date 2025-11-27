@@ -43,7 +43,7 @@ namespace DupesCuisine.Foods
                     "BeanPlantSeed",
                     Plant_SunnyWheatConfig.SeedId
                 }, new float[]{ 4f, 8f }),
-                new ComplexRecipe.RecipeElement(SimHashes.Water.CreateTag(), 15f),
+                new ComplexRecipe.RecipeElement(SimHashes.Water.CreateTag(), 12f),
             };
             ComplexRecipe.RecipeElement[] originalRecipeResults = new ComplexRecipe.RecipeElement[]
             {

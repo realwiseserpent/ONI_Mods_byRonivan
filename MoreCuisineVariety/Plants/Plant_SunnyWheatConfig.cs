@@ -13,11 +13,11 @@ namespace DupesCuisine.Plants
         public const float TemperatureLethalLow = 273.15f;
         public const float TemperatureWarningLow = 313.15f;
         public const float TemperatureWarningHigh = 343.15f;
-        public const float TemperatureLethalHigh = 348.15f;
-        public const float GROW_TIME = 10800f;
+        public const float TemperatureLethalHigh = 373.15f;
+        public const float GROW_TIME = 600 * 15f;
         public const byte CROP_NUM = 18;
-        public const float Irrigation = 10 / 600f;             //   Irrigation Needed
-        public const float Fertilization = 15 / 600f;         //   Fertilization Needed
+        public const float Irrigation = 7 / 600f;         //   Irrigation Needed
+        public const float Fertilization = 15 / 600f;     //   Fertilization Needed
         public static CuisinePlantsTuning.CropsTuning tuning = CuisinePlantsTuning.SunnyWheatTuning;
 
         public string[] GetDlcIds() => null;
@@ -36,7 +36,12 @@ namespace DupesCuisine.Plants
                 SimHashes.CarbonDioxide,
                 SimHashes.ChlorineGas
             };
-            EntityTemplates.ExtendEntityToBasicPlant(template, 273.15f, 313.15f, 343.15f, 373.15f, hashesArray1, true, 0f, 0.15f, Crop_SunnyWheatGrain.Id, true, true, true, true, 2400f, 0f, 9800f, "SunnyWheatOriginal", STRINGS.PLANTS.SUNNYWHEAT.NAME);
+            EntityTemplates.ExtendEntityToBasicPlant(
+                template,
+                TemperatureLethalLow,
+                TemperatureWarningLow,
+                TemperatureWarningHigh,
+                TemperatureLethalHigh, hashesArray1, true, 0f, 0.15f, Crop_SunnyWheatGrain.Id, true, true, true, true, 2400f, 0f, 9800f, "SunnyWheatOriginal", STRINGS.PLANTS.SUNNYWHEAT.NAME);
 
             EntityTemplates.ExtendPlantToIrrigated(template, new PlantElementAbsorber.ConsumeInfo[]
             {
@@ -46,7 +51,7 @@ namespace DupesCuisine.Plants
                     massConsumptionRate = Irrigation
                 }
             });
-            
+
             EntityTemplates.ExtendPlantToFertilizable(template, new PlantElementAbsorber.ConsumeInfo[]
             {
                 new PlantElementAbsorber.ConsumeInfo
@@ -91,6 +96,7 @@ namespace DupesCuisine.Plants
                     SimHashes.Carbon.CreateTag(),
                     SimHashes.WoodLog.CreateTag(),
                     SimHashes.Peat.CreateTag(),
+                    SimHashes.FabricatedWood.CreateTag(),
                 }, 25f)
             };
             ComplexRecipe.RecipeElement[] outputs = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement(SeedId, 1f) };
