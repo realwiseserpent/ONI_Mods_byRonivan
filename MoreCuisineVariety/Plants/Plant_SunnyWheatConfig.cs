@@ -41,7 +41,7 @@ namespace DupesCuisine.Plants
                 TemperatureLethalLow,
                 TemperatureWarningLow,
                 TemperatureWarningHigh,
-                TemperatureLethalHigh, hashesArray1, true, 0f, 0.15f, Crop_SunnyWheatGrain.Id, true, true, true, true, 2400f, 0f, 9800f, "SunnyWheatOriginal", STRINGS.PLANTS.SUNNYWHEAT.NAME);
+                TemperatureLethalHigh, hashesArray1, true, 0f, 0.15f, Crop_SunnyWheatGrain.Id, true, true, true, false, true, 2400f, 0f, 9800f, "SunnyWheatOriginal", STRINGS.PLANTS.SUNNYWHEAT.NAME);
 
             EntityTemplates.ExtendPlantToIrrigated(template, new PlantElementAbsorber.ConsumeInfo[]
             {
@@ -91,13 +91,11 @@ namespace DupesCuisine.Plants
                     "ColdWheatSeed",
                     FernFoodConfig.ID
                 }, 1f),
-                new ComplexRecipe.RecipeElement(new Tag[]
+                new ComplexRecipe.RecipeElement(GameTags.BasicWoods.Append(new Tag[]
                 {
-                    SimHashes.Carbon.CreateTag(),
-                    SimHashes.WoodLog.CreateTag(),
                     SimHashes.Peat.CreateTag(),
-                    SimHashes.FabricatedWood.CreateTag(),
-                }, 25f)
+                    SimHashes.Carbon.CreateTag()
+                }), 25f)
             };
             ComplexRecipe.RecipeElement[] outputs = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement(SeedId, 1f) };
             string id = ComplexRecipeManager.MakeRecipeID(KilnConfig.ID, inputs, outputs);

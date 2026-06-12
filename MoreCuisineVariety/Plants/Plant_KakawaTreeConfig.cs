@@ -42,7 +42,7 @@ namespace DupesCuisine.Plants
                 TemperatureWarningHigh,
                 TemperatureLethalHigh,
                 hashesArray1,
-                true, 0f, 0.15f, Crop_KakawaAcorn.Id, true, true, true, true, 2400f, 0f, TUNING.PLANTS.RADIATION_THRESHOLDS.TIER_5, "KakawaTreeOriginal", STRINGS.PLANTS.KAKAWATREE.NAME);
+                true, 0f, 0.15f, Crop_KakawaAcorn.Id, true, true, true, false, true, 2400f, 0f, TUNING.PLANTS.RADIATION_THRESHOLDS.TIER_5, "KakawaTreeOriginal", STRINGS.PLANTS.KAKAWATREE.NAME);
 
             EntityTemplates.ExtendPlantToIrrigated(gameObject, new PlantElementAbsorber.ConsumeInfo[]
                 {
@@ -106,13 +106,11 @@ namespace DupesCuisine.Plants
             ComplexRecipe.RecipeElement[] inputs = new ComplexRecipe.RecipeElement[]
             {
                 new ComplexRecipe.RecipeElement("ForestTreeSeed", 1f),
-                new ComplexRecipe.RecipeElement(new Tag[]
+                new ComplexRecipe.RecipeElement(GameTags.BasicWoods.Append(new Tag[]
                 {
-                    SimHashes.Carbon.CreateTag(),
-                    SimHashes.WoodLog.CreateTag(),
                     SimHashes.Peat.CreateTag(),
-                    SimHashes.FabricatedWood.CreateTag(),
-                }, 25f)
+                    SimHashes.Carbon.CreateTag()
+                }), 25f)
             };
             ComplexRecipe.RecipeElement[] outputs = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement(SeedId, 1f) };
             string id = ComplexRecipeManager.MakeRecipeID(KilnConfig.ID, inputs, outputs);

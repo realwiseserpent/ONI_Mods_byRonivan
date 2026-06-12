@@ -33,7 +33,7 @@ namespace DupesCuisine.Plants
                 },
                 305.15f);
             SimHashes[] hashesArray1 = new SimHashes[] { SimHashes.Oxygen, SimHashes.CarbonDioxide, SimHashes.ContaminatedOxygen };
-            EntityTemplates.ExtendEntityToBasicPlant(gameObject, 253.15f, 283.15f, 313.15f, 373.15f, null, true, 0f, 0.15f, Crop_KakawaAcorn.Id, true, true, false, true, 2400f, 0f, TUNING.PLANTS.RADIATION_THRESHOLDS.TIER_5, "KakawaTreeBranchOriginal", STRINGS.PLANTS.KAKAWATREE.NAME);
+            EntityTemplates.ExtendEntityToBasicPlant(gameObject, 253.15f, 283.15f, 313.15f, 373.15f, null, true, 0f, 0.15f, Crop_KakawaAcorn.Id, true, true, false, false, true, 2400f, 0f, TUNING.PLANTS.RADIATION_THRESHOLDS.TIER_5, "KakawaTreeBranchOriginal", STRINGS.PLANTS.KAKAWATREE.NAME);
 
             gameObject.AddOrGet<StandardCropPlant>();
             List<Tag> additionalTags = new List<Tag>();

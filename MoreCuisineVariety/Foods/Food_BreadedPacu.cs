@@ -35,7 +35,8 @@ namespace DupesCuisine.Foods
                 {
                     "FishMeat",
                     "ShellfishMeat",
-                    "PrehistoricPacuFillet"
+                    "PrehistoricPacuFillet",
+                    "SquidMeat"
                 }, 1f),
                 new ComplexRecipe.RecipeElement(Food_MealSlurryConfig.Id, 1f)
             };
@@ -59,7 +60,8 @@ namespace DupesCuisine.Foods
                 {
                     "FishMeat",
                     "ShellfishMeat",
-                    "PrehistoricPacuFillet"
+                    "PrehistoricPacuFillet",
+                    "SquidMeat"
                 }, 1f),
                 new ComplexRecipe.RecipeElement(SimHashes.Tallow.CreateTag(), 0.6f)
             };
@@ -67,16 +69,16 @@ namespace DupesCuisine.Foods
             {
                 new ComplexRecipe.RecipeElement(TagExtensions.ToTag(Food_BreadedPacu.Id), 1f, (ComplexRecipe.RecipeElement.TemperatureOperation) 1, false)
             };
-            
-            if(false)
-            Food_BreadedPacu.extendedRecipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(DeepfryerConfig.ID, extendedIngredients, extendedResult), extendedIngredients, extendedResult, DlcManager.DLC2)
-            {
-                time = FOOD.RECIPES.SMALL_COOK_TIME,
-                description = STRINGS.FOOD.BREADEDPACU.RECIPEDESC,
-                nameDisplay = (ComplexRecipe.RecipeNameDisplay)1,
-                fabricators = new List<Tag>() { DeepfryerConfig.ID },
-                sortOrder = 23
-            };
+
+            if (false)
+                Food_BreadedPacu.extendedRecipe = new ComplexRecipe(ComplexRecipeManager.MakeRecipeID(DeepfryerConfig.ID, extendedIngredients, extendedResult), extendedIngredients, extendedResult, DlcManager.DLC2)
+                {
+                    time = FOOD.RECIPES.SMALL_COOK_TIME,
+                    description = STRINGS.FOOD.BREADEDPACU.RECIPEDESC,
+                    nameDisplay = (ComplexRecipe.RecipeNameDisplay)1,
+                    fabricators = new List<Tag>() { DeepfryerConfig.ID },
+                    sortOrder = 23
+                };
 
 
 

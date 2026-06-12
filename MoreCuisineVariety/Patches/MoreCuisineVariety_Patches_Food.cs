@@ -7,6 +7,7 @@ using DupesCuisine.Foods;
 using UnityEngine;
 using static EdiblesManager;
 using System.Linq;
+using DupesCuisine.Plants;
 
 namespace DupesCuisine.Patches
 {
@@ -105,6 +106,29 @@ namespace DupesCuisine.Patches
                 string[] sweets = new string[] { "WormSuperFood", "SpinosaCake", "SpinosaSyrup", "Duskbun", "Duskjam", "CandyPikeapple" };
                 if (sweets.Contains(__instance.Id))
                     __instance.Effects.Add(Effects.SugarRushId);
+            }
+        }
+
+        [HarmonyPatch(typeof(MicrobeMusherConfig), "ConfigureBuildingTemplate")]
+        public class MicrobeMusherConfig_Patch
+        {
+            public static void Postfix(GameObject go, Tag prefab_tag)
+            {
+                List<ComplexRecipe.RecipeElement> ingr =
+                    new List<ComplexRecipe.RecipeElement>(FishFoodConfig.recipe.ingredients);
+
+                foreach (var c in ingr)
+                {
+                    if (c.possibleMaterials.Contains("BasicSingleHarvestPlantSeed"))
+                    {
+                        c.possibleMaterials = new List<Tag>(c.possibleMaterials) 
+                        {
+                            Plant_CreamcapMushroomConfig.SeedId,
+                            Plant_KakawaTreeConfig.SeedId,
+                            Plant_SunnyWheatConfig.SeedId
+                        }.ToArray();
+                    }
+                }
             }
         }
     }

@@ -40,7 +40,7 @@ namespace DupesCuisine.Plants
                 TemperatureLethalLow,
                 TemperatureWarningLow,
                 TemperatureWarningHigh,
-                TemperatureLethalHigh, simHashesArray, true, 0.0f, 0.15f, Crop_Creamcap.Id, true, true, true, true, 2400f, 0.0f, 4600f, "CreamcapOriginal", "Creamcap Mushroom");
+                TemperatureLethalHigh, simHashesArray, true, 0.0f, 0.15f, Crop_Creamcap.Id, true, true, true, false, true, 2400f, 0.0f, 4600f, "CreamcapOriginal", "Creamcap Mushroom");
             EntityTemplates.ExtendPlantToFertilizable(placedEntity, new PlantElementAbsorber.ConsumeInfo[]
                 {
                     new PlantElementAbsorber.ConsumeInfo()
@@ -80,13 +80,11 @@ namespace DupesCuisine.Plants
             ComplexRecipe.RecipeElement[] inputs = new ComplexRecipe.RecipeElement[]
             {
                 new ComplexRecipe.RecipeElement("MushroomSeed", 1f),
-                new ComplexRecipe.RecipeElement(new Tag[]
+                new ComplexRecipe.RecipeElement(GameTags.BasicWoods.Append(new Tag[]
                 {
-                    SimHashes.Carbon.CreateTag(),
-                    SimHashes.WoodLog.CreateTag(),
                     SimHashes.Peat.CreateTag(),
-                    SimHashes.FabricatedWood.CreateTag(),
-                }, 25f)
+                    SimHashes.Carbon.CreateTag()
+                }), 25f)
             };
             ComplexRecipe.RecipeElement[] outputs = new ComplexRecipe.RecipeElement[] { new ComplexRecipe.RecipeElement(SeedId, 1f) };
             string id = ComplexRecipeManager.MakeRecipeID(KilnConfig.ID, inputs, outputs);
