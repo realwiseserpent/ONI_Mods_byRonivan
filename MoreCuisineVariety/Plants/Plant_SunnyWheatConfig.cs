@@ -14,11 +14,12 @@ namespace DupesCuisine.Plants
         public const float TemperatureWarningLow = 313.15f;
         public const float TemperatureWarningHigh = 343.15f;
         public const float TemperatureLethalHigh = 373.15f;
-        public const float GROW_TIME = 600 * 15f;
-        public const byte CROP_NUM = 18;
+
         public const float Irrigation = 7 / 600f;         //   Irrigation Needed
         public const float Fertilization = 15 / 600f;     //   Fertilization Needed
         public static CuisinePlantsTuning.CropsTuning tuning = CuisinePlantsTuning.SunnyWheatTuning;
+
+        public static Crop.CropVal HARVEST = new Crop.CropVal(Crop_SunnyWheatGrain.Id, 600 * 15f, 18, true);
 
         public string[] GetDlcIds() => null;
 
@@ -38,10 +39,11 @@ namespace DupesCuisine.Plants
             };
             EntityTemplates.ExtendEntityToBasicPlant(
                 template,
+                HARVEST,
                 TemperatureLethalLow,
                 TemperatureWarningLow,
                 TemperatureWarningHigh,
-                TemperatureLethalHigh, hashesArray1, true, 0f, 0.15f, Crop_SunnyWheatGrain.Id, true, true, true, false, true, 2400f, 0f, 9800f, "SunnyWheatOriginal", STRINGS.PLANTS.SUNNYWHEAT.NAME);
+                TemperatureLethalHigh, hashesArray1, true, 0f, 0.15f, true, true, true, false, true, 2400f, 0f, 9800f, "SunnyWheatOriginal", STRINGS.PLANTS.SUNNYWHEAT.NAME);
 
             EntityTemplates.ExtendPlantToIrrigated(template, new PlantElementAbsorber.ConsumeInfo[]
             {

@@ -26,19 +26,19 @@ namespace DupesCuisine.Patches
                 RegisterStrings.MakeSeedStrings(Crop_KakawaAcorn.Id, STRINGS.SEEDS.KAKAWATREE.SEED_NAME, STRINGS.SEEDS.KAKAWATREE.SEED_DESC);
                 RegisterStrings.MakePlantSpeciesStrings(Plant_KakawaTreeConfig.Id, STRINGS.PLANTS.KAKAWATREE.NAME, STRINGS.PLANTS.KAKAWATREE.DESC);
                 //RegisterStrings.MakePlantCodexStrings(Plant_KakawaTreeConfig.Id, STRINGS.PLANTS.KAKAWATREE.NAME, STRINGS.CODEX.SUBTITLE, STRINGS.CODEX.KAKAWATREE.BODY.CONTAINER1);
-                CROPS.CROP_TYPES.Add(new Crop.CropVal(Crop_KakawaAcorn.Id, Plant_KakawaTreeConfig.GROW_TIME, Plant_KakawaTreeConfig.CROP_NUM, true));
+                CROPS.CROP_TYPES.Add(Plant_KakawaTreeConfig.HARVEST);
 
                 RegisterStrings.MakeFoodStrings(Crop_Creamcap.Id, STRINGS.CROPS.CREAMCAP.NAME, STRINGS.CROPS.CREAMCAP.DESC);
                 RegisterStrings.MakeSeedStrings(Plant_CreamcapMushroomConfig.SeedId, STRINGS.SEEDS.CREAMCAPMUSHROOM.SEED_NAME, STRINGS.SEEDS.CREAMCAPMUSHROOM.SEED_DESC);
                 RegisterStrings.MakePlantSpeciesStrings(Plant_CreamcapMushroomConfig.Id, STRINGS.PLANTS.CREAMCAPMUSHROOM.NAME, STRINGS.PLANTS.CREAMCAPMUSHROOM.DESC);
                 //RegisterStrings.MakePlantCodexStrings(Plant_CreamcapMushroomConfig.Id, STRINGS.PLANTS.CREAMCAPMUSHROOM.NAME, STRINGS.CODEX.SUBTITLE, STRINGS.CODEX.CREAMCAPMUSHROOM.BODY.CONTAINER1);
-                CROPS.CROP_TYPES.Add(new Crop.CropVal(Crop_Creamcap.Id, Plant_CreamcapMushroomConfig.GROW_TIME, Plant_CreamcapMushroomConfig.CROP_NUM, true));
+                CROPS.CROP_TYPES.Add(Plant_CreamcapMushroomConfig.HARVEST);
 
                 RegisterStrings.MakeFoodStrings(Crop_SunnyWheatGrain.Id, STRINGS.CROPS.SUNNYWHEATGRAIN.NAME, STRINGS.CROPS.SUNNYWHEATGRAIN.DESC, STRINGS.CROPS.RECIPEDESC);
                 RegisterStrings.MakeSeedStrings(Crop_SunnyWheatGrain.Id, STRINGS.SEEDS.SUNNYWHEAT.SEED_NAME, STRINGS.SEEDS.SUNNYWHEAT.SEED_DESC);
                 RegisterStrings.MakePlantSpeciesStrings(Plant_SunnyWheatConfig.Id, STRINGS.PLANTS.SUNNYWHEAT.NAME, STRINGS.PLANTS.SUNNYWHEAT.DESC);
                 //RegisterStrings.MakePlantCodexStrings(Plant_SunnyWheatConfig.Id, STRINGS.PLANTS.SUNNYWHEAT.NAME, STRINGS.CODEX.SUBTITLE, STRINGS.CODEX.SUNNYWHEAT.BODY.CONTAINER1);
-                CROPS.CROP_TYPES.Add(new Crop.CropVal(Crop_SunnyWheatGrain.Id, Plant_SunnyWheatConfig.GROW_TIME, Plant_SunnyWheatConfig.CROP_NUM, true));
+                CROPS.CROP_TYPES.Add(Plant_SunnyWheatConfig.HARVEST);
             }
         }
 

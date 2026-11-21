@@ -14,11 +14,12 @@ namespace DupesCuisine.Plants
         public const float TemperatureWarningLow = 283.15f;
         public const float TemperatureWarningHigh = 313.15f;
         public const float TemperatureLethalHigh = 373.15f;
-        public const float GROW_TIME = 600 * 20f;
-        public const byte CROP_NUM = 24;
+
         public const float Irrigation = 10 / 600f;          //   Irrigation Needed
         public const float Fertilization = 12 / 600f;       //   Fertilization Needed
         public static CuisinePlantsTuning.CropsTuning tuning = CuisinePlantsTuning.OakTreeTuning;
+
+        public static Crop.CropVal HARVEST = new Crop.CropVal(Crop_KakawaAcorn.Id, 600 * 20f, 24, true);
 
         public string[] GetDlcIds() => null;
 
@@ -37,12 +38,13 @@ namespace DupesCuisine.Plants
             };
             EntityTemplates.ExtendEntityToBasicPlant(
                 gameObject,
+                HARVEST,
                 TemperatureLethalLow,
                 TemperatureWarningLow,
                 TemperatureWarningHigh,
                 TemperatureLethalHigh,
                 hashesArray1,
-                true, 0f, 0.15f, Crop_KakawaAcorn.Id, true, true, true, false, true, 2400f, 0f, TUNING.PLANTS.RADIATION_THRESHOLDS.TIER_5, "KakawaTreeOriginal", STRINGS.PLANTS.KAKAWATREE.NAME);
+                true, 0f, 0.15f, true, true, true, false, true, 2400f, 0f, TUNING.PLANTS.RADIATION_THRESHOLDS.TIER_5, "KakawaTreeOriginal", STRINGS.PLANTS.KAKAWATREE.NAME);
 
             EntityTemplates.ExtendPlantToIrrigated(gameObject, new PlantElementAbsorber.ConsumeInfo[]
                 {
